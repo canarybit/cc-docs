@@ -1,8 +1,8 @@
-# Welcome!
+**WELCOME!**
 
-This is the documentation for [Confidential Cloud](https://confidentialcloud.io), CanaryBit PaaS solution for **Businesses** and **Public Authorities** that are willing to collaborate with **sensitive** data & algorithms.
+# Confidential Cloud - Official Documentation
 
-It covers everything from setup to usage and development.
+This is the documentation for [Confidential Cloud](https://confidentialcloud.io), CanaryBit PaaS solution for **Businesses** and **Public Authorities** that are willing to collaborate by sharing and processing **sensitive** data & algorithms.
 
 <embed src="https://www.canarybit.eu/wp-content/uploads/2022/01/confidential-cloud-architecture-light.png" alt="CanaryBit Confidential Cloud" width="100%" />
 
