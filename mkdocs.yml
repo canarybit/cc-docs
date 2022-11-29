@@ -23,3 +23,12 @@ extra_css:
 
 plugins:
   - search
+
+nav:
+  - 'Overview': 'index.md'
+  - 'Support ⧉': 'https://canarybit.eu'
+  - 'System Health ⧉': 'https://confidentialcloud.statuspage.io'
+  - 'Blog ⧉': 'https://canarybit.eu/blog'
+  - 'Login ⧉': 'https://confidentialcloud.io'
+
+  
