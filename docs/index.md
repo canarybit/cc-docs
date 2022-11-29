@@ -1,4 +1,4 @@
-# Hello!
+# Welcome!
 
 This is the documentation for [Confidential Cloud](https://confidentialcloud.io), CanaryBit PaaS solution for **Businesses** and **Public Authorities** that are willing to collaborate with **sensitive** data & algorithms.
 
