@@ -30,8 +30,4 @@ plugins:
 
 nav:
   - Overview: 'index.md'
-  - 'For Application Developers':
-    - 'Getting Started':
-      - 'Step 1: Prepare': #
-      - 'Step 2: Deploy': 'user-guide/deploy.md'
-      - 'Step 3: Operate': 'user-guide/operate.md'
+  - Next Section: ''
