@@ -27,7 +27,3 @@ extra_css:
 plugins:
   - include-markdown
   - search
-
-nav:
-  - Overview: 'index.md'
-  - Next Section: ''
