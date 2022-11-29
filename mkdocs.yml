@@ -15,10 +15,9 @@ repo_url: https://github.com/canarybit
 theme:
   name: material
   font: false
-  
+
 extra_css:
   - stylesheets/canarybit.css
 
 plugins:
-  - include-markdown
   - search
