@@ -32,7 +32,7 @@ nav:
   - LEARN:
     - 'Overview': 'index.md'
   - TRY:
-    - 'Login / Signup ⧉': 'https://confidentialcloud.io'
+    - 'Login / Signup ⧉': 'http://confidentialcloud.io'
     - 'Book a Demo ⧉': 'https://www.canarybit.eu/book-a-demo/'
   - CONNECT:
     - 'About us ⧉': 'https://canarybit.eu'
