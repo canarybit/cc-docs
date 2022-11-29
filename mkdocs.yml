@@ -30,7 +30,7 @@ plugins:
 
 nav:
   - LEARN:
-    - 'Welcome': 'index.md'
+    - 'Overview': 'index.md'
   - TRY:
     - 'Login / Signup ⧉': 'https://confidentialcloud.io'
     - 'Book a Demo ⧉': 'https://www.canarybit.eu/book-a-demo/'
