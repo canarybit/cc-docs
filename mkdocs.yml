@@ -29,10 +29,14 @@ plugins:
   - search
 
 nav:
-  - 'Overview': 'index.md'
-  - 'Support ⧉': 'https://canarybit.eu'
-  - 'System Health ⧉': 'https://confidentialcloud.statuspage.io'
-  - 'Blog ⧉': 'https://canarybit.eu/blog'
-  - 'Login / Signup ⧉': 'https://confidentialcloud.io'
+  - LEARN:
+    - 'Overview': 'index.md'
+  - TRY:
+    - 'Login / Signup ⧉': 'https://confidentialcloud.io'
+    - 'Book a Demo ⧉': 'https://www.canarybit.eu/book-a-demo/'
+  - CONNECT:
+    - 'About us ⧉': 'https://canarybit.eu'
+    - 'Blog ⧉': 'https://canarybit.eu/blog'
+    - 'Support ⧉': 'https://canarybit.eu'
 
   
