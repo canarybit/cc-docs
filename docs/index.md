@@ -9,7 +9,3 @@ This is the documentation for [Confidential Cloud](http://confidentialcloud.io),
 Run workloads On-Prem or on Public Cloud providers supporting Confidential Computing, and get an **auditable certificate** of the encrypted, running environment.
 
 <embed src="./img/confidential-cloud-platform.png" alt="CanaryBit Confidential Cloud" width="100%" />
-
-## About CanaryBit
-
-We are an independent team of specialists with 10+ years of research in Cyber Security and Cloud Computing, strong experience in technology transfer from Academia to the Industry.
