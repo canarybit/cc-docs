@@ -15,12 +15,7 @@ repo_url: https://github.com/canarybit
 theme:
   name: material
   font: false
-  logo: 'img/logo.png'
-  favicon: 'img/favicon.png'
-  custom_dir: overrides
-  palette:
-    scheme: canarybit
-
+  
 extra_css:
   - stylesheets/canarybit.css
 
