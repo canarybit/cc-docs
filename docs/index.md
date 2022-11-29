@@ -1,17 +1,9 @@
 # Welcome to Confidential Cloud
 
-For high-level description please visit the Product Description [page](https://canarybit.eu/confidential-cloud).
+Confidential Cloud is CanaryBit’s solution for **Businesses** and **Public Authorities** that are willing to collaborate with **sensitive data & algorithms**, and in need of a hardware-encrypted execution environment protected from unauthorized access.
 
-## Commands
+Run workloads on Private or Public clouds supporting **Confidential Computing** and get an auditable certificate of the encrypted, running environment.
 
-- `mkdocs new [dir-name]` - Create a new project.
-- `mkdocs serve` - Start the live-reloading docs server.
-- `mkdocs build` - Build the documentation site.
-- `mkdocs -h` - Print help message and exit.
+Find new partners, unlock new use cases and discover unprecedented opportunities.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+<embed src="https://www.canarybit.eu/wp-content/uploads/2022/01/confidential-cloud-architecture-light.png" alt="CanaryBit Confidential Cloud" width="100%" />

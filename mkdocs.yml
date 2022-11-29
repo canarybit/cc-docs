@@ -12,11 +12,15 @@ copyright: >-
 
 repo_url: https://github.com/canarybit
 
+strict: true
+
 theme:
   name: material
   font: false
   logo: 'img/logo.png'
   favicon: 'img/favicon.png'
+  palette:
+    scheme: canarybit
 
 extra_css:
   - stylesheets/canarybit.css
