@@ -1,0 +1,5 @@
+# Project information
+site_name: Confidential Cloud 
+
+theme:
+  name: material
