@@ -31,10 +31,9 @@ plugins:
 nav:
   - 'Overview': 'index.md'
   - LEARN:
-    - 'Architecture': 'architecture.md' 
-  - TRY:
-    - 'Login / Signup ⧉': 'http://confidentialcloud.io'
     - 'X.509 Certificate': x509_cert.md
+  - USE:
+    - 'Login / Signup ⧉': 'http://confidentialcloud.io'
   - CONNECT:
     - 'Book a Demo ⧉': 'https://www.canarybit.eu/book-a-demo/'
     - 'Support ⧉': 'https://canarybit.eu'
