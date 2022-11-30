@@ -7,6 +7,10 @@
     color: var(--cb-blue-01);
   }
   
+  .md-typeset p a {
+    font-weight: 600;
+  }
+
   .md-header__topic:first-child {
     font-weight: 300;
   }
