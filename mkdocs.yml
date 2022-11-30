@@ -1,14 +1,12 @@
 site_name: Confidential Cloud
 site_url: https://docs.confidentialcloud.io
-
 site_description: >-
   Confidential Cloud is CanaryBit’s solution for 
   Businesses and Public Authorities that are willing to collaborate 
   with sensitive data and algorithms, and in need of a hardware-encrypted 
   execution environment protected from unauthorized access.
 site_author: CanaryBit AB
-copyright: >-
-  Copyright © 2022 CanaryBit AB
+copyright: Copyright © 2022 CanaryBit AB
 
 repo_url: https://github.com/canarybit
 
@@ -21,12 +19,17 @@ theme:
   favicon: 'img/favicon.png'
   palette:
     scheme: canarybit
+  icon:
+    repo: fontawesome/brands/github
+
+edit_uri: ""
 
 extra_css:
   - stylesheets/canarybit.css
 
 plugins:
   - search
+  - tags
 
 nav:
   - 'Overview': 'index.md'
