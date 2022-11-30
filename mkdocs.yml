@@ -9,6 +9,9 @@ site_author: CanaryBit AB
 copyright: Copyright © 2022 CanaryBit AB
 
 repo_url: https://github.com/canarybit
+repo_name: "/canarybit"
+
+edit_uri: ""
 
 strict: true
 
@@ -21,8 +24,6 @@ theme:
     scheme: canarybit
   icon:
     repo: fontawesome/brands/github
-
-edit_uri: ""
 
 extra_css:
   - stylesheets/canarybit.css
