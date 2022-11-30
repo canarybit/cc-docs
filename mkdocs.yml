@@ -31,7 +31,7 @@ plugins:
 nav:
   - 'Overview': 'index.md'
   - LEARN:
-    - 'Hardware Requirements': 'hw_requirements.md' 
+    - 'Architecture': 'architecture.md' 
   - TRY:
     - 'Login / Signup ⧉': 'http://confidentialcloud.io'
     - 'X.509 Certificate': x509_cert.md
