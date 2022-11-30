@@ -31,13 +31,15 @@ plugins:
 nav:
   - 'Overview': 'index.md'
   - LEARN:
-    - 'X.509 Certificate': x509_cert.md
+    - 'Hardware Requirements': 'hw_requirements.md' 
   - TRY:
     - 'Login / Signup ⧉': 'http://confidentialcloud.io'
-    - 'Book a Demo ⧉': 'https://www.canarybit.eu/book-a-demo/'
+    - 'X.509 Certificate': x509_cert.md
   - CONNECT:
-    - 'About us ⧉': 'https://www.canarybit.eu/team'
-    - 'Blog ⧉': 'https://canarybit.eu/blog'
+    - 'Book a Demo ⧉': 'https://www.canarybit.eu/book-a-demo/'
     - 'Support ⧉': 'https://canarybit.eu'
+    - 'Blog ⧉': 'https://canarybit.eu/blog'
+    - 'About us ⧉': 'https://www.canarybit.eu/team'
+
 
   
