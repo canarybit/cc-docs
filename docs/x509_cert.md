@@ -7,11 +7,11 @@ Confidential Cloud Studio is architected using strong security mechanisms and re
 Fill in the following vars:
 
 ```
-MY_COUNTRY =
-MY_REGION =
-MY_LOCATION =
-MY_COMPANY =
-MY_COMPANY_WEBSITE =
+MY_COUNTRY = ""
+MY_REGION = ""
+MY_LOCATION = ""
+MY_COMPANY = ""
+MY_COMPANY_WEBSITE = ""
 ```
 
 and run the below command:
