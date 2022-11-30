@@ -29,8 +29,9 @@ plugins:
   - search
 
 nav:
+  - 'Overview': 'index.md'
   - LEARN:
-    - 'Overview': 'index.md'
+    - 'X.509 Certificate': x509_cert.md
   - TRY:
     - 'Login / Signup ⧉': 'http://confidentialcloud.io'
     - 'Book a Demo ⧉': 'https://www.canarybit.eu/book-a-demo/'
