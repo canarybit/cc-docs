@@ -27,7 +27,7 @@ theme:
 
 extra_css:
   - stylesheets/canarybit.css
-
+        
 plugins:
   - search
   - tags
@@ -35,23 +35,25 @@ plugins:
 nav:
   - 'Overview': 'index.md'
   - LEARN:
+    - 'Workflow': 'workflow.md'
     - 'Architecture': 'architecture.md'
-    - 'Encryption': []
-    - 'Security': []
-    - 'Compliance': []
-    - 'Legal': []
-    - 'Roadmap': []
+    - 'Infrastructure': 'infrastructure.md'
+    #- 'Encryption': []
+    #- 'Security': []
+    #- 'Compliance': []
+    #- 'Legal': []
+    #- 'Roadmap': []
 
   - USE:
     - 'Login / Signup ⧉': http://confidentialcloud.io" target="_blank
     - 'Generate the X.509 Certificate': 'x509_cert.md'
-    - 'Add your Dataset / Application': []
-    - 'Start a Collaboration': []
-    - 'Request Access': []
-    - 'Run an Enclave': []
-    - 'Collect the Result': []
-    - 'Collect the Attestation': []
-    - 'Collect the Audit Logs': []
+    #- 'Add your Dataset / Application': []
+    #- 'Start a Collaboration': []
+    #- 'Request Access': []
+    #- 'Run an Enclave': []
+    #- 'Collect the Result': []
+    #- 'Collect the Attestation': []
+    #- 'Collect the Audit Logs': []
 
   - CONNECT:
     - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank

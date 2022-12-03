@@ -7,7 +7,7 @@
     color: var(--cb-blue-01);
   }
   
-  .md-typeset p a {
+  .md-typeset p a, .md-typeset li a {
     font-weight: 600;
   }
 
