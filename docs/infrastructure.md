@@ -1,55 +1,58 @@
 # Infrastructure
 
-[Tower]() and [Inspector]() are responsibile for the life-cycle management (LCM) of the infrastructure resources.
+Confidential Cloud is a **cloud-agnostic** platform. [Tower](architecture.md#tower) and [Inspector](architecture.md#inspector) are responsibile for the full Life-Cycle Management (LCM) of the required infrastructure resources.
+
+Confidential Cloud builds on top of Confidential Computing to offer the most advanced encryption mechanisms. Today, this capability is only available in a small set of physical servers provided buy a limited list of Cloud Service Providers (CSPs).
+
+## Hardware Servers
+
+Currently, Confidential Computing capability is only available on few a microprocessors available in the market.
+Also, different vendors have different implementation, with different capabilities and performance limitations ([read more](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
+
+Confidential Cloud currently supports the following hardware:
+
+### AMD SEV-SNP
+
+- Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP)
+
+<details closed>
+<summary>Coming soon!</summary>
+<br>ARM Confidential Compute Architecture (CCA).
+<br>&nbsp;
+<br>IBM Protected Execution Facility (PEF).
+<br>&nbsp;
+<br>Intel® Trust Domain Extensions (TDX).
+<br>&nbsp;
+</details>
+
+<details closed>
+<summary>Decomissioned</summary>
+<br>Intel® Software Guard Extension (SGX)
+<br>&nbsp;
+</details>
 
 ## Cloud Service Providers (CSPs)
 
-Any organisation can provision a new execution environment on any of the following Cloud Service Providers (CSPs)
+Currently, new execution environments can be provisioned on the following CSPs:
 
 ### Azure
 
-- 🇪🇺 Europe / 🇸🇪 Stockholm _(default)_
+- 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
 
 ### OVH (Bare-metal)
 
-- 🇪🇺 Europe / 🇩🇪 Frankfurt _(default)_
+- 🇪🇺 Europe - 🇩🇪 Frankfurt _(default)_
 
 ### Openstack
 
-- 🇪🇺 Europe / 🇸🇪 Stockholm _(default)_
+- 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
 
 ### AWS
 
-- 🇪🇺 Europe / 🇸🇪 Stockholm _(default)_
+- 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
 
 ## On-prem / Air-gapped
 
 It is also possible to deploy the required resources On-prem, for a fully **air-gapped solution**.
 
 Get in touch for more information!
-
-## Microprocessors
-
-Confidential Computing capability is only enabled on latet processors, each with different implementation and performance (read our latest [publication](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
-
-Confidential Cloud currently supports the followings:
-
-### AMD SEV-SNP
-
-- Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP)
-
-### ARM CCA _(Coming in 2023!)_
-
-- Confidential Compute Architecture (CCA).
-
-### IBM PEF _(Coming in 2023!)_
-
-- Protected Execution Facility (PEF).
-
-### Intel TDX _(Coming in 2023!)_
-
-- Trust Domain Extensions (TDX).
-
-### <s>Intel SGX</s> _(Decommissioned!)_
-
-- Software Guard Extension (SGX)

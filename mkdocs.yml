@@ -46,7 +46,7 @@ nav:
 
   - USE:
     - 'Login / Signup ⧉': http://confidentialcloud.io" target="_blank
-    - 'Generate the X.509 Certificate': 'x509_cert.md'
+    - 'X.509 Certificate': 'x509_cert.md'
     #- 'Add your Dataset / Application': []
     #- 'Start a Collaboration': []
     #- 'Request Access': []

@@ -4,14 +4,14 @@ Confidential Cloud Studio is architected using strong security mechanisms and re
 
 ## Create a certificate
 
-Fill in the following vars:
+In your CLI, create the following vars:
 
 ```
-MY_COUNTRY = ""
-MY_REGION = ""
-MY_LOCATION = ""
-MY_COMPANY = ""
-MY_COMPANY_WEBSITE = ""
+MY_COUNTRY=""
+MY_REGION=""
+MY_LOCATION=""
+MY_COMPANY=""
+MY_COMPANY_WEBSITE=""
 ```
 
 and run the below command:
@@ -20,4 +20,4 @@ and run the below command:
 > openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 365 -subj "/C=$MY_COUNTRY/ST=$MY_REGION/L=$MY_LOCATION/O=$MY_COMPANY/OU=Org/CN=$MY_COMPANY_WEBSITE"
 ```
 
-Once done, upload the certificate in Confindetial Cloud either during sign-up or under Profile.
+Upload the certificate in Confindetial Cloud either during Sign-up or under Profile.
