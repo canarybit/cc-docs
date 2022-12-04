@@ -32,6 +32,11 @@ plugins:
   - search
   - tags
 
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 nav:
   - 'Overview': 'index.md'
   - LEARN:

@@ -7,18 +7,17 @@ Confidential Cloud builds on top of Confidential Computing to offer the most adv
 ## Hardware Servers
 
 Currently, Confidential Computing capability is only available on few a microprocessors available in the market.
-Also, different vendors have different implementation, with different capabilities and performance limitations ([read more](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
+Also, different vendors have different implementation, with different capabilities and performance limitations ([Read more](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
 
 Confidential Cloud currently supports the following hardware:
 
 ### AMD SEV-SNP
 
-- Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP)
+- Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP): [https://www.amd.com/en/processors/amd-secure-encrypted-virtualization](https://www.amd.com/en/processors/amd-secure-encrypted-virtualization)
 
-<br>
-
+<!--
 <details closed>
-<summary>Available in 2023-2024</summary>
+<summary>Coming in 2023-2024</summary>
 <br>ARM Confidential Compute Architecture (CCA).
 <br>&nbsp;
 <br>IBM Protected Execution Facility (PEF).
@@ -26,10 +25,12 @@ Confidential Cloud currently supports the following hardware:
 <br>Intel® Trust Domain Extensions (TDX).
 <br>&nbsp;
 </details>
+-->
 
 <details closed>
 <summary>Decomissioned</summary>
-<br>Intel® Software Guard Extension (SGX)
+<br>- Intel® Software Guard Extension (SGX)
+<br><a href="https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html" target="_blank">https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html</a>
 <br>&nbsp;
 </details>
 
@@ -48,13 +49,23 @@ Currently, new execution environments can be provisioned on the following CSPs:
 ### Openstack
 
 - 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
+- 🇪🇺 Europe - 🇮🇹 Italy
 
 ### AWS
 
 - 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
 
+<br>
+
+<details open>
+<summary>Partnership Programme</summary>
+<br>Are you a CSP and interested to support Confidential Cloud?
+<br>Join our <a href="https://www.canarybit.eu/become-a-partner/">Partnership programme</a>!
+<br>&nbsp;
+</details>
+
 ## On-prem / Air-gapped
 
-It is also possible to deploy the required resources On-prem, for a fully **air-gapped solution**.
+It is also possible to deploy the required resources On-prem, for a fully **air-gapped** solution.
 
-Get in touch for more information!
+[Get in touch](https://www.canarybit.eu/contact/) for more information!
