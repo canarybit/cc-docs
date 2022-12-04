@@ -15,8 +15,10 @@ Confidential Cloud currently supports the following hardware:
 
 - Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP)
 
+<br>
+
 <details closed>
-<summary>Coming soon!</summary>
+<summary>Available in 2023-2024</summary>
 <br>ARM Confidential Compute Architecture (CCA).
 <br>&nbsp;
 <br>IBM Protected Execution Facility (PEF).
