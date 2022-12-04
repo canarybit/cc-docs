@@ -2,7 +2,7 @@
 
 # Confidential Cloud - Official Documentation
 
-[Confidential Cloud](http://confidentialcloud.io) is CanaryBit's PaaS solution for **Businesses** and **Public Authorities**, willing to collaborate by sharing and processing **sensitive** digital assets, data or algorithms.
+[Confidential Cloud](http://confidentialcloud.io) is CanaryBit's PaaS solution for **Businesses** and **Public Authorities**, willing to collaborate by sharing and processing their **sensitive** digital assets: data or algorithms.
 
 ![Confidential Cloud Solution](./img/confidential-cloud-solution.png)
 
