@@ -4,7 +4,7 @@ Confidential Cloud is a **cloud-agnostic** platform. [Tower](architecture.md#tow
 
 Confidential Cloud builds on top of Confidential Computing to offer the most advanced encryption mechanisms. Today, this capability is only available in a small set of physical servers provided buy a limited list of Cloud Service Providers (CSPs).
 
-## Hardware Servers
+## Supported Hardware
 
 Currently, Confidential Computing capability is only available on few a microprocessors available in the market.
 Also, different vendors have different implementation, with different capabilities and performance limitations ([Read more](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
