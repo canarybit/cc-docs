@@ -38,22 +38,22 @@ Confidential Cloud currently supports the following hardware:
 
 Currently, new execution environments can be provisioned on the following CSPs:
 
-### Azure
+### MS Azure
 
-- 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
+- **Europe** (🇸🇪 Stockholm) : _default_
 
 ### OVH (Bare-metal)
 
-- 🇪🇺 Europe - 🇩🇪 Frankfurt _(default)_
+- **Europe** (🇩🇪 Frankfurt) : _default_
 
 ### Openstack
 
-- 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
-- 🇪🇺 Europe - 🇮🇹 Italy
+- **Europe** (🇸🇪 Stockholm) : _default_
+- **Europe** (🇮🇹 Italy)
 
 ### AWS
 
-- 🇪🇺 Europe - 🇸🇪 Stockholm _(default)_
+- **Europe** (🇸🇪 Stockholm) : _default_
 
 <br>
 
