@@ -4,8 +4,8 @@ All organisations are required to upload a signed certificate (see [Generate a X
 
 Confidential Cloud **robust encryption mechanisms** ensure that:
 
-1. the communication is fully ecncrypted
-2. the stored digital asset (data or algorithm) never leaves its current location
+1. the collaboration is fully ecncrypted
+2. the digital asset (data or algorithm) is never stored in a differnet location
 3. the execution environment is validated and certified
 
 Also, the entire workflow is **logged** for auditing purposes. Organisations will then be able to keep **full-control** and trace back all activities involving the shared data or algorithms.
