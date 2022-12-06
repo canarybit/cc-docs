@@ -6,7 +6,8 @@ site_description: >-
   with sensitive data and algorithms, and in need of a hardware-encrypted 
   execution environment protected from unauthorized access.
 site_author: CanaryBit AB
-copyright: Copyright © 2022 CanaryBit AB
+copyright: >-
+  Developed by <a href="https://www.canarybit.eu" target="_blank">CanaryBit</a> © 2022 
 
 repo_url: https://github.com/canarybit
 repo_name: "/canarybit"
@@ -24,6 +25,13 @@ theme:
     scheme: canarybit
   icon:
     repo: fontawesome/brands/github
+
+extra:
+  social:
+    - icon: material/web
+      link: https://www.canarybit.eu
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/canarybit/
 
 extra_css:
   - stylesheets/canarybit.css
@@ -65,6 +73,4 @@ nav:
     - 'Support ⧉': https://canarybit.eu" target="_blank
     - 'Blog ⧉': https://canarybit.eu/blog" target="_blank
     - 'About us ⧉': https://www.canarybit.eu/team" target="_blank
-
-
   
