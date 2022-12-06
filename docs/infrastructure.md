@@ -1,13 +1,13 @@
 # Infrastructure
 
-Confidential Cloud is a **cloud-agnostic** platform. [Tower](architecture.md#tower) and [Inspector](architecture.md#inspector) are responsibile for the full Life-Cycle Management (LCM) of the required infrastructure resources.
+Confidential Cloud is **cloud-agnostic**. [Tower](architecture.md#tower) and [Inspector](architecture.md#inspector) are responsible for various aspects of the Life-Cycle Management (LCM) of infrastructure resources.
 
-Confidential Cloud builds on top of Confidential Computing to offer the most advanced encryption mechanisms. Today, this capability is only available in a small set of physical servers provided buy a limited list of Cloud Service Providers (CSPs).
+Confidential Cloud builds atop Confidential Computing to offer state-of-the-art encryption mechanisms. Today, hardware and firmware support for Confidential Computing is only available in several modern lines of hardware platforms offered by a limited number of forward-looking Cloud Service Providers (CSPs).
 
 ## Supported Hardware
 
-Currently, Confidential Computing capability is only available on few a microprocessors available in the market.
-Also, different vendors have different implementation, with different capabilities and performance limitations ([Read more](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
+Currently, Confidential Computing is only available on a limited set of microprocessor product lines available in the market.
+Enterprise vendors offer several Confidential Computing implementations, with varying capabilities and performance limitations, and security trade-offs ([Read more](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
 
 Confidential Cloud currently supports the following hardware:
 
@@ -36,7 +36,7 @@ Confidential Cloud currently supports the following hardware:
 
 ## Cloud Service Providers (CSPs)
 
-Currently, new execution environments can be provisioned on the following CSPs:
+Currently and as a default, Confidential Cloud provisions execution environments on the following CSPs:
 
 ### MS Azure
 
@@ -46,7 +46,7 @@ Currently, new execution environments can be provisioned on the following CSPs:
 
 - **Europe** (🇩🇪 Frankfurt) : _default_
 
-### Openstack
+### OpenStack-based
 
 - **Europe** (🇸🇪 Stockholm) : _default_
 - **Europe** (🇮🇹 Italy)
@@ -64,8 +64,8 @@ Currently, new execution environments can be provisioned on the following CSPs:
 <br>&nbsp;
 </details>
 
-## On-prem / Air-gapped
+## On-Prem / Air-gapped
 
-It is also possible to deploy the required resources On-prem, for a fully **air-gapped** solution.
+Confidential Cloud can be configured to deploy resouces On-Prem. This allows to support use cases that require operations in a closely controlled domain - or even as an **air-gapped** setup.
 
 [Get in touch](https://www.canarybit.eu/contact/) for more information!
