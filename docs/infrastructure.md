@@ -28,6 +28,16 @@ Confidential Cloud currently supports the following hardware:
 -->
 
 <details closed>
+<summary>Upcoming</summary>
+<br>- Intel® Trusted Domain Extentions (SGX)
+<br><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html" target="_blank">https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html</a>
+<br>&nbsp;
+<br>- ARM® Confidential Compute Architecture (SGX)
+<br><a href="https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture" target="_blank">https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture</a>
+<br>&nbsp;
+</details>
+
+<details closed>
 <summary>Decomissioned</summary>
 <br>- Intel® Software Guard Extension (SGX)
 <br><a href="https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html" target="_blank">https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html</a>
