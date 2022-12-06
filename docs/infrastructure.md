@@ -28,11 +28,11 @@ Confidential Cloud currently supports the following hardware:
 -->
 
 <details closed>
-<summary>Upcoming, pending hardware availability</summary>
-<br>- Intel® Trusted Domain Extentions (TDX)
+<summary>Upcoming</summary>
+<br>- Intel® Trusted Domain Extensions (TDX) - pending hardware availability
 <br><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html" target="_blank">https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html</a>
 <br>&nbsp;
-<br>- ARM® Confidential Compute Architecture (SGX)
+<br>- ARM® Confidential Compute Architecture (CCA) - pending hardware availability and firmware support
 <br><a href="https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture" target="_blank">https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture</a>
 <br>&nbsp;
 </details>
