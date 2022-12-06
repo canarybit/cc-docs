@@ -5,7 +5,7 @@ To use Confidential Cloud Studio, you must upload a signed X.509 certificate (se
 Confidential Cloud **robust encryption mechanisms** ensure that:
 
 1. the collaboration is fully encrypted end-to-end, including during data processing;
-2. the digital asset (data or algorithm) is **never stored elsewhere** than its original location;
+2. the digital asset (data or algorithm) is **never stored elsewhere than its original location**;
 3. the confidential execution environment is validated and certified with a verifiable attestation report.;
 
 The entire workflow is **logged** for auditing purposes. This enables organisations to keep **full-control** and trace back all activities involving their digital assets.
