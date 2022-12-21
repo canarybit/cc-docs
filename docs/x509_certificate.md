@@ -20,7 +20,7 @@ MY_EMAIL=""
 and run the below command:
 
 ```
-> openssl req -x509 -newkey rsa:4096 -keyout my_private.key -out my_cert.crt -sha256 -days 365 -subj "/C=$MY_COUNTRY/ST=$MY_REGION/L=$MY_LOCATION/O=$MY_COMPANY/OU=Org/CN=$MY_COMPANY_WEBSITE/emailAddress=$MY_EMAIL"
+$ openssl req -x509 -newkey rsa:4096 -keyout my_private.key -out my_cert.crt -sha256 -days 365 -subj "/C=$MY_COUNTRY/ST=$MY_REGION/L=$MY_LOCATION/O=$MY_COMPANY/OU=Org/CN=$MY_COMPANY_WEBSITE/emailAddress=$MY_EMAIL"
 ```
 
 Upload the certificate in Confidential Cloud either during Sign-up or under Profile.
