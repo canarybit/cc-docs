@@ -48,9 +48,9 @@ markdown_extensions:
 nav:
   - 'Overview': 'index.md'
   - LEARN:
-    - 'Workflow': 'workflow.md'
     - 'Architecture': 'architecture.md'
     - 'Infrastructure': 'infrastructure.md'
+    - 'Workflow': 'workflow.md'
     #- 'Encryption': []
     #- 'Security': []
     - 'Compliance': 'compliance.md'
@@ -59,7 +59,7 @@ nav:
 
   - USE:
     #- 'Login / Signup ⧉': http://confidentialcloud.io" target="_blank
-    - 'X.509 Certificate': 'x509_cert.md'
+    - 'X.509 Certificate': 'x509_certificate.md'
     #- 'Add your Dataset / Application': []
     #- 'Start a Collaboration': []
     #- 'Request Access': []
