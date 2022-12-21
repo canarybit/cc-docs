@@ -1,6 +1,6 @@
 # Workflow
 
-To use Confidential Cloud Studio, you must upload a signed X.509 certificate (see [Generate a X.509 Certificate](x509_cert.md)). You must do this as a prerequisite to initiating confidential collaboration and invoking 3rd-party assets (data or algorithm).
+To use Confidential Cloud Studio, you must upload a signed X.509 certificate (see [Generate a X.509 Certificate](x509_certificate.md)). You must do this as a prerequisite to initiating confidential collaboration and invoking 3rd-party assets (data or algorithm).
 
 Confidential Cloud **robust encryption mechanisms** ensure that:
 
