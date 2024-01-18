@@ -7,3 +7,16 @@
 ![Confidential Cloud Solution](./img/confidential-cloud-solution.png)
 
 Run workloads on different [infrastructure setups](infrastructure.md) supporting [Confidential Computing](https://www.canarybit.eu/what-is-confidential-computing-and-why-should-i-care/), and get an **auditable certificate** of the encrypted, execution environment.
+
+<div class="grid cards" markdown>
+<!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
+
+-   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
+
+    ---
+
+    [`Register`]() your account with and get up and running in minutes
+
+    [:octicons-arrow-right-24: Getting started](https://demo.confidentialcloud.io/signup)
+
+</div>
