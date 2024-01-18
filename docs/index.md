@@ -8,6 +8,8 @@
 
 Run workloads on different [infrastructure setups](infrastructure.md) supporting [Confidential Computing](https://www.canarybit.eu/what-is-confidential-computing-and-why-should-i-care/), and get an **auditable certificate** of the encrypted, execution environment.
 
+## Start here!
+
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
@@ -16,8 +18,28 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
     ---
 
     Register your account and get up and running in minutes. 
+    
     All you need is just a [`X.509 Certificate`](https://docs.confidentialcloud.io/x509_certificate/)
 
-    [-> Getting started](https://demo.confidentialcloud.io/signup)
+    [:octicons-arrow-right-24: Getting started](https://demo.confidentialcloud.io/signup)
+
+-   :material-arrow-collapse:{ .lg .middle } __Register your assets__
+
+    ---
+
+    Provide information about the location of your data bundle or application.
+
+    PSST. Can also be stored in your premises, under your full control! 
+
+    [:octicons-arrow-right-24: Register the assset](https://demo.confidentialcloud.io/)
+
+-   :material-arrow-collapse:{ .lg .middle } __Find your collaborator__
+
+    ---
+
+    Search for new partners or bring your current ones, and unlock new business.
+
+    [:octicons-arrow-right-24: Connect](https://demo.confidentialcloud.io/)
+
 
 </div>
