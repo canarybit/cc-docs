@@ -15,8 +15,8 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     ---
 
-    [`Register`]() your account with and get up and running in minutes
+    __Register__ your account and get up and running in minutes
 
-    [:octicons-arrow-right-24: Getting started](https://demo.confidentialcloud.io/signup)
+    [-> Getting started](https://demo.confidentialcloud.io/signup)
 
 </div>
