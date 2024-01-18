@@ -59,17 +59,18 @@ nav:
     #- 'Encryption': []
     #- 'Security': []
     - 'Compliance': 'compliance.md'
+    - REQUIREMENTS:
+        - 'X.509 Certificate': 'x509_certificate.md'
     #- 'Legal': []
     #- 'Roadmap': []
 
   - USE:
     - 'Signup ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-    - 'X.509 Certificate': 'x509_certificate.md'
     - MULTI-PARTY COLLABORATION:
       - 'Login': http://demo.confidentialcloud.io" target="_blank
     - ORCHESTRATION:
-      - 'Deploy a Confidential VM' : http://demo.confidentialcloud.io" target="_blank
-      - 'Deploy a Confidential Containers': http://demo.confidentialcloud.io" target="_blank
+      - 'Confidential VMs' : http://demo.confidentialcloud.io" target="_blank
+      - 'Confidential Containers': http://demo.confidentialcloud.io" target="_blank
     - VERIFICATION:
       - 'Collect the report' : http://demo.confidentialcloud.io" target="_blank
       - 'Verify the report': http://demo.confidentialcloud.io" target="_blank
