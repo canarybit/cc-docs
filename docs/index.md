@@ -29,7 +29,7 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
         
     [:octicons-arrow-right-24:{ .lg .middle } Getting started](https://demo.confidentialcloud.io/signup)
 
--   :material-rocket-launch:{ .lg .middle } __Unlock new business__
+-   :material-rocket-launch-outline:{ .lg .middle } __Unlock new business__
 
     ---
 
