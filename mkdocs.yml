@@ -58,8 +58,13 @@ nav:
     #- 'Roadmap': []
 
   - USE:
-    - 'Login / Signup ⧉': http://demo.confidentialcloud.io" target="_blank
+    - 'Signup ⧉': https://demo.confidentialcloud.io/signup" target="_blank
     - 'X.509 Certificate': 'x509_certificate.md'
+    - FOR MULTI-PARTY COLLABORATION:
+      - 'Login': http://demo.confidentialcloud.io" target="_blank
+    - FOR CONFIDENTIAL ENVIRONMENT VERIFICATION:
+      - Collect the report
+      - Verify the report
     #- 'Add your Dataset / Application': []
     #- 'Start a Collaboration': []
     #- 'Request Access': []
