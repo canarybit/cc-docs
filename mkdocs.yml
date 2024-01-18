@@ -65,22 +65,21 @@ nav:
     #- 'Roadmap': []
 
   - USE:
-    - 'Signup ⧉': https://demo.confidentialcloud.io/signup" target="_blank
+    - 'Create account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
     - MULTI-PARTY COLLABORATION:
       - 'Login': http://demo.confidentialcloud.io" target="_blank
+      #- 'Register your asset': []
+      #- 'Start a collaboration': []
+      #- 'Run an Enclave': []
+      #- 'Collect results': []
+      #- 'Collect attestation': []
+      #- 'Collect audit logs': []
     - ORCHESTRATION:
-      - 'Confidential VMs' : http://demo.confidentialcloud.io" target="_blank
-      - 'Confidential Containers': http://demo.confidentialcloud.io" target="_blank
+      - 'Confidential VMs (cVMs)' : []
+      - 'Confidential Containers (Co2)': []
     - VERIFICATION:
-      - 'Collect the report' : http://demo.confidentialcloud.io" target="_blank
-      - 'Verify the report': http://demo.confidentialcloud.io" target="_blank
-    #- 'Add your Dataset / Application': []
-    #- 'Start a Collaboration': []
-    #- 'Request Access': []
-    #- 'Run an Enclave': []
-    #- 'Collect the Result': []
-    #- 'Collect the Attestation': []
-    #- 'Collect the Audit Logs': []
+      - 'Confidential VMs (cVMs)' : []
+      - 'Confidential Containers (Co2)': []
 
   - CONNECT:
     - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank

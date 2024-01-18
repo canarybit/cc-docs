@@ -13,36 +13,28 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
--   :material-glasses:{ .lg .middle } __How it works__
+-   :material-glasses:{ .lg .middle } __Learn__
 
     ---
 
     Get familiar with our solution and its core technology
         
-    [:octicons-arrow-right-24:{ .lg .middle } Learn](/architecture)
+    [:octicons-arrow-right-24:{ .lg .middle } Read more](/architecture)
 
 -   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
 
     ---
 
-    Register your account and get up and running in minutes. 
+    Create an account and get up and running in minutes. 
         
     [:octicons-arrow-right-24:{ .lg .middle } Getting started](https://demo.confidentialcloud.io/signup)
 
--   :fontawesome-solid-cubes-stacked:{ .lg .middle } __Locate your digital asset__
+-   :material-rocket-launch:{ .lg .middle } __Unlock new business__
 
     ---
 
     Provide information only about the location of your dataset or application.
 
-    [:octicons-arrow-right-24:{ .lg .middle } Register the assset](https://demo.confidentialcloud.io/)
-
--   :material-arrow-collapse:{ .lg .middle } __Find your partner__
-
-    ---
-
-    Find new or old partners, and unlock new business.
-
-    [:octicons-arrow-right-24:{ .lg .middle } Connect](https://demo.confidentialcloud.io/)
+    [:octicons-arrow-right-24:{ .lg .middle } Register the assset]()
 
 </div>
