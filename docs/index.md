@@ -15,7 +15,8 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     ---
 
-    __Register__ your account and get up and running in minutes
+    Register your account and get up and running in minutes. 
+    All you need is just a [`X.509 Certificate`](https://docs.confidentialcloud.io/x509_certificate/)
 
     [-> Getting started](https://demo.confidentialcloud.io/signup)
 
