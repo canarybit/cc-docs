@@ -60,9 +60,12 @@ nav:
   - USE:
     - 'Signup ⧉': https://demo.confidentialcloud.io/signup" target="_blank
     - 'X.509 Certificate': 'x509_certificate.md'
-    - FOR MULTI-PARTY COLLABORATION:
+    - MULTI-PARTY COLLABORATION:
       - 'Login': http://demo.confidentialcloud.io" target="_blank
-    - FOR CONFIDENTIAL ENVIRONMENT VERIFICATION:
+    - ENVIRONMENT ORCHESTRATION:
+      - 'Deploy a Confidential VM' : http://demo.confidentialcloud.io" target="_blank
+      - 'Deploy a Confidential Containers': http://demo.confidentialcloud.io" target="_blank
+    - ENVIRONMENT VERIFICATION:
       - 'Collect the report' : http://demo.confidentialcloud.io" target="_blank
       - 'Verify the report': http://demo.confidentialcloud.io" target="_blank
     #- 'Add your Dataset / Application': []
