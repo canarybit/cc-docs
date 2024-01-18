@@ -35,6 +35,6 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     Discover new opportunities with new multi-party collaborations.
 
-    [:octicons-arrow-right-24:{ .lg .middle } Register the assset]()
+    [:octicons-arrow-right-24:{ .lg .middle } Start a new collaboratoin]()
 
 </div>
