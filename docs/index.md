@@ -1,4 +1,4 @@
-**WELCOME!**
+**Hello!**
 
 # Confidential Cloud - Official Documentation
 
