@@ -63,8 +63,8 @@ nav:
     - FOR MULTI-PARTY COLLABORATION:
       - 'Login': http://demo.confidentialcloud.io" target="_blank
     - FOR CONFIDENTIAL ENVIRONMENT VERIFICATION:
-      - 'Collect the report'
-      - 'Verify the report'
+      - 'Collect the report' : http://demo.confidentialcloud.io" target="_blank
+      - 'Verify the report': http://demo.confidentialcloud.io" target="_blank
     #- 'Add your Dataset / Application': []
     #- 'Start a Collaboration': []
     #- 'Request Access': []
