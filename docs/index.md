@@ -21,7 +21,7 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
         
     [:octicons-arrow-right-24: Getting started](https://demo.confidentialcloud.io/signup)
 
--   :fontawesome-solid-cubes-stacked:{ .lg .middle } __Register your assets__
+-   :fontawesome-solid-cubes-stacked:{ .lg .middle } __Locate your digital asset__
 
     ---
 

@@ -46,7 +46,7 @@ Confidential Cloud currently supports the following hardware:
 
 ## Cloud Service Providers (CSPs)
 
-Confidential Cloud provisions Trusted Execution Environments (TEE) on several hyperscalers.
+Confidential Cloud provisions Trusted Execution Environments (TEE) on several hyperscalers and locations.
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
@@ -75,6 +75,7 @@ Confidential Cloud provisions Trusted Execution Environments (TEE) on several hy
     ---
 
     **Europe** (🇸🇪 Stockholm) : _default_
+
     **Europe** (🇮🇹 Italy)
     
 </div>
