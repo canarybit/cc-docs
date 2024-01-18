@@ -13,6 +13,14 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
+-   :material-glasses:{ .lg .middle } __How it works__
+
+    ---
+
+    Get familiar with our solution and its core technology
+        
+    [:octicons-arrow-right-24:{ .lg .middle } Learn](https://demo.confidentialcloud.io/signup)
+
 -   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
 
     ---
