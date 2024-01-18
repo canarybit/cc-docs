@@ -18,18 +18,14 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
     ---
 
     Register your account and get up and running in minutes. 
-    
-    All you need is just a [`X.509 Certificate`](https://docs.confidentialcloud.io/x509_certificate/)
-
+        
     [:octicons-arrow-right-24: Getting started](https://demo.confidentialcloud.io/signup)
 
--   :material-arrow-collapse:{ .lg .middle } __Register your assets__
+-   :fontawesome-solid-cubes-stacked:{ .lg .middle } __Register your assets__
 
     ---
 
-    Provide information about the location of your data bundle or application.
-
-    PSST. Can also be stored in your premises, under your full control! 
+    Provide information about the location of your dataset or application.
 
     [:octicons-arrow-right-24: Register the assset](https://demo.confidentialcloud.io/)
 
@@ -37,7 +33,7 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     ---
 
-    Search for new partners or bring your current ones, and unlock new business.
+    Find new or old partners, and unlock new business.
 
     [:octicons-arrow-right-24: Connect](https://demo.confidentialcloud.io/)
 
