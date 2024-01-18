@@ -1,0 +1,53 @@
+  @font-face {
+    font-family: "Titillium Web";
+    src: url("../fonts/TitilliumWeb-Regular.ttf") format("truetype");
+  }
+  
+  .md-typeset h1, .md-typeset h2, .md-typeset h3, .md-typeset h4, .md-typeset h5, .md-typeset h6 {
+    color: var(--cb-blue-01);
+  }
+  
+  .md-typeset p a, .md-typeset li a {
+    font-weight: 600;
+  }
+
+  .md-header__topic:first-child {
+    font-weight: 300;
+  }
+  
+  .md-typeset details {
+    border: 0;
+  }
+
+  .md-typeset summary {
+    background-color: var(--cb-lightblue-01);
+  }
+
+  .md-typeset summary::before {
+    background-color: var(--cb-blue-01);
+    -webkit-mask-image: var(--md-admonition-icon--info)
+  }
+
+  [data-md-color-scheme="canarybit"] {
+
+    --cb-black-01: #000000;
+    --cb-blue-01: #0097a7;
+    --cb-lightblue-01: #eaf4f6;
+    
+    --md-text-font-family: 'Titillium Web',Helvetica,Arial,Lucida,sans-serif;
+
+    --md-default-bg-color: #ffffff;
+  
+    --md-primary-fg-color: var(--cb-black-01);
+    --md-primary-fg-color--light: var(--cb-blue-01);
+    --md-primary-fg-color--dark: var(--cb-blue-01);
+  
+    --md-accent-fg-color: var(--cb-blue-01);
+    --md-accent-fg-color--light: var(--cb-blue-01);
+    --md-accent-fg-color--dark: var(--cb-blue-01);
+  
+    --md-footer-bg-color: var(--md-primary-fg-color);
+  
+    --md-typeset-a-color: var(--cb-blue-01);
+    
+  }
