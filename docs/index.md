@@ -25,11 +25,11 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     ---
 
-    Provide information about the location of your dataset or application.
+    Provide information only about the location of your dataset or application.
 
     [:octicons-arrow-right-24: Register the assset](https://demo.confidentialcloud.io/)
 
--   :material-arrow-collapse:{ .lg .middle } __Find your collaborator__
+-   :material-arrow-collapse:{ .lg .middle } __Find your partner__
 
     ---
 
