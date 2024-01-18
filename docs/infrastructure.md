@@ -51,26 +51,26 @@ Confidential Cloud provisions Trusted Execution Environments (TEE) on several hy
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
-  -   :material-clock-fast:{ .lg .middle } __AWS__
+  -   :material-aws:{ .lg .middle } __AWS__
 
     ---
 
     **Europe** (🇸🇪 Stockholm) : _default_
         
 
-  -   :material-clock-fast:{ .lg .middle } __Azure__
+  -   :material-microsoft-azure:{ .lg .middle } __Azure__
 
     ---
 
     **Europe** (🇸🇪 Stockholm) : _default_
         
-  -   :fontawesome-solid-cubes-stacked:{ .lg .middle } __OVH (Bare-Metal)__
+  -   :simple-ovh:{ .lg .middle } __OVH (Bare-Metal)__
 
     ---
 
     **Europe** (🇩🇪 Frankfurt) : _default_
     
-  -   :material-arrow-collapse:{ .lg .middle } __Openstack__
+  -   :simple-openstack:{ .lg .middle } __Openstack__
 
     ---
 
