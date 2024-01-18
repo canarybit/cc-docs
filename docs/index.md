@@ -8,7 +8,7 @@
 
 Run workloads on different [infrastructure setups](infrastructure.md) supporting [Confidential Computing](https://www.canarybit.eu/what-is-confidential-computing-and-why-should-i-care/), and get an **auditable certificate** of the encrypted, execution environment.
 
-## Start here!
+## Quickstart
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
