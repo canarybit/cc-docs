@@ -37,5 +37,4 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     [:octicons-arrow-right-24: Connect](https://demo.confidentialcloud.io/)
 
-
 </div>

@@ -46,24 +46,38 @@ Confidential Cloud currently supports the following hardware:
 
 ## Cloud Service Providers (CSPs)
 
-Currently and as a default, Confidential Cloud provisions execution environments on the following CSPs:
+Confidential Cloud provisions Trusted Execution Environments (TEE) on several hyperscalers.
 
-### MS Azure
+<div class="grid cards" markdown>
+<!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
-- **Europe** (🇸🇪 Stockholm) : _default_
+  -   :material-clock-fast:{ .lg .middle } __AWS__
 
-### OVH (Bare-metal)
+    ---
 
-- **Europe** (🇩🇪 Frankfurt) : _default_
+    **Europe** (🇸🇪 Stockholm) : _default_
+        
 
-### OpenStack-based
+  -   :material-clock-fast:{ .lg .middle } __Azure__
 
-- **Europe** (🇸🇪 Stockholm) : _default_
-- **Europe** (🇮🇹 Italy)
+    ---
 
-### AWS
+    **Europe** (🇸🇪 Stockholm) : _default_
+        
+  -   :fontawesome-solid-cubes-stacked:{ .lg .middle } __OVH (Bare-Metal)__
 
-- **Europe** (🇸🇪 Stockholm) : _default_
+    ---
+
+    **Europe** (🇩🇪 Frankfurt) : _default_
+    
+  -   :material-arrow-collapse:{ .lg .middle } __Openstack__
+
+    ---
+
+    **Europe** (🇸🇪 Stockholm) : _default_
+    **Europe** (🇮🇹 Italy)
+    
+</div>
 
 <br>
 
