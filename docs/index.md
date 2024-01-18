@@ -19,7 +19,7 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     Register your account and get up and running in minutes. 
         
-    [:octicons-arrow-right-24: Getting started](https://demo.confidentialcloud.io/signup)
+    [:octicons-arrow-right-24:{ .lg .middle } Getting started](https://demo.confidentialcloud.io/signup)
 
 -   :fontawesome-solid-cubes-stacked:{ .lg .middle } __Locate your digital asset__
 
@@ -27,7 +27,7 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     Provide information only about the location of your dataset or application.
 
-    [:octicons-arrow-right-24: Register the assset](https://demo.confidentialcloud.io/)
+    [:octicons-arrow-right-24:{ .lg .middle } Register the assset](https://demo.confidentialcloud.io/)
 
 -   :material-arrow-collapse:{ .lg .middle } __Find your partner__
 
@@ -35,6 +35,6 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     Find new or old partners, and unlock new business.
 
-    [:octicons-arrow-right-24: Connect](https://demo.confidentialcloud.io/)
+    [:octicons-arrow-right-24:{ .lg .middle } Connect](https://demo.confidentialcloud.io/)
 
 </div>
