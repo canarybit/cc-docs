@@ -33,7 +33,7 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
     ---
 
-    Provide information only about the location of your dataset or application.
+    Discover new opportunities with new multi-party collaborations.
 
     [:octicons-arrow-right-24:{ .lg .middle } Register the assset]()
 
