@@ -81,9 +81,9 @@ nav:
       - 'Confidential VMs' : []
       - 'Confidential Containers': []
       - 'Confidential AI' : []
-    - 'Secure Infrastructure':
-      - 'Orchestration' : []
-      - 'Verification' : []
+    - Secure Infrastructure:
+      - Orchestration : [tower.md]
+      - Verification : [inspector.md]
   
   - 'Support ⧉': https://canarybit.eu" target="_blank
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
