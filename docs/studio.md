@@ -1,3 +1,3 @@
-# Data Analisys
+# Dashboard
 
-CanaryBit **data analysis** service is called **Studio**.
+CanaryBit **dashboard** is called **Studio**.
