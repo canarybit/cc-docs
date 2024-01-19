@@ -67,9 +67,9 @@ nav:
   - REQUIREMENTS:
     - 'X.509 Certificate': 'x509_certificate.md'
 
-  - USE:       
+  - USER GUIDE:       
     - 'Create Account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-    - 'Login': http://demo.confidentialcloud.io" target="_blank
+    - 'Login ⧉': http://demo.confidentialcloud.io" target="_blank
     - Multi-Party Collaboration:
       - 'Dashboard' : 'studio.md'
       #- 'Register your asset': []
