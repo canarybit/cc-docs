@@ -69,8 +69,8 @@ nav:
     - 'X.509 Certificate': 'x509_certificate.md'
 
   - 'USE':       
-    - 'Create account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-    - 'MULTI-PARTY COLLABORATION':
+    - 'Create Account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
+    - 'Multi-Party Collaboration':
       - 'Login': http://demo.confidentialcloud.io" target="_blank
       #- 'Register your asset': []
       #- 'Start a collaboration': []
@@ -78,11 +78,11 @@ nav:
       #- 'Collect results': []
       #- 'Collect attestation': []
       #- 'Collect audit logs': []
-    - 'SECURE APPLICATIONS':
+    - 'Secure Applications':
       - 'Confidential VMs' : []
       - 'Confidential Containers': []
       - 'Confidential AI' : []
-    - 'SECURE INFRASTRUCTURE':
+    - 'Secure Infrastructure':
       - 'Orchestration' : []
       - 'Verification' : []
   
