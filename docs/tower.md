@@ -1,3 +1,3 @@
-# Orchestration Service: Tower
+# Orchestration
 
 CanaryBit **orchestration** service is called **Tower**.

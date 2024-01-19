@@ -1,3 +1,3 @@
-# Verification Service: Tower
+# Verification
 
 CanaryBit **verification** service is called **Inspector**.
