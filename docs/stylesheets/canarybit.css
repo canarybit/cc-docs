@@ -49,5 +49,7 @@
     --md-footer-bg-color: var(--md-primary-fg-color);
   
     --md-typeset-a-color: var(--cb-blue-01);
+
+    --md-nav__link: #0097a7;
     
   }
