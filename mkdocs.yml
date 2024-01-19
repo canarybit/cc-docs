@@ -82,8 +82,8 @@ nav:
       - 'Confidential Containers': ''
       - 'Confidential AI' : ''
     - Secure Infrastructure:
-      - 'Orchestration' : 'tower.md'
-      - 'Verification' : 'inspector.md'
+      - 'Orchestration' : 'orchestration.md'
+      - 'Verification' : 'verification.md'
 
 
   - 'Support ⧉': https://canarybit.eu" target="_blank
