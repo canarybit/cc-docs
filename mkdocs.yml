@@ -69,7 +69,7 @@ nav:
 
   - USE:       
     - 'Create Account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-    - 'Multi-Party Collaboration':
+    - Multi-Party Collaboration:
       - 'Login': http://demo.confidentialcloud.io" target="_blank
       #- 'Register your asset': []
       #- 'Start a collaboration': []
@@ -84,8 +84,8 @@ nav:
     - Secure Infrastructure:
       - 'Orchestration' : 'tower.md'
       - 'Verification' : 'inspector.md'
-  
-  - '--------':
+
+
   - 'Support ⧉': https://canarybit.eu" target="_blank
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
   - 'Blog ⧉': https://canarybit.eu/blog" target="_blank  
