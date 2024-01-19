@@ -27,7 +27,6 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.sections
-    - navigation.tabs
 
 extra:
   social:
@@ -87,4 +86,4 @@ nav:
   
   - 'Support ⧉': https://canarybit.eu" target="_blank
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
-  - 'Tech Blog ⧉': https://canarybit.eu/blog" target="_blank  
+  - 'Blog ⧉': https://canarybit.eu/blog" target="_blank  
