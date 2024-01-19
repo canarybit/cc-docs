@@ -78,12 +78,12 @@ nav:
       #- 'Collect attestation': []
       #- 'Collect audit logs': []
     - Secure Applications:
-      - 'Confidential VMs' : ''
-      - 'Confidential Containers': ''
-      - 'Confidential AI' : ''
+      - 'Confidential VMs' : []
+      - 'Confidential Containers': []
+      - 'Confidential AI' : []
     - Secure Infrastructure:
-      - 'Orchestration' : 'orchestration.md'
-      - 'Verification' : 'verification.md'
+      - 'Orchestration' : 'tower.md'
+      - 'Verification' : 'inspector.md'
 
 
   - 'Support ⧉': https://canarybit.eu" target="_blank
