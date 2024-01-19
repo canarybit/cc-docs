@@ -25,6 +25,8 @@ theme:
     scheme: canarybit
   icon:
     repo: fontawesome/brands/github
+  features:
+    - navigation.sections
 
 extra:
   social:
