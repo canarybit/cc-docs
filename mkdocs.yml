@@ -74,10 +74,10 @@ nav:
       #- 'Collect results': []
       #- 'Collect attestation': []
       #- 'Collect audit logs': []
-    - ORCHESTRATION:
-      - 'Confidential VMs (cVMs)' : []
+    - SECURE APPLICATIONS:
       - 'Confidential Containers (Co2)': []
-    - VERIFICATION:
+      - 'Confidential AI' : []
+    - SECURE INFRASTRUCTURE:
       - 'Confidential VMs (cVMs)' : []
       - 'Confidential Containers (Co2)': []
 
