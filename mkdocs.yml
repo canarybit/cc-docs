@@ -54,8 +54,8 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - 'CanaryBit Confidential Cloud': 
-    - 'Overview': 'index.md'
+  - 'Overview': 
+    - 'Intro': 'index.md'
     - 'Architecture': 'architecture.md'
     - 'Infrastructure': 'infrastructure.md'
     - 'Workflow': 'workflow.md'
