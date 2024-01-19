@@ -75,11 +75,11 @@ nav:
       #- 'Collect attestation': []
       #- 'Collect audit logs': []
     - SECURE APPLICATIONS:
-      - 'Confidential Containers (Co2)': []
+      - 'Confidential Containers': []
       - 'Confidential AI' : []
     - SECURE INFRASTRUCTURE:
-      - 'Confidential VMs (cVMs)' : []
-      - 'Confidential Containers (Co2)': []
+      - 'Confidential VMs' : []
+      - 'Confidential Containers': []
 
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
   - 'Support ⧉': https://canarybit.eu" target="_blank
