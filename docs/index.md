@@ -6,7 +6,7 @@
 
 Run workloads on different [infrastructure setups](infrastructure.md) supporting [Confidential Computing](https://www.canarybit.eu/what-is-confidential-computing-and-why-should-i-care/), and get an **auditable certificate** of the encrypted, execution environment.
 
-![Confidential Cloud Solution](./img/canarybit-confidential-cloud-solution-docs.jpg){: style="width:80%;" align=center}
+![Confidential Cloud Solution](./img/canarybit-confidential-cloud-solution-docs.jpg){: style="width:80%;" .center}
 
 ## Quickstart
 
