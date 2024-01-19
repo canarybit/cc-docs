@@ -27,6 +27,7 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.sections
+    - navigatoin.tabs
 
 extra:
   social:
