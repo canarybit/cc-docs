@@ -54,7 +54,7 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - 'Overview': 
+  - 'OVERVIEW': 
     - 'Intro': 'index.md'
     - 'Architecture': 'architecture.md'
     - 'Infrastructure': 'infrastructure.md'
@@ -65,10 +65,10 @@ nav:
     #- 'Legal': []
     #- 'Roadmap': []
 
-  - USE:
-    - REQUIREMENTS:
-        - 'X.509 Certificate': 'x509_certificate.md'
+  - USE:       
     - 'Create account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
+    - REQUIREMENTS:
+      - 'X.509 Certificate': 'x509_certificate.md'
     - MULTI-PARTY COLLABORATION:
       - 'Login': http://demo.confidentialcloud.io" target="_blank
       #- 'Register your asset': []
@@ -85,8 +85,6 @@ nav:
       - 'Orchestration' : []
       - 'Verification' : []
   
-  - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
   - 'Support ⧉': https://canarybit.eu" target="_blank
-  - 'Blog ⧉': https://canarybit.eu/blog" target="_blank
-  - 'About us ⧉': https://www.canarybit.eu/team" target="_blank
-  
+  - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
+  - 'Tech Blog ⧉': https://canarybit.eu/blog" target="_blank  
