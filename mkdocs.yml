@@ -27,7 +27,7 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.sections
-    - navigatoin.tabs
+    - navigation.tabs
 
 extra:
   social:
@@ -62,14 +62,14 @@ nav:
     #- 'Encryption': []
     #- 'Security': []
     - 'Compliance': 'compliance.md'
-    - REQUIREMENTS:
-        - 'X.509 Certificate': 'x509_certificate.md'
     #- 'Legal': []
     #- 'Roadmap': []
 
   - USE:
+    - REQUIREMENTS:
+        - 'X.509 Certificate': 'x509_certificate.md'
     - 'Create account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-    - 'MULTI-PARTY COLLABORATION':
+    - MULTI-PARTY COLLABORATION:
       - 'Login': http://demo.confidentialcloud.io" target="_blank
       #- 'Register your asset': []
       #- 'Start a collaboration': []
@@ -77,11 +77,11 @@ nav:
       #- 'Collect results': []
       #- 'Collect attestation': []
       #- 'Collect audit logs': []
-    - 'SECURE APPLICATIONS':
+    - SECURE APPLICATIONS:
       - 'Confidential VMs' : []
       - 'Confidential Containers': []
       - 'Confidential AI' : []
-    - 'SECURE INFRASTRUCTURE':
+    - SECURE INFRASTRUCTURE:
       - 'Orchestration' : []
       - 'Verification' : []
   
