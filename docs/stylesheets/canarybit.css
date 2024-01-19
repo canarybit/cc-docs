@@ -50,6 +50,6 @@
   
     --md-typeset-a-color: var(--cb-blue-01);
 
-    --md-nav__link: #0097a7;
+    --md-nav__link: var(--cb-blue-01)!important;
     
   }

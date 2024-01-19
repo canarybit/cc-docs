@@ -23,4 +23,4 @@ and run the below command:
 $ openssl req -x509 -newkey rsa:4096 -keyout my_private.key -out my_cert.crt -sha256 -days 365 -subj "/C=$MY_COUNTRY/ST=$MY_REGION/L=$MY_LOCATION/O=$MY_COMPANY/OU=Org/CN=$MY_COMPANY_WEBSITE/emailAddress=$MY_EMAIL"
 ```
 
-Upload the certificate in Confidential Cloud either during [sign-up](https://demo.confidentialcloud.io/signup) or under [Profile](https://demo.confidentialcloud.io/profile).
+Upload the certificate in Confidential Cloud either during [sign-up](https://demo.confidentialcloud.io/signup) or under your [profile](https://demo.confidentialcloud.io/profile).
