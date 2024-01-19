@@ -8,6 +8,8 @@ Run workloads on different [infrastructure setups](infrastructure.md) supporting
 
 ![Confidential Cloud Solution](./img/canarybit-confidential-cloud-solution-docs.jpg){: style="width:80%; display: block; margin: 0 auto;"}
 
+<br/>
+
 ## Quickstart
 
 <div class="grid cards" markdown>
