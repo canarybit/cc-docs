@@ -64,10 +64,11 @@ nav:
     #- 'Legal': []
     #- 'Roadmap': []
 
+  - 'REQUIREMENTS':
+    - 'X.509 Certificate': 'x509_certificate.md'
+
   - 'USE':       
     - 'Create account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-    - 'REQUIREMENTS':
-      - 'X.509 Certificate': 'x509_certificate.md'
     - 'MULTI-PARTY COLLABORATION':
       - 'Login': http://demo.confidentialcloud.io" target="_blank
       #- 'Register your asset': []
