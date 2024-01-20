@@ -54,6 +54,7 @@ markdown_extensions:
 
 nav:
   - 'Introduction': 'index.md'
+  
   - Basics:  
     - 'Architecture': 'architecture.md'
     - 'Infrastructure': 'infrastructure.md'
@@ -69,21 +70,24 @@ nav:
 
   - Getting started:       
     - 'Create Account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-    - Multi-Party Collaboration:
-      - 'Login ⧉': http://demo.confidentialcloud.io" target="_blank
-      - 'Register your asset': []
-      - 'Start a collaboration': []
-      - 'Run an Enclave': []
-      - 'Collect results': []
-      - 'Collect attestation': []
-      - 'Collect audit logs': []
-    - Secure Applications:
-      - 'Confidential VMs' : []
-      - 'Confidential Containers': []
-      - 'Confidential AI' : []
-    - Secure Infrastructure:
-      - 'Orchestrate the resources' : 'tower.md'
-      - 'Verify the setup' : 'inspector.md'
+
+  - Multi-Party Collaboration:
+    - 'Login ⧉': http://demo.confidentialcloud.io" target="_blank
+    - 'Register your asset': []
+    - 'Start a collaboration': []
+    - 'Run an Enclave': []
+    - 'Collect results': []
+    - 'Collect attestation': []
+    - 'Collect audit logs': []
+
+  - Secure Applications:
+    - 'Confidential VMs' : []
+    - 'Confidential Containers': []
+    - 'Confidential AI' : []
+
+  - Secure Infrastructure:
+    - 'Orchestrate Resources' : 'tower.md'
+    - 'Verify Setup' : 'inspector.md'
 
 
   - 'Support ⧉': https://canarybit.eu" target="_blank
