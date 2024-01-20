@@ -28,6 +28,10 @@
     -webkit-mask-image: var(--md-admonition-icon--info)
   }
 
+  .md-grid {
+    max-width: 1440px; 
+  }
+  
   [data-md-color-scheme="canarybit"] {
 
     --cb-black-01: #000000;
