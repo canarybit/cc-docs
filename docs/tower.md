@@ -31,7 +31,8 @@
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Openstack**
 
-    [:octicons-link-external-16:{ .lg .middle } GitHub]()
+    Coming soon!
+    #[:octicons-link-external-16:{ .lg .middle } GitHub]()
     
 -   :material-server:{ .lg .middle } __Bare-metal__
 
@@ -39,6 +40,7 @@
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments for **Bare-metal** setups
 
-    [:octicons-link-external-16:{ .lg .middle } GitHub]()
+    Coming soon!
+    #[:octicons-link-external-16:{ .lg .middle } GitHub]()
 
 </div>
