@@ -13,7 +13,7 @@ Tower follows Infrastructure-as-Code (IaC) best practices, putting end users fir
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments in Azure
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Azure**
         
     [:octicons-link-external-16:{ .lg .middle } GitHub](https://github.com/canarybit/cc-tower-deploy-tee-azure)
 
@@ -21,7 +21,7 @@ Tower follows Infrastructure-as-Code (IaC) best practices, putting end users fir
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments in AWS
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **AWS**
         
     [:octicons-link-external-16:{ .lg .middle } GitHub](https://github.com/canarybit/cc-tower-deploy-tee-aws)
 
@@ -29,7 +29,7 @@ Tower follows Infrastructure-as-Code (IaC) best practices, putting end users fir
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments in Openstack
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Openstack**
 
     [:octicons-link-external-16:{ .lg .middle } GitHub]()
     
@@ -37,7 +37,7 @@ Tower follows Infrastructure-as-Code (IaC) best practices, putting end users fir
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments for Bare-metal
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments for **Bare-metal** setups
 
     [:octicons-link-external-16:{ .lg .middle } GitHub]()
 
