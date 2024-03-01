@@ -1,4 +1,4 @@
-# Deploy your Infrastructure with Tower
+# Deploy a secure infrastructure with Tower
 
 *Tower* is CanaryBit's **orchestration** service to automate the deployment of infrastructure resources for Trusted Execution Environments (TEEs) deployments.
 
