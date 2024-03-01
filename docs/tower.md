@@ -1,6 +1,6 @@
 # Deploy
 
-Confidential Cloud | *Tower* is CanaryBit's **orchestration** service to automate the deployment of infrastructure resources for Trusted Execution Environments (TEEs) deployments.
+*Tower* is CanaryBit's **orchestration** service to automate the deployment of infrastructure resources for Trusted Execution Environments (TEEs) deployments.
 
 *Tower* follows Infrastructure-as-Code (IaC) best practices, putting end users firmly in control of their setups. It offers a set of open-source [Terraform](https://terraform.io/) configurations to help you manage and provision higly secure runtime environments on a wide set of public cloud providers, on-prem or bare-metal setups.
 
