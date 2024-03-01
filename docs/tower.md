@@ -4,6 +4,7 @@ Confidential Cloud Tower is CanaryBit's **orchestration** service to automate th
 
 Tower follows Infrastructure-as-Code (IaC) best practices, putting end users firmly in control of their setups. It offers a set of open-source [Terraform](https://terraform.io/) configurations to help you manage and provision higly secure runtime environments on a wide set of public cloud providers, on-prem or bare-metal.
 
+## Download the code 
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
