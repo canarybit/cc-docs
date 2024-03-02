@@ -71,7 +71,16 @@ nav:
   - Getting started:       
     - 'Create Account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
 
-  - Multi-Party Collaboration:
+  - Secure your Infrastructure:
+    - 'Deploy' : 'tower.md'
+    - 'Verify' : 'inspector.md'
+  
+  - Secure your Applications:
+    - 'Confidential VMs' : []
+    - 'Confidential Containers': []
+    - 'Confidential AI' : []
+
+  - Start a Collaboration:
     - 'Login ⧉': http://demo.confidentialcloud.io" target="_blank
     - 'Register a dataset': []
     - 'Register an Application': []
@@ -80,16 +89,6 @@ nav:
     - 'Collect results': []
     - 'Collect attestation': []
     - 'Collect audit logs': []
-
-  - Secure Applications:
-    - 'Confidential VMs' : []
-    - 'Confidential Containers': []
-    - 'Confidential AI' : []
-
-  - Secure Infrastructure:
-    - 'Deploy' : 'tower.md'
-    - 'Verify' : 'inspector.md'
-
 
   - 'Support ⧉': https://canarybit.eu" target="_blank
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
