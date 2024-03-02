@@ -65,10 +65,8 @@ nav:
     #- 'Legal': []
     #- 'Roadmap': []
 
-  - Requirements:
-    - 'X.509 Certificate': 'x509_certificate.md'
-
   - Getting started:       
+    - 'Requirements': 'x509_certificate.md'
     - 'Create Account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
 
   - Secure your Infrastructure:
