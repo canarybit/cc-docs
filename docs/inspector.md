@@ -1,3 +1,3 @@
 # Verify the security of your infrastructure with Inspector
 
-CanaryBit **verification** service is called **Inspector**.
+[Inspector](https://docs.confidentialcloud.io/architecture/#inspector) is CanaryBit's **attestation** service for Confidential Computing setups.

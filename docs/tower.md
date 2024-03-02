@@ -32,7 +32,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Openstack**
 
     Coming soon!
-    #[:octicons-link-external-16:{ .lg .middle } GitHub]()
+    <!-- [:octicons-link-external-16:{ .lg .middle } GitHub]()
     
 -   :material-server:{ .lg .middle } __Bare-metal__
 
@@ -41,6 +41,6 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
     Terraform configuration for Trusted Execution Environments (TEEs) deployments for **Bare-metal** setups
 
     Coming soon!
-    #[:octicons-link-external-16:{ .lg .middle } GitHub]()
+    <!-- [:octicons-link-external-16:{ .lg .middle } GitHub]()
 
 </div>
