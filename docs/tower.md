@@ -15,7 +15,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Azure**
         
-    [:octicons-link-external-16:{ .lg .middle } GitHub](https://github.com/canarybit/cc-tower-deploy-tee-azure)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/cc-tower-deploy-tee-azure)
 
 -   :material-aws:{ .lg .middle } __Aws__
 
@@ -23,7 +23,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **AWS**
         
-    [:octicons-link-external-16:{ .lg .middle } GitHub](https://github.com/canarybit/cc-tower-deploy-tee-aws)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/cc-tower-deploy-tee-aws)
 
 -   :simple-openstack:{ .lg .middle } __Openstack__
 
@@ -31,8 +31,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Openstack**
 
-    Coming soon!
-    <!-- [:octicons-link-external-16:{ .lg .middle } GitHub]()
+    [:octicons-link-external-16:{ .lg .middle }  Available soon!]()
     
 -   :material-server:{ .lg .middle } __Bare-metal__
 
@@ -40,7 +39,6 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments for **Bare-metal** setups
 
-    Coming soon!
-    <!-- [:octicons-link-external-16:{ .lg .middle } GitHub]()
+    [:octicons-link-external-16:{ .lg .middle }  Available soon!]()
 
 </div>
