@@ -55,7 +55,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments for **Openshift** setups
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Openshift**
 
     [:octicons-link-external-16:{ .lg .middle }  Available soon!](https://github.com/canarybit/cc-tower)
 
