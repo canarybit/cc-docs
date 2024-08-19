@@ -51,7 +51,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     [:octicons-link-external-16:{ .lg .middle }  Available soon!](https://github.com/canarybit/cc-tower)
 
--   :material-server:{ .lg .middle } __Openshift__
+-   :simple-redhatopenshift:{ .lg .middle } __Openshift__
 
     ---
 
