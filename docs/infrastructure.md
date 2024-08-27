@@ -2,11 +2,12 @@
 
 Confidential Cloud is **cloud-agnostic**. [Tower](architecture.md#tower) and [Inspector](architecture.md#inspector) are responsible for various aspects of the Life-Cycle Management (LCM) of infrastructure resources.
 
-Confidential Cloud builds atop Confidential Computing to offer state-of-the-art encryption mechanisms. Today, hardware and firmware support for Confidential Computing is only available in several modern lines of hardware platforms offered by a limited range of forward-looking Cloud Service Providers (CSPs).
+Confidential Cloud builds atop Confidential Computing to offer state-of-the-art encryption mechanisms.
+Today, hardware and firmware support for Confidential Computing is widely available in modern lines of hardware platforms offered by forward-looking Cloud Service Providers (CSPs).
 
 ## Supported Hardware
 
-Currently, Confidential Computing is only available on a limited set of microprocessor product lines available in the market.
+Support for Confidential Computing widely available on microprocessor product lines available on the market.
 Enterprise vendors offer several Confidential Computing implementations, with varying capabilities and performance limitations, and security trade-offs ([Read more](https://www.canarybit.eu/comparing-confidential-computing-platforms/)).
 
 Confidential Cloud currently supports the following hardware:
@@ -17,7 +18,7 @@ Confidential Cloud currently supports the following hardware:
 
 <!--
 <details closed>
-<summary>Coming in 2023-2024</summary>
+<summary>Coming in 2024</summary>
 <br>ARM Confidential Compute Architecture (CCA).
 <br>&nbsp;
 <br>IBM Protected Execution Facility (PEF).
@@ -29,7 +30,7 @@ Confidential Cloud currently supports the following hardware:
 
 <details closed>
 <summary>Upcoming</summary>
-<br>- Intel® Trusted Domain Extensions (TDX) - pending hardware availability
+<br>- Intel® Trusted Domain Extensions (TDX) - pending wider hardware availability
 <br><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html" target="_blank">https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html</a>
 <br>&nbsp;
 <br>- ARM® Confidential Compute Architecture (CCA) - pending hardware availability and firmware support
