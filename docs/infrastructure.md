@@ -37,6 +37,8 @@ Confidential Cloud currently supports the following hardware:
 <br>&nbsp;
 <br>- ARM® Confidential Compute Architecture (CCA) - General Availability pending wider hardware availability
 <br><a href="https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture" target="_blank">https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture</a>
+<br>
+<br>Interested in joining the preview programme? <a href="https://www.canarybit.eu/contact/">Reach out to us</a>!
 <br>&nbsp;
 </details>
 
