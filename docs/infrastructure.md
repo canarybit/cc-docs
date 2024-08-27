@@ -13,8 +13,10 @@ Enterprise vendors offer several Confidential Computing implementations, with va
 Confidential Cloud currently supports the following hardware:
 
 ### AMD SEV-SNP
-
 - Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP): [read more](https://www.amd.com/en/developer/sev.html)
+
+### NVIDIA Confidential Computing
+- Support for confidential computing on NVIDIA Hopper and Blackwell GPUs: [read more](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/) 
 
 <!--
 <details closed>
@@ -29,17 +31,17 @@ Confidential Cloud currently supports the following hardware:
 -->
 
 <details closed>
-<summary>Upcoming</summary>
-<br>- Intel® Trusted Domain Extensions (TDX) - pending wider hardware availability
+<summary>Preview</summary>
+<br>- Intel® Trusted Domain Extensions (TDX) - General Availability pending wider hardware availability
 <br><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html" target="_blank">https://www.intel.com/content/www/us/en/developer/articles/technical/intel-trust-domain-extensions.html</a>
 <br>&nbsp;
-<br>- ARM® Confidential Compute Architecture (CCA) - pending hardware availability and firmware support
+<br>- ARM® Confidential Compute Architecture (CCA) - General Availability pending wider hardware availability
 <br><a href="https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture" target="_blank">https://www.arm.com/architecture/security-features/arm-confidential-compute-architecture</a>
 <br>&nbsp;
 </details>
 
 <details closed>
-<summary>Decomissioned</summary>
+<summary>Decommissioned</summary>
 <br>- Intel® Software Guard Extension (SGX)
 <br><a href="https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html" target="_blank">https://www.intel.com/content/www/us/en/developer/tools/software-guard-extensions/overview.html</a>
 <br>&nbsp;
@@ -85,7 +87,7 @@ Confidential Cloud provisions Trusted Execution Environments (TEE) on several hy
 
 <details open>
 <summary>Partnership Programme</summary>
-<br>Are you a CSP and interested to support Confidential Cloud?
+<br>Are you a CSP, hardware vendor or software solutions provider and interested to support Confidential Cloud?
 <br>Join our <a href="https://www.canarybit.eu/become-a-partner/">Partnership programme</a>!
 <br>&nbsp;
 </details>
