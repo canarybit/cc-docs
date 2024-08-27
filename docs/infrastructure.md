@@ -14,7 +14,7 @@ Confidential Cloud currently supports the following hardware:
 
 ### AMD SEV-SNP
 
-- Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP): [https://www.amd.com/en/processors/amd-secure-encrypted-virtualization](https://www.amd.com/en/processors/amd-secure-encrypted-virtualization)
+- Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP): [read more](https://www.amd.com/en/developer/sev.html)
 
 <!--
 <details closed>
