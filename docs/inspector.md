@@ -79,7 +79,7 @@ The GPU itself does not constitute a full TEE for confidential computing and it 
 ### GPU Attestation Flow
 
 
-## Supported Trusted Execution Environemnts
+## Supported Trusted Execution Environments
 The following TEEs are currently supported.
 
 ### AMD SEV-SNP (Secure Encrypted Virtualization - Secure Nested Paging)
