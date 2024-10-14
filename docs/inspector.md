@@ -62,7 +62,7 @@ Steps Involved in Using a CSR for client authentication are:
 * Inspector forwards the signed certificate from the SCEP CA server to the CBclient.
 * CBclient then can use the singed certificate to request resources. 
 
-## Attestion FLow
+## Attestation FLow
 Inspector attestion workflow is represted in the figure below which is based on passport model in RATS architecture: 
 
 ![Attestation Flow](./img/Attestation-flow.png)
