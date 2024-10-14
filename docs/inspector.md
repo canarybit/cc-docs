@@ -67,7 +67,7 @@ Inspector attestion workflow is represted in the figure below which is based on 
 
 ![Attestation Flow](./img/Attestation-flow.png)
 
-## Attestation Polcies
+## Attestation Policies
 Inspector uses attestation policies to define and perform tests to the evidence or endorsments during attestation verification. Inspector uses OPA which is an open source, general-purpose policy engine that unifies policy enforcement across the stack. OPA provides a high-level declarative language that lets data or application owners to specify policy as code and simple APIs to offload policy decision-making from the software. OPA policies are expressed in a high-level declarative language called Rego. As an example, a policy can compare the kernel or OS version of the workload to determine if they have the defined values and then set the policy result. 
 
 
