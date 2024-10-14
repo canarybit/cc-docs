@@ -169,10 +169,10 @@ Inspector verifies if the measurement value contained in the attestation report 
 ### Intel TDX
 - To be defined.
 
-### Nvidia GPU
+### NVIDIA GPU
 NVIDIA GPU Confidential Computing is an initiative that enables secure processing of sensitive data and application on GPUs, ensuring that the data or applicaton remains protected during computation.
 
-The verification for the Nvidia GPU attestation request is performed using the [GPU attestation tool](https://github.com/canarybit/gpu-attestation).
+The verification for the NVIDIA GPU attestation request is performed using the [GPU attestation tool](https://github.com/canarybit/gpu-attestation).
 
 The GPU report contains the following fields.
 
