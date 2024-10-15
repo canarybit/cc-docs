@@ -159,9 +159,9 @@ AMD SEV-SNP attestaion report contians the following claims:
 |                      Microcode SVN → Lowest current patch level of all cores                                  |
 | Chip ID            | CPU ID                                                                                   |
 | Signature          | In ECDSA is the signature is built of (R,S),                                             |
-|                    | the values below specifies each component value.                                         |
-|                    | R → R part of the signature.                                                             |
-|                    | S → S part of the signature.                                                             |
+|^                   | the values below specifies each component value.                                         |
+|^                   | R → R part of the signature.                                                             |
+|^                   | S → S part of the signature.                                                             |
 
 
 
