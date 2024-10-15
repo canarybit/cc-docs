@@ -67,9 +67,22 @@ Inspector attestion workflow is represted in the figure below which is based on 
 
 ![Attestation Flow](./img/Attestation-flow.png)
 
-## Attestation Policies
-Inspector uses attestation policies to define and perform tests to the evidence or endorsments during attestation verification. Inspector uses OPA which is an open source, general-purpose policy engine that unifies policy enforcement across the stack. OPA provides a high-level declarative language that lets data or application owners to specify policy as code and simple APIs to offload policy decision-making from the software. OPA policies are expressed in a high-level declarative language called Rego. As an example, a policy can compare the kernel or OS version of the workload to determine if they have the defined values and then set the policy result. 
 
+As shown in the picture above the attestation flow is as follows: 
+1. Data or application owners (relying party) need to get a valid evidence from TEE to make sure it is authentic and trustworthy. CBclient uses AMD tools to get an evidence from TEE. The attester collects evidence, add nonce, extra data, and optional CSR and sends it to inspetor. 
+2. Inspector verifies evidence, nonce and applies policies. 
+3. If CSR in included in the request, Inspector sends the CSR to SCEP CA server. SCEP CA server verifies the CSR and challenge password and returns a signed certificate. 
+4. Inspector sends back attestaion results and signed certificate to the CBclient.
+5. CBclient forwards the attestation results and signed certificate to the relying party. The relying party verifies the attestation results and then decides if it should trust the attester or not to transfer its own data or application to the TEE.
+
+
+## Attestation Policies
+Inspector uses attestation policies to perform tests to the evidence or endorsments during attestation verification. Relying party defines these optional attestation policies and the policies will be included in the request to Inspector from CBcleint. By default, Inspector returns an attestation result when no policies have been specified, but if policies are defined, Inspector checks evidnece claims or endorsments against policies.   
+Inspector uses OPA which is an open source, general-purpose policy engine that unifies policy enforcement across the stack. OPA provides a high-level declarative language that lets data or application owners to specify policy as code and simple APIs to offload policy decision-making from the software. OPA policies are expressed in a high-level declarative language called Rego, for more information about Rego policy language check [the basics](https://www.openpolicyagent.org/docs/latest/policy-language/#the-basics). As an example, a policy can compare the kernel or OS version of the workload to determine if they have the defined values and then set the policy result. 
+
+### Claims
+
+In attestation report a claim is a name:value pair. Claims contains specific values related to the attested TEE. These elements are associated with the TEE’s hardware and software components which is known as the Trusted-Compute Base (TCB). The software component collects evidence from the TEE and package it as a report. 
 
 ## GPU Attestation
 Inspector has support for remote attestaion of NVIDIA H100 GPU TEE. The concept of a GPU in Trusted Execution Environment (TEE) is relatively new and enhances the capabilities of a traditional CPU TEE. There are many reosurce intensive applications including AI and amchine learning that require the performance boost provided by GPU hardware acceleration. Many AI models and parameters usually include sensitive data and a confidential GPU offers a secure environment for these workloads, ensuring protection against unauthorized access or tampering.
@@ -77,7 +90,7 @@ Inspector has support for remote attestaion of NVIDIA H100 GPU TEE. The concept 
 The GPU itself does not constitute a full TEE for confidential computing and it depends on a confidential CPU TEE. The CPU TEE provides the necessary measurements and attestations to establish trust in the GPU. The CPU TEE securely transfers information to the GPU via a fully encrypted channel. The GPU and the confidential VM exchange keys to create a secure, encrypted communication channel.
 
 ### GPU Attestation Flow
-
+To be defined. 
 
 ## Supported Trusted Execution Environments
 The following TEEs are currently supported.
@@ -103,6 +116,55 @@ The AMD SEV-SNP evidence contains the following fields.
 }
 
 ```
+
+#### Attestaion Report and Claims 
+AMD SEV-SNP attestaion report contians the following claims: 
+
+| Claim names        | Description                                                                              |
+| -------------      | ---------------------------------------------------------------------------------------- |
+| Version            | Version number of the attestation                                                        |
+| Policy             | The guest policy is an 8-byte structure with the fields below                            |
+|                      Debugging Allowed → Debugging is allowed or not.                                         |
+|                      Migration Agent Allowed → Association with a migration agent is allowed or not.          |
+|                      SMT Allowed → SMT (Simultaneous Multi-Threading) is allowed or not.                      |
+|                      Min. ABI Major → The minimum ABI (Application Binary Interface) major version required.  |
+|                      Min. ABI Minor → The minimum ABI (Application Binary Interface) minor version required   |
+| Family ID          | Family ID of the guest, provided by the guest owner and uninterpreted by the firmware.   |
+| Image ID           | Image ID of the guest, provided by the guest owner and uninterpreted by the firmware.    |
+| VMPL               | Virtual Machine Privilege Level (VMPL) is an optional feature in the SEV-SNP architecture| 
+|                      which allows a guest VM to divide its address space into four levels.                    |
+|                      The level can be used to provide the hardware isolated abstraction layers with a VM.     |
+|                      The VMPL 0 is the highest privilege, and VMPL 3 is the least privilege.                  |
+| Signature Algorithm| The signature algorithm used to sign the report(The default is ECDSA P-384 with SHA-384).|
+| Platform Info      | Information about the platform such as                                                   |
+|                      SMT Enabled → Indicates that SMT (Simultaneous Multi-Threading) is enabled in the system.|
+|                      Author Key Enabled → Indicates whether an Author key signed the ID key.                  |
+| Report Data        | The hash of guest provided data.                                                         |
+| Measurement        | Signature of the memory contents at VM launch, can be sent to the guest owner as         |
+|                      an attestation that the memory was encrypted correctly by the firmware.                  |
+| Host Data          | Data provided by the hypervisor during launch the guest VM, the default is zero.         |
+| ID Key Digest      | SHA-384 digest of the ID public key that signed the ID block provided during launch.     |
+|                      Specifies the identity of guest owner.                                                   |
+| Author Key Digest  | SHA-384 digest of the Author public key that certified the ID key,                       |
+|                      if provided during launch. Zeroes if Author Key is Enabled.                              |
+| Report ID          | Report identifier of the guest VM.                                                       |
+| Migration Agent    | Report identifier of the guest VM’s migration agent.                                     |
+| Report ID
+| Reported TCB       | Reported Trusted computing base (TCB) version of the SNP firmware used to derive         |
+|                      the VCEK (Versioned Chip Endorsement Key) that signed the report.                        |
+|                      It contains the following values:                                                        |
+|                      Boot Loader SVN → Current bootloader version.                                            |
+|                      TEE SVN → Security Version Number (SVN) of PSP (Platform Security Processor) OS          |
+|                      SNP firmware SVN → Security Version Number (SVN) of SNP firmware.                        |
+|                      Microcode SVN → Lowest current patch level of all cores                                  |
+| Chip ID            | CPU ID                                                                                   |
+| Signature          | In ECDSA is the signature is built of (R,S),                                             |
+|                      the values below specifies each component value.                                         |
+|                      R → R part of the signature.                                                             |
+|                      S → S part of the signature.                                                             |
+
+
+
 #### Evidence Verification
 
 * Attestation report verification
