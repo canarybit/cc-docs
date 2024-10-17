@@ -94,7 +94,11 @@ The GPU itself does not constitute a full TEE for confidential computing and it 
 For more information about CPU and GPU memory communications refer to [Confidential Compute on NVIDIA Hopper H100](https://images.nvidia.com/aem-dam/en-zz/Solutions/data-center/HCC-Whitepaper-v1.0.pdf). 
 
 ### GPU Attestation Flow
-GPU attestation is the process where the relying party wants to challenge the GPU hardware and the associated driver, firmware, and microcode, and receives confirmation that the results are valid and authentic. In Inspector we use a local GPU verifier.  
+GPU attestation is the process where the relying party wants to challenge the GPU hardware and the associated driver, firmware, and microcode, and receives confirmation that the results are valid and authentic. In Inspector we use a local GPU verifier. 
+
+The GPU attestaion flow is shown in the picture below: 
+
+![Attestation Flow](./img/GPU-attestaion-flow.png)
 
 Here are the general steps for the attestation workflow using the Inspector: 
 * Relying party requests the attester to attest GPU and the attester sends the attestation request to Inspector
