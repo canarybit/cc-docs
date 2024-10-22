@@ -25,7 +25,7 @@ The attester is a confidential computing environment or VM that must prove its i
 
 We provide a client (CBclient) to streamline the process of obtaining an evidence from the attesting environment. The CBclient uses libraries and tools from AMD, Intel or NVIDIA to handle low-level platform software calls to obtain the evidence.
 
-The attesting environment is responsible for gathering evidence for the attestaion report, either using the AMD, Intel, and NVIDIA tools or another compatible method. The attestaion report is then sent directly to Inspector (passport model in RATS architecture).
+The attesting environment is responsible for gathering evidence for the attestation report, either using the AMD, Intel, and NVIDIA tools or another compatible method. The attestation report is then sent directly to Inspector (passport model in RATS architecture).
 
 
 ### Relying Party
@@ -35,7 +35,7 @@ The relying party which can be data or application owner uses the attestation re
 
 ## Attestation Security
 
-Inspector uses the following security machanisms to ensure confidentiality, integrity, authenticity, and non-repudiation of attestaion procedure. The used security techniques are described in detail below.   
+Inspector uses the following security machanisms to ensure confidentiality, integrity, authenticity, and non-repudiation of attestation procedure. The used security techniques are described in detail below.
 
 ### Secure Communication
 
@@ -50,7 +50,7 @@ A nonce is a random generated string that uniquely identifies each attestation r
 The verifier must be able to authenticate the identity of the attester, ensuring that the evidence is coming from the correct source (e.g., a trusted platform or device). The attestation evidence is often signed using digital signatures, ensuring that the verifier can authenticate the origin of the evidence and confirm that it has not been tampered with. 
 
 #### Optional Client Authentication
-The attestaion request to the Inspector can include a Certificate Signing Request (CSR) that can be used by a Certificate Authority (CA) to issue digital certificates for client authentication. 
+The attestation request to the Inspector can include a Certificate Signing Request (CSR) that can be used by a Certificate Authority (CA) to issue digital certificates for client authentication.
 Steps Involved in using a CSR for client authentication are:
 
 * CBclient first generates a key pair: a public and a private key.
@@ -72,7 +72,7 @@ As shown in the picture above the attestation flow is as follows:
 1. Data or application owners (relying party) need to get a valid evidence from TEE to make sure it is authentic and trustworthy. CBclient uses AMD, Intel, and NVIDIA (based on the used TEE) tools to get an evidence from TEE. The attester collects evidence, add nonce, extra data, and optional CSR and sends it to inspetor. 
 2. Inspector verifies evidence, nonce and applies policies. 
 3. If CSR in included in the request, Inspector sends the CSR to SCEP CA server. SCEP CA server verifies the CSR and challenge password and returns a signed certificate. 
-4. Inspector sends back attestaion results and signed certificate to the CBclient.
+4. Inspector sends back attestation results and signed certificate to the CBclient.
 5. CBclient forwards the attestation results and signed certificate to the relying party. The relying party verifies the attestation results and then decides if it should trust the attester or not to transfer its own data or application to the TEE.
 
 
@@ -85,7 +85,7 @@ Inspector uses OPA which is an open source, general-purpose policy engine that u
 In attestation report a claim is a name:value pair. Claims contains specific values related to the attested TEE. These elements are associated with the TEE’s hardware and software components which is known as the Trusted-Compute Base (TCB). The software component collects evidence from the TEE and package it as a report. 
 
 ## GPU Attestation
-Inspector has support for remote attestaion of NVIDIA H100 GPU TEE. The concept of a GPU in TEE is relatively new and enhances the capabilities of a traditional CPU TEE. There are many reosurce intensive applications including AI and amchine learning that require the performance boost provided by GPU hardware acceleration. Many AI models and parameters usually include sensitive data and a confidential GPU offers a secure environment for these workloads, ensuring protection against unauthorized access or tampering.
+Inspector has support for remote attestation of NVIDIA H100 GPU TEE. The concept of a GPU in TEE is relatively new and enhances the capabilities of a traditional CPU TEE. There are many reosurce intensive applications including AI and amchine learning that require the performance boost provided by GPU hardware acceleration. Many AI models and parameters usually include sensitive data and a confidential GPU offers a secure environment for these workloads, ensuring protection against unauthorized access or tampering.
 
 The GPU itself does not constitute a full TEE for confidential computing and it depends on a confidential CPU TEE. The CPU TEE provides the necessary measurements and attestations to establish trust in the GPU. The CPU TEE securely transfers information to the GPU via a fully encrypted channel. The GPU and the confidential VM exchange keys to create a secure, encrypted communication channel. Currently there are three specific CPUs that can be used to enable confidential compute with NVIDIA’s H100:
 * Intel CPUs with support of Trusted Domain eXtensions (TDX)
@@ -96,7 +96,7 @@ For more information about CPU and GPU memory communications refer to [Confident
 ### GPU Attestation Flow
 GPU attestation is the process where the relying party wants to challenge the GPU hardware and the associated driver, firmware, and microcode, and receives confirmation that the results are valid and authentic. In Inspector we use a local GPU verifier. 
 
-The GPU attestaion flow is shown in the picture below: 
+The GPU attestation flow is shown in the picture below:
 
 ![Attestation Flow](./img/GPU-attestaion-flow.png)
 
@@ -141,8 +141,8 @@ The AMD SEV-SNP evidence contains the following fields.
 
 ```
 
-#### Attestaion Report and Claims 
-AMD SEV-SNP attestaion report contians the following claims: 
+#### Attestation Report and Claims
+AMD SEV-SNP attestation report contains the following claims:
 
 
 | Claim names                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -234,7 +234,7 @@ Inspector verifies if the measurement value contained in the attestation report 
 Intel Trust Domain Extensions (Intel TDX) is currently the newest confidential computing technology by Intel. TDX facilitates the deployment of trust domains (TD), which are hardware-isolated VMs designed to protect sensitive data and applications from unauthorized access.
 Intel TDX uses hardware extensions for encrypting memory and protects both the confidentiality and integrity of the TDs. 
 
-#### Attestaion Report and Claims 
+#### Attestation Report and Claims
 In TDX, remote attestation allows external entities to verify the integrity of the system and that the TD has been securely established. 
 In TDX, an attestation report is represented as a JSON Web Token (JWT) issued by the verifier and contains the results of an attestation request. The token is composed of a header, a body, and an attestation signature. The token body, is the main part of the JWT that contains all the claims from TEE. 
 The attestation token claims in TDX are shown below: 
@@ -275,7 +275,7 @@ Inspector uses Intel attestation service to verify the TDX attestation token or 
 * Check if the PCK Cert is on the CRL (Certificate Revocation Lists).
 * Check the verification collaterals’ cert signature chain, including PCK Cert Chain, TCB info chain and QE (Quoting Enclave) identity chain.
 * Check if verification collaterals are on the CRL.
-* Check the TDQE Report signature and the contained AK (Attestaion Key) hash using the PCK Cert.
+* Check the TDQE Report signature and the contained AK (Attestation Key) hash using the PCK Cert.
 * Check the measurements of the TDQE contained in the TDQE Report.
 * Check the signature of the TD Quote using the public key–part of the AK. Implicitly, this validated the TD and TDX (Trust Domain Extensions) Module measurements.
 * Evaluate the TDX TCB information contained in the TD Quote.
@@ -313,6 +313,6 @@ The GPU report contains the following fields.
   ]
 }
 ```
-#### Attestaion Report and Claims 
+#### Attestation Report and Claims
 
 #### Evidence Verification
