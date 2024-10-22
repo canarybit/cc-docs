@@ -231,7 +231,55 @@ Inspector verifies if the measurement value contained in the attestation report 
 
 
 ### Intel TDX
-- To be defined.
+Intel Trust Domain Extensions (Intel TDX) is currently the newest confidential computing technology by Intel. TDX facilitates the deployment of trust domains (TD), which are hardware-isolated VMs designed to protect sensitive data and applications from unauthorized access.
+Intel TDX uses hardware extensions for encrypting memory and protects both the confidentiality and integrity of the TDs. 
+
+#### Attestaion Report and Claims 
+In TDX, remote attestation allows external entities to verify the integrity of the system and that the TD has been securely established. 
+In TDX, an attestation report is represented as a JSON Web Token (JWT) issued by the verifier and contains the results of an attestation request. The token is composed of a header, a body, and an attestation signature. The token body, is the main part of the JWT that contains all the claims from TEE. 
+The attestation token claims in TDX are shown below: 
+
+| Claim names                      | Description                                                                                                                                                                                                  |
+|----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| tdx_mrsignerseam                 | The measurement of the Intel TDX module signer, if valid.                                                                                                                                                    |
+| tdx_mrseam                       | The measurement of the Intel TDX module.                                                                                                                                                                     |
+| tdx_mrtd                         | The measurement of the TD build process and the initial contents of the TD.                                                                                                                                  |
+| tdx_seamsvn                      | The Intel TDX module security version number (SVN).                                                                                                                                                          |
+| tdx_rtmr0                        | The measurement of the TD virtual firmware (TDVF) configuration.                                                                                                                                             |
+| tdx_rtmr1                        | The measurements of the TD OS loader and kernel.                                                                                                                                                             |
+| tdx_rtmr2                        | The measurement of the OS application.                                                                                                                                                                       |
+| tdx_rtmr3                        | Reserved for special usage.                                                                                                                                                                                  |
+| tdx_mrconfigid                   | The software-defined ID for non-owner-defined configuration of the TD.                                                                                                                                       |
+| tdx_mrowner                      | The software-defined ID for the TD’s owner.                                                                                                                                                                  |
+| tdx_mrownerconfig                | The software-defined ID for owner-defined configuration of the TD.                                                                                                                                           |
+| tdx_report_data                  | This claim contains the hash of the nonce supplied with the evidence, runtime_data supplied during quote generation, optional user data, and attester held data supplied by the TEE during quote generation. |
+| tdx_seam_attributes              | Additional configuration of the Intel TDX module.                                                                                                                                                            |
+| tdx_td_attributes                | The TD attributes bitmap. This claim contains the entire bitmap. The following claims break out certain specific attributes specified in the bitmap.                                                         |
+| tdx_td_attributes_debug          | Defines whether the TD runs in TD debug mode (set to 1) or not (set to 0).                                                                                                                                   |
+| tdx_td_attributes_key_locker     | This claim indicates if the TD is allowed to use Intel Key Locker hardware resources for AES key protection.                                                                                                 |
+| tdx_td_attributes_perfmon        | TD is allowed to use Perfmon and PERF_METRICS capabilities.                                                                                                                                                  |
+| tdx_attributes_protection_keys   | TD is allowed to use Supervisor Protection Keys.                                                                                                                                                             |
+| tdx_td_attributes_septve_disable | The TD is allowed to use Supervisor Protection Keys.                                                                                                                                                         |
+| tdx_tee_tcb_svn                  | Describes the TCB SVNs of TDX.                                                                                                                                                                               |
+| tdx_xfam                         | Contains an XFAM mask of CPU extended features that the TD is allowed to use.                                                                                                                                |
+| tdx_is_debuggable                | This claim indicates if the Intel TDX debug attribute is enabled or not. True if enabled, otherwise false.                                                                                                   |
+| tdx_collateral                   | Contains the hash value of the binary TCB collateral being used to verify the the quote.                                                                                                                     |
+
+For more information about the claims and JWT token from Intel TDX refer to [Intel TDX document](https://download.01.org/intel-sgx/latest/dcap-latest/linux/docs/Intel_TDX_DCAP_Quoting_Library_API.pdf)
+
+#### Evidence Verification
+
+Inspector uses Intel attestation service to verify the TDX attestation token or quote, and the attestation service performs the following checks on the quote: 
+
+* Check the PCK (Provisioning Certification Key) Cert (signature chain).
+* Check if the PCK Cert is on the CRL (Certificate Revocation Lists).
+* Check the verification collaterals’ cert signature chain, including PCK Cert Chain, TCB info chain and QE (Quoting Enclave) identity chain.
+* Check if verification collaterals are on the CRL.
+* Check the TDQE Report signature and the contained AK (Attestaion Key) hash using the PCK Cert.
+* Check the measurements of the TDQE contained in the TDQE Report.
+* Check the signature of the TD Quote using the public key–part of the AK. Implicitly, this validated the TD and TDX (Trust Domain Extensions) Module measurements.
+* Evaluate the TDX TCB information contained in the TD Quote.
+
 
 ### NVIDIA GPU
 NVIDIA GPU Confidential Computing is an initiative that enables secure processing of sensitive data and application on GPUs, ensuring that the data or applicaton remains protected during computation.
@@ -265,3 +313,6 @@ The GPU report contains the following fields.
   ]
 }
 ```
+#### Attestaion Report and Claims 
+
+#### Evidence Verification
