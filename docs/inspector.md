@@ -12,12 +12,12 @@ Attestation is a core concept in confidential computing.
 It is a process where one peer (the "Attester") produces believable information about itself ("Evidence") to enable a
 remote peer (the "Relying Party") to decide whether to  consider that the Attester is a trustworthy peer.
 Remote attestation procedures are facilitated by Inspector, performing the role of a verifier.
-The successful attestation procedure helps establish a trust relationship between the attester (such as a confidential computing environment) and relying parties.
+The successful attestation procedure helps establish a trust relationship between the attester (such as a confidential computing environment which is usually a VM (Virtual Machine) that has support for TEE (Trusted Execution Environment)) and relying parties.
 CanaryBit supports confidential computing environments instantiated as confidential virtual machines confidential containers.
 Attestation helps assure third parties that the confidential computing environments has not been tampered with or otherwise compromised.
 
-* A confidential computing environment attests its identity and integrity by providing Evidence along with other validation data (endorsements) included in an attestation report.
-* Inspector checks the attestation report against reference values and endorsements to determine its validity and whether specific measurements align with stored values and policies.
+* A confidential computing environment attests its identity and integrity by providing Evidence along with other validation data (endorsements) included in an evidence.
+* Inspector checks the evidence against reference values and endorsements to determine its validity and whether specific measurements align with stored values and policies.
 * A relying party uses the returned information from Inspector to determine whether to trust the attester or not.
 
 ### Inspector
@@ -33,12 +33,12 @@ The attester is a confidential computing environment capable to provide evidence
 
 CanaryBit provides a client software (**cb-client**) to streamline the process of obtaining an evidence from the attesting environment. 
 **cb-client** uses firmware and software support from platform vendors (AMD, Intel, NVIDIA, AMD, and others) to invoke low-level platform calls in order to obtain the evidence.
-The attestation report is then sent to Inspector for validation, corresponding to the "passport model" in RATS architecture.
+The evidence is then sent to Inspector for validation, corresponding to the "passport model" in RATS architecture.
 
 
 ### Relying Party
 
-The relying party which can be data or application owner uses the attestation result returned from Inspector to determine whether to trust the attester and transfer its data or application to the confidential environment.
+The relying party or resource owner uses the attestation result returned from Inspector to determine whether to trust the attester and transfer its resource to the confidential environment.
 
 ## Attestation Security
 
@@ -46,15 +46,15 @@ Inspector uses the following security machanisms to ensure confidentiality, inte
 
 ### Secure Communication
 
-During the attestation procedure, the communication between the attester, verifier, and the relying parties must be secured to protect the confidentiality and integrity of the attestation information. Techniques including encryption and secure communication channel such as TLS are used to establish secure communication. These techniques ensure confientiality and integrity of the acommunication. 
+During the attestation procedure, the communication between the attester, Inspector, and the relying parties must be secured to protect the confidentiality and integrity of the attestation information. Techniques including encryption and secure communication channel such as TLS are used to establish secure communication. These techniques ensure confientiality and integrity of the acommunication. 
 
 ### Nonce
 A nonce is a random generated string that uniquely identifies each attestation request. Inspector creates and returns a nonce, which attester use to identify an attestation request. Generated nonces and their creation timestamp are stored on Inspector and each nonce can be only used once within the maximum nonce age. This is to avoid replay attacks that could allow an attacker to reuse the past attestation results.
 
 ### Authentication
 
-#### TEE Authentication
-The verifier must be able to authenticate the identity of the attester, ensuring that the evidence is coming from the correct source (e.g., a trusted platform or device). The attestation evidence is often signed using digital signatures, ensuring that the verifier can authenticate the origin of the evidence and confirm that it has not been tampered with. 
+#### Confidential Computing Environment Authentication
+Inspector must be able to authenticate the identity of the attester, ensuring that the evidence is coming from the correct source (e.g., a trusted platform or device). The attestation evidence is often signed using digital signatures, ensuring that Inspector can authenticate the origin of the evidence and confirm that it has not been tampered with. 
 
 #### Optional Client Authentication
 The attestation request to the Inspector can include a Certificate Signing Request (CSR) that can be used by a Certificate Authority (CA) to issue digital certificates for client authentication.
@@ -76,25 +76,25 @@ Inspector attestion workflow is represted in the figure below which is based on 
 
 
 As shown in the picture above the attestation flow is as follows: 
-1. Data or application owners (relying party) need to get a valid evidence from TEE to make sure it is authentic and trustworthy. cb-client uses AMD, Intel, and NVIDIA (based on the used TEE) tools to get an evidence from TEE. The attester collects evidence, add nonce, extra data, and optional CSR and sends it to inspetor. 
+1. Resource owners (relying party) need to get a valid evidence from confidential computing environment to make sure it is authentic and trustworthy. cb-client uses AMD, Intel, and NVIDIA (based on the used confidential computing environment) tools to get an evidence from confidential computing environment. The attester collects evidence, add nonce, extra data, and optional CSR and sends it to inspetor. 
 2. Inspector verifies evidence, nonce and applies policies. 
 3. If CSR in included in the request, Inspector sends the CSR to SCEP CA server. SCEP CA server verifies the CSR and challenge password and returns a signed certificate. 
 4. Inspector sends back attestation results and signed certificate to the cb-client.
-5. cb-client forwards the attestation results and signed certificate to the relying party. The relying party verifies the attestation results and then decides if it should trust the attester or not to transfer its own data or application to the TEE.
+5. cb-client forwards the attestation results and signed certificate to the relying party. The relying party verifies the attestation results and then decides if it should trust the attester or not to transfer its own resource to the confidential computing environment.
 
 
 ## Attestation Policies
 Inspector uses attestation policies to perform tests to the evidence or endorsments during attestation verification. Relying party defines these optional attestation policies and the policies will be included in the request to Inspector from cb-client. By default, Inspector returns an attestation result when no policies have been specified, but if policies are defined, Inspector checks evidnece claims or endorsments against policies.   
-Inspector uses OPA which is an open source, general-purpose policy engine that unifies policy enforcement across the stack. OPA provides a high-level declarative language that lets data or application owners to specify policy as code and simple APIs to offload policy decision-making from the software. OPA policies are expressed in a high-level declarative language called Rego, for more information about Rego policy language check [the basics](https://www.openpolicyagent.org/docs/latest/policy-language/#the-basics). As an example, a policy can compare the kernel or OS version of the VM to determine if they have the defined values and then set the policy result. 
+Inspector uses OPA which is an open source, general-purpose policy engine that unifies policy enforcement across the stack. OPA provides a high-level declarative language that lets resource owners to specify policy as code and simple APIs to offload policy decision-making from the software. OPA policies are expressed in a high-level declarative language called Rego, for more information about Rego policy language check [the basics](https://www.openpolicyagent.org/docs/latest/policy-language/#the-basics). As an example, a policy can compare the kernel or OS version of the VM to determine if they have the defined values and then set the policy result. 
 
 ### Claims
 
-In attestation report a claim is a name:value pair. Claims contains specific values related to the attested TEE. These elements are associated with the TEE’s hardware and software components which is known as the Trusted-Compute Base (TCB). The software component collects evidence from the TEE and package it as a report. 
+In an evidence a claim is a name:value pair. Claims contains specific values related to the attested confidential computing environment. These elements are associated with the confidential computing environment’s hardware and software components which is known as the Trusted-Compute Base (TCB). The software component collects evidence from the confidential computing environment and package it as a report. 
 
 ## GPU Attestation
-Inspector supports remote attestation of NVIDIA H100 GPU TEEs. The concept of a GPU in TEE is relatively new and enhances the capabilities of a traditional CPU TEE. There are many reosurce intensive applications including AI and amchine learning that require the performance boost provided by GPU hardware acceleration. Many AI models and parameters usually include sensitive data and a confidential GPU offers a secure environment for these workloads, ensuring protection against unauthorized access or tampering.
+Inspector supports remote attestation of NVIDIA H100 GPU confidential computing environments. The concept of a GPU in confidential computing environment is relatively new and enhances the capabilities of a traditional CPU TEE. There are many reosurce intensive applications including AI and amchine learning that require the performance boost provided by GPU hardware acceleration. Many AI models and parameters usually include sensitive data and a confidential GPU offers a secure environment for these workloads, ensuring protection against unauthorized access or tampering.
 
-The GPU itself does not constitute a full TEE for confidential computing and it depends on a confidential CPU TEE. The CPU TEE provides the necessary measurements and attestations to establish trust in the GPU. The CPU TEE securely transfers information to the GPU via a fully encrypted channel. The GPU and the confidential VM exchange keys to create a secure, encrypted communication channel. Currently there are three specific CPUs that can be used to enable confidential compute with NVIDIA’s H100:
+The GPU itself does not constitute a full confidential computing environment for confidential computing and it depends on a confidential CPU TEE. The CPU TEE provides the necessary measurements and attestations to establish trust in the GPU. The CPU TEE securely transfers information to the GPU via a fully encrypted channel. The GPU and the confidential computing environment exchange keys to create a secure, encrypted communication channel. Currently there are three specific CPUs that can be used to enable confidential compute with NVIDIA’s H100:
 * Intel CPUs with support of Trusted Domain eXtensions (TDX)
 * AMD CPUs with support of Secure Encrypted Virtualization with Secure Nested Paging (SEV-SNP)
 * ARM CPUs with support of ARM Confidential Compute Architecture (CCA)
@@ -123,8 +123,8 @@ certificate chain and it also checks if the issuer of the certificate chain belo
 
 
 
-## Supported Trusted Execution Environments
-The following TEEs are currently supported.
+## Supported Confidential Computing Environments
+The following confidential computing environments are currently supported.
 
 ### AMD SEV-SNP (Secure Encrypted Virtualization - Secure Nested Paging)
 AMD SEV-SNP is the latest security feature in AMD's EPYC processors designed to protect virtualized environments, especially in cloud and multi-tenant environments. SEV-SNP builds upon previous AMD security technologies like SEV and SEV-ES to deliver stronger protections against a broader range of attacks.
@@ -148,8 +148,8 @@ The AMD SEV-SNP evidence contains the following fields.
 
 ```
 
-#### Attestation Report and Claims
-AMD SEV-SNP attestation report contains the following claims:
+#### Evidence and Claims
+AMD SEV-SNP evidence contains the following claims:
 
 
 | Claim names                     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
@@ -176,8 +176,8 @@ AMD SEV-SNP attestation report contains the following claims:
 
 #### Evidence Verification
 
-* Attestation report verification
-Inspector verifies that the attestation report is valid and was signed by the submitted VCEK certificate.
+* Evidence verification
+Inspector verifies that the evidence is valid and was signed by the submitted VCEK certificate.
 
 * Certificate chain verification
 Inspector verifies the submitted certificate chain. The verified certificate chain can have one of the following formats.
@@ -231,19 +231,19 @@ Inspector verifies the submitted certificate chain. The verified certificate cha
 ```
 
 * Measurement evidence claim verification 
-Inspector verifies if the measurement value contained in the attestation report is equal to the reference value calculated by using the [sev-snp-measure tool](https://github.com/virtee/sev-snp-measure).
+Inspector verifies if the measurement value contained in the evidence is equal to the reference value calculated by using the [sev-snp-measure tool](https://github.com/virtee/sev-snp-measure).
 
 - Report data evidence claim verification
- Inspector verifies if the hash of additional report data is included in the attestation report is equal to the hash of the report data computed by Inspector (skipped for Azure/Hyper-V).
+ Inspector verifies if the hash of additional report data is included in the evidence is equal to the hash of the report data computed by Inspector (skipped for Azure/Hyper-V).
 
 
 ### Intel TDX
 Intel Trust Domain Extensions (Intel TDX) is currently the newest confidential computing technology by Intel. TDX facilitates the deployment of trust domains (TD), which are hardware-isolated VMs designed to protect sensitive data and applications from unauthorized access.
 Intel TDX uses hardware extensions for encrypting memory and protects both the confidentiality and integrity of the TDs. 
 
-#### Attestation Report and Claims
+#### Evidence and Claims
 In TDX, remote attestation allows external entities to verify the integrity of the system and that the TD has been securely established. 
-In TDX, an attestation report is represented as a JSON Web Token (JWT) issued by the verifier and contains the results of an attestation request. The token is composed of a header, a body, and an attestation signature. The token body, is the main part of the JWT that contains all the claims from TEE. 
+In TDX, an evidence is represented as a JSON Web Token (JWT) issued by the attester and contains the results of an attestation request. The token is composed of a header, a body, and an attestation signature. The token body, is the main part of the JWT that contains all the claims from confidential computing environment. 
 The attestation token claims in TDX are shown below: 
 
 | Claim names                      | Description                                                                                                                                                                                                  |
@@ -320,6 +320,6 @@ The GPU report contains the following fields.
   ]
 }
 ```
-#### Attestation Report and Claims
+#### Evidence and Claims
 
 #### Evidence Verification
