@@ -105,7 +105,7 @@ GPU attestation is the process where the relying party wants to challenge the GP
 
 The GPU attestation flow is shown in the picture below:
 
-![Attestation Flow](./img/GPU-attestaion-flow.png)
+![Attestation Flow](./img/GPU-attestation-flow.png)
 
 Here are the general steps for the attestation workflow using the Inspector: 
 * Relying party requests the attester to attest GPU and the attester sends the attestation request to Inspector
