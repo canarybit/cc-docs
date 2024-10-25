@@ -322,4 +322,59 @@ The GPU report contains the following fields.
 ```
 #### Evidence and Claims
 
+The GPU evidence is collected by the NVIDIA GPU driver running on the server where the GPU is installed. The collected evidence has binary format and it usually contains the following claims.
+
+| Claim names                   | Description                                                                           | 
+|-------------------------------|---------------------------------------------------------------------------------------|
+| sub                           | Identifies the type of attestation (e.g., NVIDIA GPU).                                |  
+| aud                           | The target audience, such as "HOPPER," indicating the hardware generation of the GPU. |  
+| nonce                         | A cryptographic nonce to protect against replay attacks.                              |  
+| exp                           | Timestamps indicating the expiration time of the evidence.                            |  
+| iat                           | Timestamps indicating the issuance of the evidence.                                   |  
+| jti                           | A unique identifier that enables traceability and correlation.                        |  
+| x-nv-gpu-driver-version       | Indicates the specific driver version installed.                                      |  
+| x-nv-gpu-vbios-version        | Indicates the specific VBIOS version installed.                                       |  
+| x-nv-attestation-manufacturer | Provides the manufacturer information.                                                |  
+| x-nv-attestation-type         | Specifies the type of attestation, in this case, for a GPU.                           |  
+| evidenceCertificate           | The certificate chain included in the evidence.                                       |  
+| evidenceSignature             | The digital signature included in the evidence.                                       |  
+| runtimeMeasurement            | Includes the runtime measurements from the GPU.                                       |  
+
+The GPU evidence includes opaque evidence data, where each field ID represents specific metadata or status about the hardware. Here's what each ID typically represents:
+
+
+| Claim names                                       | Description                                                                                                     |
+|---------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| **OPAQUE_FIELD_ID_CERT_ISSUER_NAME**              | The name of the certificate authority that issued the attestation certificate.                                  |
+| **OPAQUE_FIELD_ID_CERT_AUTHORITY_KEY_IDENTIFIER** | An identifier for the certificate authority’s key used to sign the certificate.                                 |
+| **OPAQUE_FIELD_ID_DRIVER_VERSION**                | The version of the GPU driver currently in use.                                                                 |
+| **OPAQUE_FIELD_ID_GPU_INFO**                      | General information about the GPU model, generation, or specifications.                                         |
+| **OPAQUE_FIELD_ID_SKU**                           | Stock Keeping Unit, a unique identifier for the hardware model or variant.                                      |
+| **OPAQUE_FIELD_ID_VBIOS_VERSION**                 | Version of the VBIOS (Video BIOS) firmware installed on the GPU.                                                |
+| **OPAQUE_FIELD_ID_MANUFACTURER_ID**               | Identifies the manufacturer, typically NVIDIA Corporation, as the hardware producer.                            |
+| **OPAQUE_FIELD_ID_TAMPER_DETECTION**              | Contains status information about any tamper detection features, indicating if any tampering is detected.       |
+| **OPAQUE_FIELD_ID_SMC**                           | Security Management Controller status, relating to secure operations management within the GPU.                 |
+| **OPAQUE_FIELD_ID_VPR**                           | Status of Video Protected Region, used in secure video processing.                                              |
+| **OPAQUE_FIELD_ID_NVDEC0_STATUS**                 | Status of the NVDEC (NVIDIA Video Decoder) unit, relevant to secure decoding tasks.                             |
+| **OPAQUE_FIELD_ID_MSRSCNT**                       | Measurement or resource counter, used for tracking secure measurement operations.                               |
+| **OPAQUE_FIELD_ID_CPRINFO**                       | Confidential or secure processing information relevant to attestation or cryptographic handling.                |
+| **OPAQUE_FIELD_ID_BOARD_ID**                      | Identifier for the specific board layout or version of the GPU.                                                 |
+| **OPAQUE_FIELD_ID_CHIP_SKU**                      | SKU identifier for the chip itself, indicating the specific version of the GPU processor.                       |
+| **OPAQUE_FIELD_ID_CHIP_SKU_MOD**                  | Modifier to the chip SKU, giving additional specifics on the chip variant.                                      |
+| **OPAQUE_FIELD_ID_PROJECT**                       | Identifies the internal project name or code for the GPU model.                                                 |
+| **OPAQUE_FIELD_ID_PROJECT_SKU**                   | SKU of the project, defining variations in the project model.                                                   |
+| **OPAQUE_FIELD_ID_PROJECT_SKU_MOD**               | Modifier for the project SKU, for further specification.                                                        |
+| **OPAQUE_FIELD_ID_FWID**                          | Firmware identifier, specifying the particular firmware version or type installed.                              |
+| **OPAQUE_FIELD_ID_PROTECTED_PCIE_STATUS**         | Status of PCIe (Peripheral Component Interconnect Express) protection, related to secure data handling on PCIe. |
+| **OPAQUE_FIELD_ID_INVALID**                       | A placeholder or error field, used when an invalid ID is encountered or when a field is unused.                 |
+
+
 #### Evidence Verification
+
+
+ The core checks that commonly applies on NVIDIA's evidence are:
+ 1- Certificate validation: The evidence includes an attestation certificate issued by NVIDIA or a trusted authority. In verification usually the issuer's digital signature on the certificate is verified.
+ 2- Signature verification: The evidence itself or sections within it are signed using NVIDIA's private key. The verifier uses NVIDIA's public key to verify the signature,
+ 3- Nonce verification: A nonce generated by the verifier is often included in the attestation request. Validating the nonce ensures the report is fresh and wasn't reused.
+ 4- Measurement verification: These measurements capture the state of various GPU components, such as firmware and driver versions, and runtime configurations. The verifier compares these measurements against expected values to ensure no tampering has occurred.
+ 
