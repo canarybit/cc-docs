@@ -11,7 +11,7 @@ Inspector performs the role of a verifier in the RATS architecture.
 Attestation is a core concept in confidential computing.
 It is a process where one peer (the "Attester") produces believable information about itself ("Evidence") to enable a
 remote peer (the "Relying Party") to decide whether to  consider that the Attester is a trustworthy peer.
-Remote attestation procedures are facilitated by Inspector, performing the role of a verifier.
+Inspector facilitates remote attestation procedures, performing the role of a verifier.
 The successful attestation procedure helps establish a trust relationship between the attester (such as a confidential computing environment which is usually a VM (Virtual Machine) that has support for TEE (Trusted Execution Environment)) and relying parties.
 CanaryBit supports confidential computing environments instantiated as confidential virtual machines confidential containers.
 Attestation helps assure third parties that the confidential computing environments has not been tampered with or otherwise compromised.
