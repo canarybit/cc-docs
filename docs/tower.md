@@ -4,7 +4,7 @@
 
 It strictly follows Infrastructure-as-Code (IaC) and cloud security best practices, putting end users firmly in control of their setups. It offers a set of open-source [Terraform](https://terraform.io/)/[OpenTofu](https://opentofu.io/) configurations to help you manage and provision higly secure runtime environments on a wide set of public cloud providers, on-prem or bare-metal setups.
 
-## Deploy on Public Clouds (Open-source)
+## On Public Clouds (FREE Licence)
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
@@ -15,7 +15,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Azure**
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/azure/)
+    [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/azure/)
 
 -   :material-aws:{ .lg .middle } __AWS__
 
@@ -23,7 +23,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **AWS**
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/aws/)
+    [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/aws/)
 
 -   :material-aws:{ .lg .middle } __GCP__
 
@@ -31,12 +31,12 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Terraform configuration for Trusted Execution Environments (TEEs) deployments in **GCP**
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/gcp/)
+    [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/gcp/)
 
 </div>
 
 
-## Deploy On-premise (Premium License)
+## On premise (Premium License)
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
@@ -47,7 +47,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Infrastructure as Code (IaC) configuration for **VMware**
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
+    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
 
 -   :simple-proxmox:{ .lg .middle } __Proxmox__
 
@@ -55,7 +55,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Infrastructure as Code (IaC) configuration for **Proxmox** 
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
+    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
 
 -   :simple-redhatopenshift:{ .lg .middle } __Openshift__
 
@@ -63,7 +63,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Infrastructure as Code (IaC) configuration for **Openshift**
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
+    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
 
 -   :simple-openstack:{ .lg .middle } __Libvirt/KVM__
 
@@ -71,7 +71,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     Infrastructure as Code (IaC) configuration for **Baremetal**
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
+    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
 
 </div>
 
