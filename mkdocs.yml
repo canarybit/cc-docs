@@ -54,8 +54,8 @@ markdown_extensions:
 
 nav:
   - 'Introduction': 'index.md'
-
-  - Basics:  
+  - Getting started:
+    - 'Sign-up ⧉': https://demo.confidentialcloud.io/signup" target="_blank
     - 'Architecture': 'architecture.md'
     - 'Infrastructure': 'infrastructure.md'
     - 'Workflow': 'workflow.md'
@@ -65,28 +65,24 @@ nav:
     #- 'Legal': []
     #- 'Roadmap': []
 
-  - Getting started:       
-    - 'Requirements': 'x509_certificate.md'
-    - 'Create Account ⧉': https://demo.confidentialcloud.io/signup" target="_blank
-
-  - Secure your Infrastructure:
+  - Deploy your Infrastructure:
     - 'Deploy' : 'tower.md'
     - 'Verify' : 'inspector.md'
   
-  - Secure your Applications:
-    - 'Confidential VMs' : []
-    - 'Confidential Containers': []
-    - 'Confidential AI' : []
+  #- Secure your Applications:
+  #  - 'Confidential VMs' : []
+  #  - 'Confidential Containers': []
+  #  - 'Confidential AI' : []
 
-  - Start a Collaboration:
-    - 'Login ⧉': http://demo.confidentialcloud.io" target="_blank
-    - 'Register a dataset': []
-    - 'Register an Application': []
-    - 'Start a collaboration': []
-    - 'Run an Enclave': []
-    - 'Collect results': []
-    - 'Collect attestation': []
-    - 'Collect audit logs': []
+  #- Start a Collaboration:
+  #  - 'Login ⧉': http://demo.confidentialcloud.io" target="_blank
+  #  - 'Register a dataset': []
+  #  - 'Register an Application': []
+  #  - 'Start a collaboration': []
+  #  - 'Run an Enclave': []
+  #  - 'Collect results': []
+  #  - 'Collect attestation': []
+  #  - 'Collect audit logs': []
 
   - 'Support ⧉': https://canarybit.eu" target="_blank
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
