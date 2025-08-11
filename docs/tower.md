@@ -1,17 +1,13 @@
-# Deploy Secure Processing Environments with CanaryBit Tower
+# Orchestrate your confidential environments with CanaryBit Tower
 
 [CanaryBit Tower](https://docs.confidentialcloud.io/architecture/#tower) is an **orchestration** tool to automate the deployment of Trusted Execution Environments (TEEs).
 
 It strictly follows Infrastructure-as-Code (IaC) and cloud security best practices, putting end users firmly in control of their setups. It offers a set of open-source [Terraform](https://terraform.io/)/[OpenTofu](https://opentofu.io/) configurations to help you manage and provision higly secure runtime environments on a wide set of public cloud providers, on-prem or bare-metal setups.
 
-## Download the code 
+## Deploy on Public Clouds (Open-source)
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
-
-### Public Cloud (Open-source)
-
-Currently, CanaryBit Tower supports the following Public Cloud Service Providers:
 
 -   :material-microsoft-azure:{ .lg .middle } __Azure__
 
@@ -37,10 +33,13 @@ Currently, CanaryBit Tower supports the following Public Cloud Service Providers
         
     [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/gcp/)
 
+</div>
 
-### On-premise (Premium License)
 
-Currently, CanaryBit Tower supports the following On-prem setups:
+## Deploy On-premise (Premium License)
+
+<div class="grid cards" markdown>
+<!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
 -   :simple-vmware:{ .lg .middle } __VMware__
 
@@ -76,22 +75,24 @@ Currently, CanaryBit Tower supports the following On-prem setups:
 
 </div>
 
-## Resources Deployment and Attestation
+## Workflow description
 
-**Note:** Before provisioning the resources, [user authentication]() is required towards CanaryBit's Identity Service Provider (IdP).
+1. Deploy the specified amount of Confidential VMs and required virtual resources such as Networks, Security Groups, and more.
 
-During the deployment, the Infrastructure as Code configuration will perform the following activities:
+2. Apply security best-practices to ensure the Confidential VM is robust and the defined user DOES NOT run with `root` privileges.
 
-1. It deploys the specified amount of Confidential VMs and required virtual resources such as Networks, Security Groups, and more.
-2. It applies security best-practices to ensure the Confidential VM is robust and the defined user DOES NOT run with `root` privileges.
-3. It creates a configuration file containing execution details such as: 
+3. Create a Manifest file containing execution details such as: 
    1. the hardware environment to attest (e.g.AMD SNP, Intel TDX, NVIDIA H100)
    2. the cloud provider
    3. the custom policy rules
-   4. ... and more!
-4. It downloads the required `cbclient` and additional binaries, e.g. `cbfinder` used for custom-policy checking
-5. It launches the `cbclient` in **attestation** mode, providing the following information:
-   1. the user's authentication token
-   2. the configuration file
-   3. the Confidential VM information for custom-policy checking
-6. [CC Inspector]() verifies the environment according to the custom policies.
+
+4. Download the required `cbclient` (aka CanaryBit Inspector Agent) and
+   1. collect hardware attestation reports (CPU, GPU and Network)
+   2. collect OS environment configuration
+
+5. Launch the `cbclient` providing the following information:
+   1. the user's authentication token (required)
+   2. a Manifest file (required)
+   3. a custom Policy file (optional)
+   
+6. [CanaryBit Inspector](inspector.md) verifies the environment according to the custom policies.
