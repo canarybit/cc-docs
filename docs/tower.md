@@ -1,8 +1,12 @@
 # Orchestrate TEEs with CanaryBit Tower
 
-[CanaryBit Tower](https://docs.confidentialcloud.io/architecture/#tower) is an **orchestration** tool to automate the deployment of Trusted Execution Environments (TEEs).
+## Requirements
 
-It strictly follows Infrastructure-as-Code (IaC) and cloud security best practices, putting end users firmly in control of their setups. It offers a set of open-source [Terraform](https://terraform.io/)/[OpenTofu](https://opentofu.io/) configurations to help you manage and provision higly secure runtime environments on a wide set of public cloud providers, on-prem or bare-metal setups.
+- A CanaryBit account
+
+- [Terraform](https://developer.hashicorp.com/terraform) or [OpenTofu](https://opentofu.org/docs/) installed
+
+- Credentials to access you cloud infrastructure such as Azure, VMware and others
 
 ## On Public Clouds (FREE Licence)
 
@@ -75,7 +79,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
 </div>
 
-## Workflow description
+## Workflow Description
 
 1. Deploy the specified amount of Confidential VMs and required virtual resources such as Networks, Security Groups, and more.
 
