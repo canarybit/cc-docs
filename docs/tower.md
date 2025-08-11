@@ -82,17 +82,25 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 2. Apply security best-practices to ensure the Confidential VM is robust and the defined user DOES NOT run with `root` privileges.
 
 3. Create a Manifest file containing execution details such as: 
-   1. the hardware environment to attest (e.g.AMD SNP, Intel TDX, NVIDIA H100)
-   2. the cloud provider
-   3. the custom policy rules
+   
+   i. the hardware environment to attest (e.g.AMD SNP, Intel TDX, NVIDIA H100)
+   
+   ii. the cloud provider
+   
+   iii. the custom policy rules
 
 4. Download the required `cbclient` (aka CanaryBit Inspector Agent) and
-   1. collect hardware attestation reports (CPU, GPU and Network)
-   2. collect OS environment configuration
+   
+   i. collect hardware attestation reports (CPU, GPU and Network)
+   
+   ii. collect OS environment configuration
 
 5. Launch the `cbclient` providing the following information:
-   1. the user's authentication token (required)
-   2. a Manifest file (required)
-   3. a custom Policy file (optional)
+   
+   i. the user's authentication token (required)
+   
+   ii. a Manifest file (required)
+   
+   iii. a custom Policy file (optional)
    
 6. [CanaryBit Inspector](inspector.md) verifies the environment according to the custom policies.
