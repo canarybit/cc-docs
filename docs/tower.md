@@ -1,4 +1,4 @@
-# Orchestrate your confidential environments with CanaryBit Tower
+# Orchestrate TEEs with CanaryBit Tower
 
 [CanaryBit Tower](https://docs.confidentialcloud.io/architecture/#tower) is an **orchestration** tool to automate the deployment of Trusted Execution Environments (TEEs).
 
@@ -13,7 +13,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Azure**
+    Infrastructure as Code (IaC) configuration for **Azure**
         
     [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/azure/)
 
@@ -21,7 +21,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **AWS**
+    Infrastructure as Code (IaC) configuration for **AWS**
         
     [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/aws/)
 
@@ -29,7 +29,7 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 
     ---
 
-    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **GCP**
+    Infrastructure as Code (IaC) configuration for **GCP**
         
     [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/gcp/)
 
