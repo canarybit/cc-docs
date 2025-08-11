@@ -9,7 +9,9 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
-### Public Cloud (FREE Apache-2.0 license)
+### Public Cloud (Open-source)
+
+Currently, CanaryBit Tower supports the following Public Cloud Service Providers:
 
 -   :material-microsoft-azure:{ .lg .middle } __Azure__
 
@@ -35,7 +37,10 @@ It strictly follows Infrastructure-as-Code (IaC) and cloud security best practic
         
     [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/gcp/)
 
-### On-premis (Premium License)
+
+### On-premise (Premium License)
+
+Currently, CanaryBit Tower supports the following On-prem setups:
 
 -   :simple-vmware:{ .lg .middle } __VMware__
 
