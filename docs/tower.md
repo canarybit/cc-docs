@@ -2,46 +2,70 @@
 
 [CanaryBit Tower](https://docs.confidentialcloud.io/architecture/#tower) is an **orchestration** tool to automate the deployment of Trusted Execution Environments (TEEs).
 
-It strictly follows Infrastructure-as-Code (IaC) and cloud security best practices, putting end-users firmly in control of their setups. It offers a set of open-source [Terraform](https://terraform.io/)/[OpenTofu](https://opentofu.io/) configurations to help you manage and provision higly secure runtime environments on a wide set of public cloud providers, on-prem or bare-metal setups.
+It strictly follows Infrastructure-as-Code (IaC) and cloud security best practices, putting end users firmly in control of their setups. It offers a set of open-source [Terraform](https://terraform.io/)/[OpenTofu](https://opentofu.io/) configurations to help you manage and provision higly secure runtime environments on a wide set of public cloud providers, on-prem or bare-metal setups.
 
 ## Download the code 
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
+### Public Cloud (FREE Apache-2.0 license)
+
 -   :material-microsoft-azure:{ .lg .middle } __Azure__
 
     ---
+
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **Azure**
         
     [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/azure/)
 
 -   :material-aws:{ .lg .middle } __AWS__
 
     ---
+
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **AWS**
         
     [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/aws/)
 
 -   :material-aws:{ .lg .middle } __GCP__
 
     ---
+
+    Terraform configuration for Trusted Execution Environments (TEEs) deployments in **GCP**
         
     [:octicons-link-external-16:{ .lg .middle }  GitHub](https://github.com/canarybit/tower/tree/main/gcp/)
 
--   :simple-openstack:{ .lg .middle } __Openstack__
+### On-premis (Premium License)
+
+-   :simple-vmware:{ .lg .middle } __VMware__
 
     ---
+
+    Infrastructure as Code (IaC) configuration for **VMware**
 
     [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
 
--   :simple-openstack:{ .lg .middle } __Openstack__
+-   :simple-proxmox:{ .lg .middle } __Proxmox__
 
     ---
+
+    Infrastructure as Code (IaC) configuration for **Proxmox** 
 
     [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
 
 -   :simple-redhatopenshift:{ .lg .middle } __Openshift__
 
     ---
+
+    Infrastructure as Code (IaC) configuration for **Openshift**
+
+    [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
+
+-   :simple-openstack:{ .lg .middle } __Libvirt/KVM__
+
+    ---
+
+    Infrastructure as Code (IaC) configuration for **Baremetal**
 
     [:octicons-link-external-16:{ .lg .middle }  Premium License](https://github.com/canarybit/tower)
 
