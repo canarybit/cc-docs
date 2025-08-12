@@ -1,17 +1,17 @@
 
-# CanaryBit Inspector
+# CanaryBit Tower
 
-Orchestrate Trusted Execution Environments (TEE)
+*Orchestrate Trusted Execution Environments (TEE).*
 
 ## Requirements
 
-- A CanaryBit account
-
 - [Terraform](https://developer.hashicorp.com/terraform) or [OpenTofu](https://opentofu.org/docs/) installed
 
-- Credentials to access you cloud infrastructure such as Azure, VMware and others
+- Credentials to access your cloud platform (e.g Azure, VMware and others)
 
-## On Public Clouds (FREE Licence)
+## Public Clouds
+
+The below configurations are free to use under the Apache-2.0 licence.
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
@@ -20,30 +20,32 @@ Orchestrate Trusted Execution Environments (TEE)
 
     ---
 
-    Infrastructure as Code (IaC) configuration for **Azure**
+    Infrastructure as Code (IaC) configuration for Confidential VM deployments in **Azure**
         
-    [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/azure/)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main/azure/)
 
 -   :material-aws:{ .lg .middle } __AWS__
 
     ---
 
-    Infrastructure as Code (IaC) configuration for **AWS**
+    Infrastructure as Code (IaC) configuration for Confidential VM deployments in **AWS**
         
-    [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/aws/)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main/aws/)
 
 -   :material-aws:{ .lg .middle } __GCP__
 
     ---
 
-    Infrastructure as Code (IaC) configuration for **GCP**
+    Infrastructure as Code (IaC) configuration for Confidential VM deployments in **GCP**
         
-    [:octicons-link-external-16:{ .lg .middle }  Open-source ](https://github.com/canarybit/tower/tree/main/gcp/)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main/gcp/)
 
 </div>
 
 
-## On premise (Premium License)
+## On-Premise 
+
+A Premium License is required for the following configurations.
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
@@ -52,25 +54,25 @@ Orchestrate Trusted Execution Environments (TEE)
 
     ---
 
-    Infrastructure as Code (IaC) configuration for **VMware**
+    Infrastructure as Code (IaC) configuration for Confidential VM deployments in **VMware**
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
+    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
 
 -   :simple-proxmox:{ .lg .middle } __Proxmox__
 
     ---
 
-    Infrastructure as Code (IaC) configuration for **Proxmox** 
+    Infrastructure as Code (IaC) configuration for Confidential VM deployments in **Proxmox** 
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
+    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
 
 -   :simple-redhatopenshift:{ .lg .middle } __Openshift__
 
     ---
 
-    Infrastructure as Code (IaC) configuration for **Openshift**
+    Infrastructure as Code (IaC) configuration for Confidential VM deployments in **Openshift**
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
+    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
 
 -   :simple-openstack:{ .lg .middle } __Libvirt/KVM__
 
@@ -78,36 +80,36 @@ Orchestrate Trusted Execution Environments (TEE)
 
     Infrastructure as Code (IaC) configuration for **Baremetal**
 
-    [:octicons-link-external-16:{ .lg .middle }  Premium License ](https://github.com/canarybit/tower)
+    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
 
 </div>
 
-## Workflow Description
+## Configuration Workflow 
 
-1. Deploy the specified amount of Confidential VMs and required virtual resources such as Networks, Security Groups, and more.
+The provided configuration performs the following steps on the selected cloud platform:
 
-2. Apply security best-practices to ensure the Confidential VM is robust and the defined user DOES NOT run with `root` privileges.
+1. it deploys the Confidential VMs and the required additional virtual resources (e.g. networks, security-groups, etc...)
 
-3. Create a Manifest file containing execution details such as: 
-   
-   i. the hardware environment to attest (e.g.AMD SNP, Intel TDX, NVIDIA H100)
-   
-   ii. the cloud provider
-   
-   iii. the custom policy rules
+2. it applies security best-practices to ensure Confidential VM configuration is robust (e.g. disable password login, perform OS updates, open only the specified ports and more) and prevents users to run with `root` privileges.
 
-4. Download the required `cbclient` (aka CanaryBit Inspector Agent) and
-   
-   i. collect hardware attestation reports (CPU, GPU and Network)
-   
-   ii. collect OS environment configuration
+### Add-on: Remote Attestation
 
-5. Launch the `cbclient` providing the following information:
+The configuration can be extended by adding [CanaryBit Inspector](inspector.md) Remote Attestation service to verify the actual deployement of the Confidential VMs on the selected cloud platform, in order to guarantee the highest level of security of your execution environment. Specifically:
+
+1. it creates a Manifest file containing execution details such as: 
    
-   i. the user's authentication token (required)
+    - the hardware environment to verify (e.g. AMD SNP, Intel TDX, NVIDIA H100, etc...),
+    - the custom policy rules;
+
+2. it downloads and runs the CanaryBit Inspector-*agent* (`cbclient`) which
+
+    - collects hardware attestation reports (CPU, GPU and Network),
+    - collects OS environment configuration;
+    
+    by providing the following information:
+    
+    - the user's authentication token,
+    - the Manifest file,
+    - a custom Policy file (optional).
    
-   ii. a Manifest file (required)
-   
-   iii. a custom Policy file (optional)
-   
-6. [CanaryBit Inspector](inspector.md) verifies the environment according to the custom policies.
+3. it shut-downs/crashes the Confidential VM according to selected verification exit policy.
