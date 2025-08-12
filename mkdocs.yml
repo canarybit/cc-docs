@@ -65,23 +65,20 @@ nav:
     #- 'Legal': []
     #- 'Roadmap': []
 
-  - Products \& Tools:
+  - Products & Tools:
     - 'Tower': 'tower.md'
     - 'Inspector': 'inspector.md'
     - 'Surveyor': 'surveyor.md'
   
   - Private:
     - 'Architecture': []
-    - 'Licenses': []
     - 'Setup': []
-  
-  - Reseller Programme:
-    - 'Private': []
-    - SaaS:
-      - 'Architecture': []
-      - 'Licenses': []
-      - 'Setup': []
-      - 'Setup': []
+    - 'Licenses': []
+
+  - SaaS:
+    - 'Architecture': []
+    - 'Setup': []
+    - 'Licenses': []
 
   #- Secure your Applications:
   #  - 'Confidential VMs' : []
