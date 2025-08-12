@@ -95,7 +95,7 @@ nav:
   #  - 'Collect attestation': []
   #  - 'Collect audit logs': []
 
-  - CanaryBit Studio (Under Development):
+  - CanaryBit Studio (v1-alpha):
     - 'Sign-up ⧉': []
     - Start a Collaboration: 
       - 'Register a Dataset': []
