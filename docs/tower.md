@@ -1,4 +1,7 @@
-# Orchestrate TEEs with CanaryBit Tower
+
+# CanaryBit Inspector
+
+Orchestrate Trusted Execution Environments (TEE)
 
 ## Requirements
 

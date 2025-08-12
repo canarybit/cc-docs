@@ -1,4 +1,6 @@
-# Verify your infrastructure security with CC Inspector
+# CanaryBit Inspector
+
+Verify Trusted Execution Environments (TEE) characteristics.
 
 CanaryBit [Inspector](https://docs.confidentialcloud.io/architecture/#inspector) is a Confidential Computing [Remote Attestation (RA)]() service for Confidential VMs (cVM) and containers deployed in Public or Private cloud infrastructures.
 
