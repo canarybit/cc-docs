@@ -54,20 +54,35 @@ markdown_extensions:
 
 nav:
   - 'Introduction': 'index.md'
-  - 'Sign-up ⧉': https://demo.confidentialcloud.io/signup" target="_blank
   - Getting started:
-    - 'Architecture': 'architecture.md'
-    - 'Infrastructure': 'infrastructure.md'
-    - 'Workflow': 'workflow.md'
+    - 'The risks in the Cloud': []
+    - 'Compliance': 'compliance.md'
+    #- 'Architecture': 'architecture.md'
+    #- 'Infrastructure': 'infrastructure.md'
+    #- 'Workflow': 'workflow.md'
     #- 'Encryption': []
     #- 'Security': []
-    - 'Compliance': 'compliance.md'
     #- 'Legal': []
     #- 'Roadmap': []
 
-  - 'Deploy' : 'tower.md'
-  - 'Verify' : 'inspector.md'
+  - Products \& Tools:
+    - 'Tower': 'tower.md'
+    - 'Inspector': 'inspector.md'
+    - 'Surveyor': 'surveyor.md'
   
+  - Private:
+    - 'Architecture': []
+    - 'Licenses': []
+    - 'Setup': []
+  
+  - Reseller Programme:
+    - 'Private': []
+    - SaaS:
+      - 'Architecture': []
+      - 'Licenses': []
+      - 'Setup': []
+      - 'Setup': []
+
   #- Secure your Applications:
   #  - 'Confidential VMs' : []
   #  - 'Confidential Containers': []
@@ -82,6 +97,15 @@ nav:
   #  - 'Collect results': []
   #  - 'Collect attestation': []
   #  - 'Collect audit logs': []
+
+  - CanaryBit Studio (Under Development):
+    - 'Sign-up ⧉': []
+    - Start a Collaboration: 
+      - 'Register a Dataset': []
+      - 'Register an Application': []
+      - 'Collect the Results': []
+    - Auditing:
+      - 'Get the Reports': []
 
   - 'Support ⧉': https://canarybit.eu" target="_blank
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
