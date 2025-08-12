@@ -69,6 +69,14 @@ nav:
     - 'Tower': 'tower.md'
     - 'Inspector': 'inspector.md'
     - 'Surveyor': 'surveyor.md'
+    - Studio (v1-alpha):
+      - 'Sign-up ⧉': []
+      - Start a Collaboration: 
+        - 'Register a Dataset': []
+        - 'Register an Application': []
+        - 'Collect the Results': []
+      - Auditing:
+        - 'Get the Reports': []
   
   - Private:
     - 'Architecture': []
@@ -94,15 +102,6 @@ nav:
   #  - 'Collect results': []
   #  - 'Collect attestation': []
   #  - 'Collect audit logs': []
-
-  - CanaryBit Studio (v1-alpha):
-    - 'Sign-up ⧉': []
-    - Start a Collaboration: 
-      - 'Register a Dataset': []
-      - 'Register an Application': []
-      - 'Collect the Results': []
-    - Auditing:
-      - 'Get the Reports': []
 
   - 'Support ⧉': https://canarybit.eu" target="_blank
   - 'Book a Demo ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
