@@ -1,0 +1,98 @@
+site_name: Confidential Cloud
+site_url: https://docs.confidentialcloud.io
+site_description: >-
+  CanaryBit Confidential Cloud is a virtual infrastructure security solution for 
+  Businesses and Public Authorities that are willing to collaborate 
+  with sensitive data and algorithms, and in need of a hardware-encrypted 
+  execution environment protected from unauthorized access.
+site_author: Canary Bit AB
+copyright: >-
+  Developed by <a href="https://www.canarybit.eu" target="_blank">CanaryBit</a> 
+
+#repo_url: https://github.com/canarybit
+#repo_name: "/canarybit"
+
+edit_uri: ""
+
+strict: true
+
+theme:
+  name: material
+  font: false
+  logo: 'img/logo.png'
+  favicon: 'img/favicon.png'
+  palette:
+    - scheme: canarybit
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - navigation.expand
+    - navigation.tabs
+    
+    
+extra:
+  social:
+    - icon: material/web
+      link: https://www.canarybit.eu
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/canarybit/
+
+extra_css:
+  - stylesheets/canarybit.css
+        
+plugins:
+  - search
+  - tags
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - Introduction: 
+    - 'Overview': 'index.md'
+    - 'FREE Trial ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
+    - 'Customer Support ⧉': https://canarybit.eu" target="_blank
+
+  - Getting started:
+    #- 'The risks in the Cloud': 'risks.md'
+    - 'Compliance': 'compliance.md'
+    - 'Supported Technologies': 'supported-technologies.md'
+    - 'Read more ⧉': https://canarybit.eu/blog" target="_blank  
+    #- 'Infrastructure': 'infrastructure.md'
+    #- 'Workflow': 'workflow.md'
+    #- 'Encryption': []
+    #- 'Security': []
+    #- 'Legal': []
+    #- 'Roadmap': []
+
+  - Products & Tools:
+    - 'Tower': 'tower.md'
+    - 'Inspector': 'inspector.md'
+    - 'Surveyor': 'surveyor.md'
+  
+  #- Deployments: 
+  #  - 'Overview': 'deployments.md'
+  #  - 'On-premise / Private': 'deployment-private.md'
+  #  - 'SaaS': 'deployment-saas.md'
+
+  - / : []
+
+  - Studio (coming soon!):
+    - Overview: 'studio.md'
+    - 'Sign up ⧉': https://www.canarybit.eu/" target="_blank
+    # - Manage Account: 'studio-account.md'
+    # - Collaborate: 
+    #  - 'Register a Dataset': 'studio-collaboration.md'
+    #  - 'Register an Application': 'studio-collaboration.md'
+    #  - 'Collect the Results': 'studio-collaboration.md'
+    #- Auditing:
+    #  - 'Collect the Reports': 'studio-auditing.md'
+
+  - 'Login ⧉': https://www.canarybit.eu/" target="_blank
