@@ -9,5 +9,8 @@ Well known examples impacting European-based companies using e.g. MS Azure, AWS,
 
 Data and algorithms processed in Confidential Cloud **cannot be technically accessed** by anyone else than their owners.
 
-> [!TIP]
-> CanaryBit is incorporated in 🇸🇪 Sweden and it is **controlled** exclusively by 🇪🇺 European entities.
+## CanaryBit - Company Status
+
+CanaryBit is incorporated in 🇸🇪 Sweden and controlled **exclusively** by 🇪🇺 European entities.
+
+The list of CanaryBit shareholders is publicly available on the [company webpage](https://www.canarybit.eu/about-us/).
