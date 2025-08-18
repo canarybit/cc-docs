@@ -76,6 +76,17 @@ nav:
     - 'Tower': 'tower.md'
     - 'Inspector': 'inspector.md'
     - 'Surveyor': 'surveyor.md'
+    - '---': []
+    - 'Studio UI (Work in Progress)': 'studio.md'
+      #- Overview: 'studio.md'
+      #- 'Login ⧉': https://www.canarybit.eu/" target="_blank
+      # - Manage Account: 'studio-account.md'
+      # - Collaborate: 
+      #  - 'Register a Dataset': 'studio-collaboration.md'
+      #  - 'Register an Application': 'studio-collaboration.md'
+      #  - 'Collect the Results': 'studio-collaboration.md'
+      #- Auditing:
+      #  - 'Collect the Reports': 'studio-auditing.md'
   
   #- Deployments: 
   #  - 'Overview': 'deployments.md'
@@ -83,16 +94,6 @@ nav:
   #  - 'SaaS': 'deployment-saas.md'
 
   - / : []
-
-  - Studio (coming soon!):
-    - Overview: 'studio.md'
-    - 'Sign up ⧉': https://www.canarybit.eu/" target="_blank
-    # - Manage Account: 'studio-account.md'
-    # - Collaborate: 
-    #  - 'Register a Dataset': 'studio-collaboration.md'
-    #  - 'Register an Application': 'studio-collaboration.md'
-    #  - 'Collect the Results': 'studio-collaboration.md'
-    #- Auditing:
-    #  - 'Collect the Reports': 'studio-auditing.md'
-
-  - 'Login ⧉': https://www.canarybit.eu/" target="_blank
+  
+  - 'Sign up ⧉': https://www.canarybit.eu/contact" target="_blank
+   
