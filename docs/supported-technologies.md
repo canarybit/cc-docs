@@ -47,7 +47,9 @@ From 5th Gen Xeon Scalable Processors (Family Name: `Emerald Rapids`):
 
 ## Operating Systems
 
-Linux (kernel v6.4+)
+### Linux 
+
+Kernel: `v6.4+`
 
 - Ubuntu
 - RedHat Enterprise Linux - RHEL
@@ -60,4 +62,4 @@ Linux (kernel v6.4+)
 
 ## Kubernetes / Containers
 - [Kubernetes](https://kubernetes.io/)-based Platform with support for [kata-containers](https://katacontainers.io/)
-- [Openshift](https://www.redhat.com/en/technologies/cloud-computing/openshift): v4.20+
+- [Openshift](https://www.redhat.com/en/technologies/cloud-computing/openshift) `v4.20+`
