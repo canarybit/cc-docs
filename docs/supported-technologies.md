@@ -52,7 +52,7 @@ From 5th Gen Xeon Scalable Processors (Family Name: `Emerald Rapids`):
 Kernel: `v6.4+`
 
 - Ubuntu
-- RedHat Enterprise Linux - RHEL
+- RedHat Enterprise Linux (RHEL)
 - AmazonLinux
 - OpenSuse
 - NixOS
