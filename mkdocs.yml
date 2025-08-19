@@ -75,7 +75,7 @@ nav:
   - Products & Tools:
     - 'Tower': 'tower.md'
     - 'Inspector': 'inspector.md'
-    - 'Surveyor': 'surveyor.md'
+    #- 'Surveyor': 'surveyor.md'
     - '---': []
     - 'Studio UI (Work in Progress)': 'studio.md'
       #- Overview: 'studio.md'
