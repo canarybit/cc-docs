@@ -52,7 +52,7 @@ The below configurations are free to use under the Apache-2.0 licence.
 
 ### On-Premise 
 
-A Premium License is required for the following configurations.
+A **Premium License** is required for the following configurations.
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
@@ -63,7 +63,7 @@ A Premium License is required for the following configurations.
 
     Infrastructure as Code (IaC) configuration for **VMware** Confidential VMs
 
-    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
+    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
 -   :simple-proxmox:{ .lg .middle } __Proxmox__
 
@@ -71,7 +71,7 @@ A Premium License is required for the following configurations.
 
     Infrastructure as Code (IaC) configuration for **Proxmox** Confidential VMs
 
-    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
+    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
 -   :simple-redhatopenshift:{ .lg .middle } __Openshift__
 
@@ -79,7 +79,7 @@ A Premium License is required for the following configurations.
 
     Infrastructure as Code (IaC) configuration for **Openshift** Confidential VMs/Nodes
 
-    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
+    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
 -   :simple-openstack:{ .lg .middle } __Libvirt/KVM__
 
@@ -87,7 +87,7 @@ A Premium License is required for the following configurations.
 
     Infrastructure as Code (IaC) configuration for **Baremetal** Confidential VMs
 
-    [:material-diamond-stone:{ .lg .middle }  Contact us! ](https://www.canarybit.eu/contact)
+    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
 </div>
    
@@ -130,7 +130,7 @@ In addition to the standard configuration, the `cloud-init` file will:
    
 1. create a Manifest file containing execution details such as: 
    
-    - the [supported](supported-technologies.md) hardware environment to verify;
+    - the [supported](supported-setups.md) hardware environment to verify;
     - the custom policies
 
 2. create the `canarybit` user-group and assign it to the user (e.g. `cbuser`), limiting its `root` permissions;

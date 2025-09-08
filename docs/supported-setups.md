@@ -1,6 +1,6 @@
-# Supported Technologies
+# Supported Setups
 
-CanaryBit products and solutions have been extensively tested with the following technologies and different combinations.
+CanaryBit products and solutions have been extensively tested with different setups.
 
 ## Hardware
 

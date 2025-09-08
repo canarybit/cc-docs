@@ -7,7 +7,7 @@ CanaryBit [Inspector](https://docs.confidentialcloud.io/architecture/#inspector)
 ## Requirements
 
 - A [CanaryBit Licence](inspector.md#licences)
-- A [supported](supported-technologies.md) technology stack.
+- A [supported](supported-setups.md) technology stack.
     
 ## Verification
 

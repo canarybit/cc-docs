@@ -63,7 +63,7 @@ nav:
   - Getting started:
     #- 'The risks in the Cloud': 'risks.md'
     - 'Compliance': 'compliance.md'
-    - 'Supported Technologies': 'supported-technologies.md'
+    - 'Supported Setups': 'supported-setups.md'
     - 'Read more ⧉': https://canarybit.eu/blog" target="_blank  
     #- 'Infrastructure': 'infrastructure.md'
     #- 'Workflow': 'workflow.md'
