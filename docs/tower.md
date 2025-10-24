@@ -94,7 +94,9 @@ A **Premium License** is required for the following configurations.
 
 ## Deployment Configuration 
 
-### Default
+CanaryBit Tower can deploy Confidential VMs with and without an additional verification step (recommended).
+
+### Default (unverified)
 
 The provided configuration performs the following steps on the selected infrastructure provider:
 
@@ -122,9 +124,9 @@ The provided configuration performs the following steps on the selected infrastr
     package_reboot_if_required: true
     ```
 
-*⚠️ **NOTE:** The security characteritstic of this environment are not verified! In this case, you are still trusting the hypervisor/infrastructure provider. For full-privacy and highest security level, verify the environment with CanaryBit Attestation service.*
+*⚠️ **UNVERIFIED:** The security characteritstic of this environment are not verified! You are still trusting the hypervisor/infrastructure provider. For full-privacy and highest security level, verify the environment with CanaryBit Attestation service.*
 
-### CanaryBit Attestation
+### Attested (verified)
 
 CanaryBit Attestation service can be easily added as part of the CanaryBit Tower configuration to verify the security characteristics of a Confidential VM, once the resource is correclty deployed on the target infrastructure provider.
 
@@ -134,3 +136,5 @@ In addition to the standard configuration, the `cloud-init` file will:
 2. Collect information about the current execution environment;
 3. Download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying the (optional) Custom Policies; 
 4. Return the final **CanaryBit report**. Logs and reports are available for **external logging & auditing** activities.
+
+✅ **VERIFIED**: The security of this environment has been verified by CanaryBit Inspector Attestation service and the final report(s) can be collected for **auditing** activities.
