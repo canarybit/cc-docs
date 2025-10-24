@@ -92,7 +92,7 @@ A **Premium License** is required for the following configurations.
 </div>
    
 
-## Deployment Configuration 
+## Deployment 
 
 CanaryBit Tower can deploy Confidential VMs with and without an additional verification step (recommended).
 
