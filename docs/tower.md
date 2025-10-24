@@ -139,4 +139,4 @@ In addition to the standard configuration, the `cloud-init` file will:
 3. Download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying the (optional) Custom Policies; 
 4. Return the final **CanaryBit report**. Logs and reports are available for **external logging & auditing** activities.
 
-✅ **VERIFIED**: The security of this environment has been verified by CanaryBit Inspector Attestation service and the final report(s) can be collected for **auditing** activities.
+✅ **VERIFIED**: The security of this **environment has been verified** by CanaryBit Inspector Attestation service and the final report(s) can be collected for auditing activities.
