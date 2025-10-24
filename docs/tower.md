@@ -124,9 +124,9 @@ The provided configuration performs the following steps on the selected infrastr
     package_reboot_if_required: true
     ```
 
-*❗ **UNVERIFIED:** The security characteritstic of this environment are not verified! 
-**You are still trusting the hypervisor/infrastructure provider.**
-For full-privacy and highest security level, verify the environment with CanaryBit Attestation service.*
+❗ **UNVERIFIED**: The security characteritstic of this environment are not verified! **You are still trusting the hypervisor/infrastructure provider.**
+
+For full-privacy and highest security level, verify the environment with CanaryBit Attestation service.
 
 ### Attested (verified)
 
