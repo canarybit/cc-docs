@@ -1,3 +1,5 @@
+
+####Welcome!####
 # CanaryBit Confidential Cloud
 
 [Confidential Cloud](http://confidentialcloud.io) is a suite of advanced solutions developed by CanaryBit, designed to provide **Enterprises** and the **Public Sector** with robust tools for infrastructure and AI security.

@@ -8,9 +8,9 @@ CanaryBit [Tower](https://docs.confidentialcloud.io/architecture/#inspector) is 
 
 ## Requirements
 
-- A CanaryBit account only if [Attestation](#confidential-computing-attestation) add-on is enabled!
+- A CanaryBit Account, if [Attestation](#confidential-computing-attestation) is required;
 
-- [Terraform](https://developer.hashicorp.com/terraform) or [OpenTofu](https://opentofu.org/docs/) installed
+- [Terraform](https://developer.hashicorp.com/terraform) or [OpenTofu](https://opentofu.org/docs/) installed;
 
 - CLI access to your cloud platform (e.g [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest), [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html), etc...)
 
@@ -18,7 +18,7 @@ CanaryBit [Tower](https://docs.confidentialcloud.io/architecture/#inspector) is 
 
 ### Public Clouds
 
-The below configurations are free to use under the Apache-2.0 licence.
+The below configurations are **free to use** under the Apache-2.0 licence.
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
@@ -29,7 +29,7 @@ The below configurations are free to use under the Apache-2.0 licence.
 
     Infrastructure as Code (IaC) configuration for **Azure** Confidential VMs
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main/azure/)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
 
 -   :material-aws:{ .lg .middle } __AWS__
 
@@ -37,7 +37,7 @@ The below configurations are free to use under the Apache-2.0 licence.
 
     Infrastructure as Code (IaC) configuration for **AWS** Confidential VMs
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main/aws/)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
 
 -   :material-aws:{ .lg .middle } __GCP__
 
@@ -45,7 +45,7 @@ The below configurations are free to use under the Apache-2.0 licence.
 
     Infrastructure as Code (IaC) configuration for in **GCP** Confidential VMs
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main/gcp/)
+    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
 
 </div>
 
@@ -94,7 +94,7 @@ A **Premium License** is required for the following configurations.
 
 ## Deployment Configuration 
 
-### Standard
+### Default
 
 The provided configuration performs the following steps on the selected infrastructure provider:
 
@@ -122,20 +122,15 @@ The provided configuration performs the following steps on the selected infrastr
     package_reboot_if_required: true
     ```
 
+*⚠️ **NOTE:** The security characteritstic of this environment are not verified! In this case, you are still trusting the hypervisor/infrastructure provider. For full-privacy and highest security level, verify the environment with CanaryBit Attestation service.*
+
 ### CanaryBit Attestation
 
-CanaryBit Attestation service can be easily added as part of the CanaryBit Tower configuration to verify the correctness of a Confidential VM, once the resource is correclty deployed on the preferred infrastructure provider.
+CanaryBit Attestation service can be easily added as part of the CanaryBit Tower configuration to verify the security characteristics of a Confidential VM, once the resource is correclty deployed on the target infrastructure provider.
 
 In addition to the standard configuration, the `cloud-init` file will:
    
-1. create a Manifest file containing execution details such as: 
-   
-    - the [supported](supported-setups.md) hardware environment to verify;
-    - the custom policies
-
-2. create the `canarybit` user-group and assign it to the user (e.g. `cbuser`), limiting its `root` permissions;
-3. collect information about the current executiont environment;
-4. download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying the custom Policies; 
-5. return the final **CanaryBit report** upon a successful verification process. Logs and reports are also available for **external logging & auditing** services.
-
-CanaryBit Tower comes with a `cloud-init` **generator** to ensure the right configuration is deployed.
+1. Create a `canarybit` user-group and assign it to the user (e.g. `cbuser`), limiting its `root` permissions;
+2. Collect information about the current execution environment;
+3. Download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying the (optional) Custom Policies; 
+4. Return the final **CanaryBit report**. Logs and reports are available for **external logging & auditing** activities.

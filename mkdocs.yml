@@ -27,7 +27,7 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.expand
-    - navigation.tabs
+    #- navigation.tabs
     
     
 extra:
@@ -55,16 +55,12 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - Introduction: 
-    - 'Overview': 'index.md'
-    - 'FREE Trial ⧉': https://www.canarybit.eu/book-a-demo/" target="_blank
-    - 'Customer Support ⧉': https://canarybit.eu" target="_blank
+  - 'Overview': 'index.md'
 
   - Getting started:
     #- 'The risks in the Cloud': 'risks.md'
     - 'Compliance': 'compliance.md'
     - 'Supported Setups': 'supported-setups.md'
-    - 'Read more ⧉': https://canarybit.eu/blog" target="_blank  
     #- 'Infrastructure': 'infrastructure.md'
     #- 'Workflow': 'workflow.md'
     #- 'Encryption': []
@@ -76,8 +72,7 @@ nav:
     - 'Tower': 'tower.md'
     - 'Inspector': 'inspector.md'
     #- 'Surveyor': 'surveyor.md'
-    - '---': []
-    - 'Studio UI (Work in Progress)': 'studio.md'
+    - 'Studio UI (coming soon!)': 'studio.md'
       #- Overview: 'studio.md'
       #- 'Login ⧉': https://www.canarybit.eu/" target="_blank
       # - Manage Account: 'studio-account.md'
@@ -92,8 +87,7 @@ nav:
   #  - 'Overview': 'deployments.md'
   #  - 'On-premise / Private': 'deployment-private.md'
   #  - 'SaaS': 'deployment-saas.md'
-
-  - / : []
-  
-  - 'Sign up ⧉': https://www.canarybit.eu/contact" target="_blank
-   
+  - --- : []
+  - 'Create an Account ⧉': https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F" target="_blank
+  - 'Customer Support ⧉': https://canarybit.eu" target="_blank
+ 

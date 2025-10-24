@@ -2,12 +2,13 @@
 
 *Audit Trusted Execution Environments (TEE).*
 
-CanaryBit [Inspector](https://docs.confidentialcloud.io/architecture/#inspector) is a Confidential Computing [Attestation (RA)]() service. It helps end-users verify the security of their processing environments and ensure user-defined policies are met before any application run or data analysis.
+CanaryBit [Inspector](https://docs.confidentialcloud.io/architecture/#inspector) is a Confidential Computing [Attestation]() service. It helps end-users verify the security of their processing environments and ensure user-defined policies are met before any application run or data analysis.
 
 ## Requirements
 
-- A [CanaryBit Licence](inspector.md#licences)
-- A [supported](supported-setups.md) technology stack.
+- A CanaryBit Account;
+- A [CanaryBit Licence](inspector.md#licences);
+- A target environment with [supported](supported-setups.md) technology.
     
 ## Verification
 
@@ -48,7 +49,7 @@ CanaryBit Inspector can be deployed on-prem for internal use or offered as a ser
 
 ### Free Trial
 
-Request a 1-month FREE trial via our [contact form](https://www.canarybit.eu/contacts)!
+Request a 1-month FREE trial via our [contact form](https://www.canarybit.eu/contact)!
 
 ### Enterprise
 
