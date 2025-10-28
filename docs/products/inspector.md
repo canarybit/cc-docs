@@ -1,14 +1,17 @@
 # CanaryBit Inspector
 
-*Audit Trusted Execution Environments (TEE).*
+*Audits & Certifies Trusted Execution Environments (TEE).*
 
 CanaryBit [Inspector](https://docs.confidentialcloud.io/architecture/#inspector) is a Confidential Computing [Attestation]() service. It helps end-users verify the security of their processing environments and ensure user-defined policies are met before any application run or data analysis.
+
+It validates that the underlying platform has support for and uses Confidential Computing capabilties enabled by the platform's instruction set architecture and firmware.
+CanaryBit Inspector performs the validation based on an Attestation Report provided by a software client deployed in the TEE. The client software collects information on the hardware, firmware, and software level to attest its trustworthiness. CanaryBit Inspector monitors the infrastructure and enforces customer-defined deployment policies by destroying infrastructure components that fail to meet the deployment policy.
 
 ## Requirements
 
 - A CanaryBit Account;
-- A [CanaryBit Licence](inspector.md#licences);
-- A target environment with [supported](supported-setups.md) technology.
+- A [CanaryBit Licence](./inspector.md#licences);
+- A target environment with a [supported](../requirements.md) technology stack.
     
 ## Verification
 
@@ -24,7 +27,7 @@ CanaryBit Inspector verifies Confidential VMs (cVM) deployed:
 
   1. **By CanaryBit Tower:**
     
-      A Confidential VM is **automatically** deployed and attested by injecting the CanaryBit `cloud-init` file. Examples of different `cloud-init` configurations can be found [here](tower.md).
+      A Confidential VM is **automatically** deployed and attested by injecting the CanaryBit `cloud-init` file.
 
   2. **By other means:**
    
@@ -41,7 +44,7 @@ CanaryBit Inspector verifies the Cluster Node characteristics:
 
 This is **extremely beneficial** for dynamic clusters with the `autoscaling` feature enabled.
 
-[CanaryBit Surveyor]() provides the configuration to enable Container Attestation for several use-cases.
+[CanaryBit Surveyor](./surveyor.md) provides the configuration to enable Container Attestation for several use-cases.
 
 ## Licences
 

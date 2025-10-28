@@ -11,6 +11,6 @@ Confidential Cloud **robust encryption mechanisms** ensure that:
 The entire workflow is **logged** for auditing purposes. This enables organisations to keep **full-control** and trace back all activities involving their digital assets.
 
 Transparent security mechanisms help organisations **build trust** between the
-confidential collaboration partners, the execution environment, and CanaryBit's supporting [services](architecture.md).
+confidential collaboration partners, the execution environment, and CanaryBit's supporting [services](overview.md).
 
 Confidential Cloud enables you to collaborate using your digital assets, while ensuring that they are protected using **state of the art** encryption, authentication and authorisation mechanisms.

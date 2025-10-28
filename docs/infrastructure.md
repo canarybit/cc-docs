@@ -1,6 +1,6 @@
 # Infrastructure
 
-Confidential Cloud is **cloud-agnostic**. [Tower](architecture.md#tower) and [Inspector](architecture.md#inspector) are responsible for various aspects of the Life-Cycle Management (LCM) of infrastructure resources.
+Confidential Cloud is **cloud-agnostic**. [Tower](overview.md#tower) and [Inspector](overview.md#inspector) are responsible for various aspects of the Life-Cycle Management (LCM) of infrastructure resources.
 
 Confidential Cloud builds atop Confidential Computing to offer state-of-the-art encryption mechanisms.
 Today, hardware and firmware support for Confidential Computing is widely available in modern lines of hardware platforms offered by forward-looking Cloud Service Providers (CSPs).
