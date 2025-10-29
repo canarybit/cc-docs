@@ -16,16 +16,64 @@ It destroys all the resources once the execution is completed or compromised. Ea
 
 - CLI access to your cloud platform (e.g [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest), [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html), etc...)
 
-## Infrastructure Providers
+## Deployment types
 
-### Public Clouds
+CanaryBit Tower configurations are flexible enough to deploy Confidential VMs with or without CanaryBit Inspector Attestation service.
+
+**Environment verification with CanaryBit Inspector service is recommended to certify the security capabilities of the execution environments, mitigate risks and ensure privacy**.
+
+### 1. With Attestation (recommended)
+
+In this scenario, the provided configuration performs the following steps on the selected infrastructure provider:
+
+1. Deploy Confidential VMs and required virtual resources (e.g. networks, security groups, etc...)
+2. Inject a `cloud-init` file at booting time ensuring robust Confidential VMs configuration. Specifically: 
+      1. Apply cloud security best-practices:
+         1. Create a new user
+         2. Disable password login
+         3. Assign the new user a new group without wide `root` permissions.
+      2. Download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying (optional) Custom Policies; 
+      3. Return the final **CanaryBit report**. Logs and reports will be available for **external logging & auditing** activities; 
+3. Return details about the configured resources;
+4. ✳️ **The security of the environment is verified!** The final report(s) can be collected on the CanaryBit Inspector dashboard;
+
+### 2. Without Attestation
+
+In this scenario, the provided configuration performs the following steps on the selected infrastructure provider:
+
+1. deploy Confidential VMs and required virtual resources (e.g. networks);
+2. apply cloud security best-practices (e.g. password login disabled);
+3. inject a `cloud-init` file at booting time ensuring the Confidential VM configuration is robust e.g. a separate user is used (e.g. `cbuser`), OS and packages are updated:  
+        ```
+        #cloud-config
+        users:
+        - default
+        - name: cbuser
+            sudo: false
+            shell: /bin/bash
+            ssh_authorized_keys:
+            - ssh-rsa <CBUSER_PUB_KEY>
+
+        timezone: UTC
+        locale: "en_US.UTF-8"
+
+        package_update: true
+        package_upgrade: true
+        package_reboot_if_required: true
+        ```
+4. Return details about the configured resources;
+5. ⚠️ **The security characteristics of this environment are not verified!** In this scenario, you are still trusting the hypervisor/infrastructure provider.
+
+## Download & Run
+
+### On Public Clouds
 
 The below configurations are **free to use** under the Apache-2.0 licence.
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
--   :material-microsoft-azure:{ .lg .middle } __Azure__
+-   #### :material-microsoft-azure:{ .lg .middle } __Azure__
 
     ---
 
@@ -33,7 +81,7 @@ The below configurations are **free to use** under the Apache-2.0 licence.
         
     [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
 
--   :material-aws:{ .lg .middle } __AWS__
+-   #### :material-aws:{ .lg .middle } __AWS__
 
     ---
 
@@ -41,7 +89,7 @@ The below configurations are **free to use** under the Apache-2.0 licence.
         
     [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
 
--   :material-aws:{ .lg .middle } __GCP__
+-   #### :material-aws:{ .lg .middle } __GCP__
 
     ---
 
@@ -52,91 +100,39 @@ The below configurations are **free to use** under the Apache-2.0 licence.
 </div>
 
 
-### On-Premise 
+### On-Premise / Bare-metal
 
-A **Premium License** is required for the following configurations.
+A **Premium License** is required for the following configurations: [:material-diamond-stone:{ .lg .middle } Buy Premium :octicons-link-external-16:{ .lg .middle }](https://www.canarybit.eu/contact)
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
--   :simple-vmware:{ .lg .middle } __VMware__
+-   #### :simple-vmware:{ .lg .middle } __VMware__
 
     ---
 
     Infrastructure as Code (IaC) configuration for **VMware** Confidential VMs
 
-    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
--   :simple-proxmox:{ .lg .middle } __Proxmox__
+-   #### :simple-proxmox:{ .lg .middle } __Proxmox__
 
     ---
 
     Infrastructure as Code (IaC) configuration for **Proxmox** Confidential VMs
 
-    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
--   :simple-redhatopenshift:{ .lg .middle } __Openshift__
+-   #### :simple-redhatopenshift:{ .lg .middle } __Openshift__
 
     ---
 
     Infrastructure as Code (IaC) configuration for **Openshift** Confidential VMs/Nodes
 
-    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
--   :simple-openstack:{ .lg .middle } __Libvirt/KVM__
+-   #### :simple-openstack:{ .lg .middle } __Libvirt/QEMU__
 
     ---
 
     Infrastructure as Code (IaC) configuration for **Baremetal** Confidential VMs
 
-    [:material-diamond-stone:{ .lg .middle } Buy Premium ](https://www.canarybit.eu/contact)
 
 </div>
-   
-
-## Deployments
-
-CanaryBit Tower can deploy Confidential VMs with **with attestation for Production** environments, or without attestation for Dev/Test environments.
-
-### With Attestation (Recommended)
-
-CanaryBit Inspector Attestation service can be easily added as part of the CanaryBit Tower configuration to verify the security characteristics of a Confidential VM, once the resource is correclty deployed on the target infrastructure provider.
-
-In addition to the standard configuration, the `cloud-init` file will:
-   
-1. Create a `canarybit` user-group and assign it to the user (e.g. `cbuser`), limiting its `root` permissions;
-2. Collect information about the current execution environment;
-3. Download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying the (optional) Custom Policies; 
-4. Return the final **CanaryBit report**. Logs and reports are available for **external logging & auditing** activities.
-
-The security of this **environment has been verified** by CanaryBit Inspector Attestation service and the final report(s) can be collected for auditing activities.
-
-### Without Attestation
-
-The provided configuration performs the following steps on the selected infrastructure provider:
-
-1. deploy Confidential VMs and required virtual resources (e.g. networks)
-2. apply cloud security best-practices (e.g. password login disabled).
-3. inject a `cloud-init` file at booting time ensuring the Confidential VM configuration is robust e.g. a separate user is used (e.g. `cbuser`), OS and packages are updated:
-
-    `cloud-init.yml`:
-    
-    ```
-    #cloud-config
-    users:
-    - default
-    - name: cbuser
-        sudo: false
-        shell: /bin/bash
-        ssh_authorized_keys:
-        - ssh-rsa <CBUSER_PUB_KEY>
-
-    timezone: UTC
-    locale: "en_US.UTF-8"
-
-    package_update: true
-    package_upgrade: true
-    package_reboot_if_required: true
-    ```
-
- ⚠️ **WARNING**: The security characteristics of this environment are not verified! In this scenario, you are **still trusting the hypervisor/infrastructure provider**. For full-privacy and highest security level, verify the environment with CanaryBit Attestation service.
