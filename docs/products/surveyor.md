@@ -1,5 +1,5 @@
 # CanaryBit Surveyor
 
-*Safeguard Container execution.*
+*Safeguard Container execution*
 
-<br>
+---

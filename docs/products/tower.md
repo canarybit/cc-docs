@@ -1,6 +1,8 @@
 # CanaryBit Tower
 
-*Orchestrate Trusted Execution Environments (TEE).*
+*Orchestrate Trusted Execution Environments (TEE)*
+
+---
 
 CanaryBit [Tower](https://docs.confidentialcloud.io/architecture/#inspector) is a Confidential Computing resources orchestration service. It helps end-users to deploy secure processing environments and provides control over configuration drifts.
 

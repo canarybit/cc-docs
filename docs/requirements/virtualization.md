@@ -20,7 +20,7 @@
 - Alibaba Cloud
 - ...
 
-## Private / Bare-metal / On-prem
+## Bare-metal / Private
 
 - Proxmox VE `v8.4+`
 - VMware vSphere `v9+`

@@ -15,6 +15,10 @@
   font-weight: 300;
 }
 
+.md-header {
+  background: linear-gradient(to right, #000000, #0997a7);
+}
+
 .md-header__topic:first-child {
   font-weight: 300;
 }
