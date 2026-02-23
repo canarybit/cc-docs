@@ -20,51 +20,48 @@ It destroys all the resources once the execution is completed or compromised. Ea
 
 ## Deployment
 
-CanaryBit Tower configurations are flexible enough to deploy Confidential VMs with or without CanaryBit Inspector Attestation service.
+CanaryBit Tower supports multiple configrutions to deploy Confidential VMs with or without CanaryBit Inspector Attestation service.
 
-**Environment verification with CanaryBit Inspector service is recommended to certify the security capabilities of the execution environments, mitigate risks and ensure privacy**.
+!!! info "NEVER TRUST, ALWAYS VERIFY"
+
+    Environment verification with CanaryBit Inspector service is recommended to certify the security capabilities of the execution environments, mitigate risks and ensure privacy**.
 
 ### 1. With Attestation (recommended)
 
 In this scenario, the provided configuration performs the following steps on the selected infrastructure provider:
 
 1. Deploy Confidential VMs and required virtual resources (e.g. networks, security groups, etc...)
-2. Inject a `cloud-init` file at booting time ensuring robust Confidential VMs configuration. Specifically: 
-      1. Apply cloud security best-practices:
-         1. Create a new user
-         2. Disable password login
-         3. Assign the new user a new group without wide `root` permissions.
-      2. Download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying (optional) Custom Policies; 
-      3. Return the final **CanaryBit report**. Logs and reports will be available for **external logging & auditing** activities; 
+2. Inject the `attested.yml` *cloud-init* file at booting time ensuring robust Confidential VMs configuration. 
+   
+    ``` title="attested.yml"
+    --8<-- "https://raw.githubusercontent.com/canarybit/terraform-canarybit-tower/refs/heads/main/cloud-init/attested.yml"
+    ```
+
 3. Return details about the configured resources;
-4. **The security characteristics of this environment are VERIFIED!** The final report(s) can be collected on the CanaryBit Inspector dashboard;
+
+!!! success 
+
+    The security characteristics of this environment are VERIFIED! </br>
+    In this scenario, you are only trusting the chip vendor.
 
 ### 2. Without Attestation
 
 In this scenario, the provided configuration performs the following steps on the selected infrastructure provider:
 
-1. deploy Confidential VMs and required virtual resources (e.g. networks);
-2. apply cloud security best-practices (e.g. password login disabled);
-3. inject a `cloud-init` file at booting time ensuring the Confidential VM configuration is robust e.g. a separate user is used (e.g. `cbuser`), OS and packages are updated:  
-        ```
-        #cloud-config
-        users:
-        - default
-        - name: cbuser
-            sudo: false
-            shell: /bin/bash
-            ssh_authorized_keys:
-            - ssh-rsa <CBUSER_PUB_KEY>
+1. Deploy one or more Confidential VMs and required virtual resources (e.g. networks, security groups, etc...);
+2. Apply cloud security best-practices (e.g. disable password login);
+3. Inject the `default.yml` *cloud-init* file at booting time ensuring the Confidential VM configuration is robust e.g. a separate user is used (e.g. `cbuser`), OS and packages are updated:  
+        
+    ``` title="default.yml"
+    --8<-- "https://raw.githubusercontent.com/canarybit/terraform-canarybit-tower/refs/heads/main/cloud-init/default.yml"
+    ```
 
-        timezone: UTC
-        locale: "en_US.UTF-8"
+4. Return details about the Confidential VM and other configured resource.
 
-        package_update: true
-        package_upgrade: true
-        package_reboot_if_required: true
-        ```
-4. Return details about the configured resources;
-5. ⚠️ **The security characteristics of this environment are NOT VERIFIED!** In this scenario, you are still trusting the hypervisor/infrastructure provider.
+!!! danger 
+    
+    The security characteristics of this environment are NOT VERIFIED! </br>
+    In this scenario, you are still trusting the hypervisor/infrastructure provider.
 
 ## Download & Run
 
@@ -81,7 +78,8 @@ The below configurations are **free to use** under the Apache-2.0 licence.
 
     Infrastructure as Code (IaC) configuration for **Azure** Confidential VMs
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
+    [:simple-terraform:{ .lg .middle }  Terraform ](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/azure) &nbsp; | &nbsp; 
+    [:simple-opentofu:{ .lg .middle }  OpenTofu ](https://search.opentofu.org/module/canarybit/tower/canarybit/latest/submodule/azure)
 
 -   #### :material-aws:{ .lg .middle } __AWS__
 
@@ -89,20 +87,22 @@ The below configurations are **free to use** under the Apache-2.0 licence.
 
     Infrastructure as Code (IaC) configuration for **AWS** Confidential VMs
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
-
--   #### :material-aws:{ .lg .middle } __GCP__
+    [:simple-terraform:{ .lg .middle }  Terraform ](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/aws) &nbsp; | &nbsp; 
+    [:simple-opentofu:{ .lg .middle }  OpenTofu ](https://search.opentofu.org/module/canarybit/tower/canarybit/latest/submodule/aws)
+    
+-   #### :material-google-cloud:{ .lg .middle } __GCP__
 
     ---
 
     Infrastructure as Code (IaC) configuration for in **GCP** Confidential VMs
         
-    [:octicons-link-external-16:{ .lg .middle }  GitHub ](https://github.com/canarybit/tower/tree/main)
+    [:simple-terraform:{ .lg .middle }  Terraform ](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/azure) &nbsp; | &nbsp; 
+    [:simple-opentofu:{ .lg .middle }  OpenTofu ](https://search.opentofu.org/module/canarybit/tower/canarybit/latest/submodule/azure)
 
 </div>
 
 
-### On-Premise / Bare-metal
+### Bare-metal / Private setups
 
 A **Premium License** is required for the following configurations: [:material-diamond-stone:{ .lg .middle } Buy Premium :octicons-link-external-16:{ .lg .middle }](https://www.canarybit.eu/contact)
 
