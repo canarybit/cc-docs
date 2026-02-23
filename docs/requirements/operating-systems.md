@@ -10,7 +10,7 @@ Any of:
 - OpenSuse
 - NixOS
 
-with kernel `v6.11+`
+with kernel `v6.16+`
 
 ## Windows
 

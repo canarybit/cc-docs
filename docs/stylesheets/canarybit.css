@@ -36,6 +36,9 @@
   -webkit-mask-image: var(--md-admonition-icon--info)
 }
 
+.md-copyright {
+  color: var(--cb-lightblue-01);
+}
 .md-grid {
   max-width: 1440px; 
 }

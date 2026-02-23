@@ -12,13 +12,13 @@ It destroys all the resources once the execution is completed or compromised. Ea
 
 ## Requirements
 
-- A CanaryBit Account, if [Attestation](#confidential-computing-attestation) is required;
+- A CanaryBit Account
 
 - [Terraform](https://developer.hashicorp.com/terraform) or [OpenTofu](https://opentofu.org/docs/) installed;
 
 - CLI access to your cloud platform (e.g [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest), [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html), etc...)
 
-## Deployment types
+## Deployment
 
 CanaryBit Tower configurations are flexible enough to deploy Confidential VMs with or without CanaryBit Inspector Attestation service.
 
@@ -37,7 +37,7 @@ In this scenario, the provided configuration performs the following steps on the
       2. Download & run the [CanaryBit Inspector client](inspector.md) (`cbclient`) applying (optional) Custom Policies; 
       3. Return the final **CanaryBit report**. Logs and reports will be available for **external logging & auditing** activities; 
 3. Return details about the configured resources;
-4. ✳️ **The security of the environment is verified!** The final report(s) can be collected on the CanaryBit Inspector dashboard;
+4. **The security characteristics of this environment are VERIFIED!** The final report(s) can be collected on the CanaryBit Inspector dashboard;
 
 ### 2. Without Attestation
 
@@ -64,7 +64,7 @@ In this scenario, the provided configuration performs the following steps on the
         package_reboot_if_required: true
         ```
 4. Return details about the configured resources;
-5. ⚠️ **The security characteristics of this environment are not verified!** In this scenario, you are still trusting the hypervisor/infrastructure provider.
+5. ⚠️ **The security characteristics of this environment are NOT VERIFIED!** In this scenario, you are still trusting the hypervisor/infrastructure provider.
 
 ## Download & Run
 

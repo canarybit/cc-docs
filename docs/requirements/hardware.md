@@ -4,19 +4,29 @@ Confidential Computing is an hardware capability at the core of CanaryBit Confid
 
 ## CPU support
 
-#### [AMD SEV-SNP](https://www.amd.com/en/developer/sev.html)
+### AMD SEV-SNP
 
-From 3rd Gen AMD `EPYC` Processors (FamilyName: *Milan*) and newer.
+*Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP).*
 
-#### [INTEL TDX](https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html)
+Confidential Computing capability is available from **3rd Gen AMD `EPYC` Processors** (FamilyName: *Milan*) and newer.
 
-From 5th Gen Intel `Xeon` Scalable Processors (FamilyName: *Emerald Rapids*) and newer.
+Read the [official docs](https://www.amd.com/en/developer/sev.html).
+
+### INTEL TDX
+
+*Trust Domain Extensions (TDX).*
+
+Confidential Computing capability is available from **5th Gen Intel `Xeon` Scalable Processors** (FamilyName: *Emerald Rapids*) and newer.
+
+Read the [official docs](https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html)
 
 ## GPU support
 
-#### [NVIDIA](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/)
+### NVIDIA
 
-From H100 `Tensor Core` Processors (FamilyName: *Hopper*) and newer.
+Confidential Computing capability is available from **H100 `Tensor Core` Processors** (FamilyName: *Hopper*) and newer.
+
+Read the [official docs](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/)
 
 ## Smart NIC support
 
