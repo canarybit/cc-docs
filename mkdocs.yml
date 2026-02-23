@@ -58,7 +58,7 @@ nav:
   - Overview: 'overview.md'
   - 'Create an Account ⧉': https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F" target="_blank
   - Requirements:
-    - 'Infrastructure': 'infrastructure.md'
+    #- 'Infrastructure': 'infrastructure.md'
     - 'Hardware': 'requirements/hardware.md'
     - 'Virtualization Platform': 'requirements/virtualization.md'
     - 'Operating Systems': 'requirements/operating-systems.md'
