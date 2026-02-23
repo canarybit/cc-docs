@@ -6,19 +6,14 @@
 
 - OVH
 - Aruba
-- ...
   
 ### United States
 
 - Azure
 - GCP
 - AWS
-- ...
 
-### Other Regions
-
-- Alibaba Cloud
-- ...
+... and more!
 
 ## Bare-metal / Private
 

@@ -10,7 +10,7 @@ Confidential Computing is an hardware capability at the core of CanaryBit Confid
 
 Confidential Computing capability is available from **3rd Gen AMD `EPYC` Processors** (FamilyName: *Milan*) and newer.
 
-Read the [official docs](https://www.amd.com/en/developer/sev.html).
+Read the [official documentation.](https://www.amd.com/en/developer/sev.html)
 
 ### INTEL TDX
 
@@ -18,7 +18,7 @@ Read the [official docs](https://www.amd.com/en/developer/sev.html).
 
 Confidential Computing capability is available from **5th Gen Intel `Xeon` Scalable Processors** (FamilyName: *Emerald Rapids*) and newer.
 
-Read the [official docs](https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html)
+Read the [official documentation.](https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html)
 
 ## GPU support
 
@@ -26,7 +26,7 @@ Read the [official docs](https://www.intel.com/content/www/us/en/developer/tools
 
 Confidential Computing capability is available from **H100 `Tensor Core` Processors** (FamilyName: *Hopper*) and newer.
 
-Read the [official docs](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/)
+Read the [official documentation.](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/)
 
 ## Smart NIC support
 

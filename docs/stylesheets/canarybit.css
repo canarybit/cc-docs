@@ -5,6 +5,7 @@
 
 .md-typeset h1, .md-typeset h2, .md-typeset h3 {
   color: var(--cb-blue-01);
+  font-weight: bold;
 }
 
 .md-typeset h4, .md-typeset h5, .md-typeset h6 {

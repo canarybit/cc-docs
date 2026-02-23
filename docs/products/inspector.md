@@ -1,6 +1,6 @@
 # CanaryBit Inspector
 
-*Audit & Certify your Trusted Execution Environments (TEE)*
+*Audit & Certify Trusted Execution Environments (TEE)*
 
 --- 
 
