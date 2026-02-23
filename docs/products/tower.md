@@ -31,18 +31,14 @@ CanaryBit Tower supports multiple configrutions to deploy Confidential VMs with 
 In this scenario, the provided configuration performs the following steps on the selected infrastructure provider:
 
 1. Deploy Confidential VMs and required virtual resources (e.g. networks, security groups, etc...)
-2. Inject the `attested.yml` *cloud-init* file at booting time ensuring robust Confidential VMs configuration. 
-   
-    ``` title="attested.yml"
-    --8<-- "https://raw.githubusercontent.com/canarybit/terraform-canarybit-tower/refs/heads/main/cloud-init/attested.yml"
-    ```
-
+2. Inject the [`attested.yml`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/attested.yml) *cloud-init* file at booting time ensuring robust Confidential VMs configuration and **security verification** of the deployed setup.
 3. Return details about the configured resources;
 
 !!! success 
 
     The security characteristics of this environment are VERIFIED! </br>
     In this scenario, you are only trusting the chip vendor.
+    The full report can be downloaded from the CanaryBit [Inspector Dashbord.](inspector.md)
 
 ### 2. Without Attestation
 
@@ -50,12 +46,7 @@ In this scenario, the provided configuration performs the following steps on the
 
 1. Deploy one or more Confidential VMs and required virtual resources (e.g. networks, security groups, etc...);
 2. Apply cloud security best-practices (e.g. disable password login);
-3. Inject the `default.yml` *cloud-init* file at booting time ensuring the Confidential VM configuration is robust e.g. a separate user is used (e.g. `cbuser`), OS and packages are updated:  
-        
-    ``` title="default.yml"
-    --8<-- "https://raw.githubusercontent.com/canarybit/terraform-canarybit-tower/refs/heads/main/cloud-init/default.yml"
-    ```
-
+3. Inject the [`default.yml`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/default.yml) *cloud-init* file at booting time ensuring robust Confidential VM configuration.
 4. Return details about the Confidential VM and other configured resource.
 
 !!! danger 
@@ -96,15 +87,15 @@ The below configurations are **free to use** under the Apache-2.0 licence.
 
     Infrastructure as Code (IaC) configuration for in **GCP** Confidential VMs
         
-    [:simple-terraform:{ .lg .middle }  Terraform ](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/azure) &nbsp; | &nbsp; 
-    [:simple-opentofu:{ .lg .middle }  OpenTofu ](https://search.opentofu.org/module/canarybit/tower/canarybit/latest/submodule/azure)
+    [:simple-terraform:{ .lg .middle }  Terraform ](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/gcp) &nbsp; | &nbsp; 
+    [:simple-opentofu:{ .lg .middle }  OpenTofu ](https://search.opentofu.org/module/canarybit/tower/canarybit/latest/submodule/gcp)
 
 </div>
 
 
 ### Bare-metal / Private setups
 
-A **Premium License** is required for the following configurations: [:material-diamond-stone:{ .lg .middle } Buy Premium :octicons-link-external-16:{ .lg .middle }](https://www.canarybit.eu/contact)
+A **Premium License** is required for the following configurations: [:material-diamond-stone:{ .lg .middle } Buy Premium](https://www.canarybit.eu/contact)
 
 <div class="grid cards" markdown>
 <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
