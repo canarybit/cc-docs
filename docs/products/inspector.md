@@ -24,6 +24,11 @@ CanaryBit Inspector service is **built on microservices** that wholetogether pro
 
 - **Database**: a data store used by the microservices; 
 
+### cbclient
+
+CanaryBit Inspector verifies Confidential VMs (cVM) and Containers deployed in Public, Private or On-Prem cloud infrastructures.
+
+The `cbclient` agent is the **client implementation** for the CanaryBit Inspector Attestation service. Written in [Rust](https://www.rust-lang.org/), it is responsible to collect the attestation data and call the CanaryBit Inspector API to verify the execution environments, either Confidential VMs or containers.
  
 ## Requirements
 
@@ -31,45 +36,25 @@ CanaryBit Inspector service is **built on microservices** that wholetogether pro
 - A CanaryBit [Inspector Licence](./inspector.md#licences);
 - A target environment with a [supported](../requirements.md) technology stack.
 
-## Setups
+## How-To
 
-CanaryBit Inspector verifies Confidential VMs (cVM) and Containers deployed in Public, Private or On-Prem cloud infrastructures.
-
-The `cbclient` agent is the client implementation for the CanaryBit Inspector Attestation service. Written in [Rust](https://www.rust-lang.org/), it is responsible to collect the attestation data and call the CanaryBit Inspector API to verify the execution environments (Confidential VMs or containers).
-
-### Confidential VMs
+### Attest a Confidential VM
 
 CanaryBit Inspector verifies Confidential VMs (cVM) deployed:
 
-  1. **via CanaryBit Tower:**
+#### by CanaryBit Tower
     
-      A Confidential VM is **automatically** deployed and attested by injecting the CanaryBit `cloud-init` file.
+A Confidential VM is automatically **deployed by [CanaryBit Tower](tower.md)** on the target infrastructure provider and attested by CanaryBit Inspector via a `cloud-init` configuration injected at creation time.
 
-  2. **by other means:**
+#### by custom deployment
    
-      The end-user provisions a Confidential VM on the infrastructure provider and injects the CanaryBit `cloud-init` file at creation time.
+A Confidential VM is **deployed by the end-user** on the target infrastructure provider and attested by CanaryBit Inspector via a `cloud-init` configuration injected at creation time.
 
-### Containers
+#### by manual configuration
 
-Identically, CanaryBit Inspector can be used to constantly verify the Confidential Nodes where containers are running, no matter if they are managed by an orchestration service (e.g. AKS) or directly on a container platform.
+A Confidential VM is **deployed by the end-user** on the target infrastructure provider and attested by CanaryBit Inspector following the steps below:
 
-CanaryBit Inspector verifies the Cluster Node characteristics:
-
-- before a container is executed (always);
-
-- at a defined schedule (if enabled);
-
-- when specific system-wide events occur (if enabled).
-
-This is **extremely beneficial** for dynamic clusters with the `autoscaling` feature enabled by default, typically recommended by the hyperscalers.
-
-[CanaryBit Surveyor](./surveyor.md) provides the configuration to enable Container Attestation for several use-cases.
-
-## HowTo
-
-### Confidential VM
-
-From inside the Confidential VM (guest) run the following commands:
+*From <ins>outside</ins> the Confidential VM:*
 
 1. Download the [CanaryBit Command-Line Interface (CLI)](./cli.md)
 
@@ -79,50 +64,71 @@ export CB_USERNAME=***
 export CB_PASSWORD=***
 ```
 
-3. Download the CanaryBit Inspector agent (`cbclient`)
+1. Download the CanaryBit Inspector agent (`cbclient`)
 ```
 ./cb download cbclient [CBCLIENT_V]/cbclient
 ```
 where `[CBCLIENT_V]` is the required client version, e.g. `0.2.6`
 
-4. Fetch a valid token for the CanaryBit Inspector service
+1. Fetch a user valid token
 ```
-export CBCLIENT_TOKEN=$(./cb login inspector)
+./cb login inspector
 ```
-5. Run the `cbclient`:
+The command returns a valid `USER_TOKEN` that will be used by the `cbclient` to authenticate the user towards CanaryBit Inspector.
+
+*From <ins>inside</ins> the Confidential VM:*
+
+1. Access the Confidential VM and run the `cbclient`:
     ```
+    export CBCLIENT_TOKEN=[USER_TOKEN]
+
     ./cbclient attestation --environments [TARGET_ENV] --inspector-url https://inspector.confidentialcloud.io
     ```
     where `TARGET_ENV` is one or more of:
-      - `snp` for AMD SEV-SNP
-      - `tdx` for Intel TDX
-      - `nvtrust` for NVIDIA H100+ 
-      - `vtpm` for vTPM attestation
-    
-    **Example (AMD SEV-SNP)**
+    - `snp` for AMD SEV-SNP
+    - `tdx` for Intel TDX
+    - `nvtrust` for NVIDIA H100+ 
+    - `vtpm` for vTPM attestation
 
-    ```
-    ./cbclient attestation --environments snp --inspector-url https://inspector.confidentialcloud.io
-    2026-02-22T22:14:55Z info: starting attestation
-    2026-02-22T22:14:55Z info: generating attestation reports for enclave c2fdb0228f9e3edb1c5999f2401e76929fd79d7ec9e0d08cd914dfb5347aeb28
-    2026-02-22T22:14:55Z info: requesting nonce from: https://inspector.confidentialcloud.io
-    2026-02-22T22:14:56Z info: generating attestation reports
-    2026-02-22T22:14:56Z info: generating attestation report for SEV-SNP
-    2026-02-22T22:14:56Z info: collecting claims
-    2026-02-22T22:14:56Z info: preparing composite attestation report
-    2026-02-22T22:14:56Z info: validating generated reports
-    2026-02-22T22:14:56Z info: requesting verification from: https://inspector.confidentialcloud.io
-    2026-02-22T22:14:58Z info: verification report: {"claims":{"attestations":[{"author_key_digest":"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","chip_id":"9e2cf0ace115931142cc914fa5cc865fafdce55f949080a397752680ef66ee527ef6e848cb29ed2f4e12304cd69bdc7797b117d4b23274fd6d97090978c1430f","committed":{"build":29,"major":1,"minor":55},"committed_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"cpuid_fam_id":25,"cpuid_mod_id":1,"cpuid_step":1,"current":{"build":29,"major":1,"minor":55},"current_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"environment":"SNP","family_id":"00000000000000000000000000000000","guest_svn":0,"host_data":"0000000000000000000000000000000000000000000000000000000000000000","id_key_digest":"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","image_id":"00000000000000000000000000000000","key_info":"00000000","launch_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"measurement":"284778cfa7af0baefb066c253036f3cff4cd1d594eea3811ed96cbfc94317c0914510b4da2ba895d33e49165fd580a8e","platform_info":"2700000000000000","policy":"0000030000000000","report_data":"2d305eaf2d6aca3dde7a0d005aafbf19712f274577ee9e66cdcd9d5375d7d29e782f0b7dd3c6257df47cb96a7cc1299a1ae32b0f4a5170da0e1f07ae62577682", ...
-    2026-02-22T22:14:58Z info: attestation successful
-    ```
+    Example for AMD SEV-SNP attestation:
 
-6. Download the verification report and additional insights on the CanaryBit [Inspector Dashboard](#)
+        ```
+        export CBCLIENT_TOKEN='***'
+        export CBCLIENT_LOG_LEVEL="info" // Optional
 
+        ./cbclient attestation --environments snp --inspector-url https://inspector.confidentialcloud.io
+        2026-02-22T22:14:55Z info: starting attestation
+        2026-02-22T22:14:55Z info: generating attestation reports for enclave c2fdb0228f9e3edb1c5999f2401e76929fd79d7ec9e0d08cd914dfb5347aeb28
+        2026-02-22T22:14:55Z info: requesting nonce from: https://inspector.confidentialcloud.io
+        2026-02-22T22:14:56Z info: generating attestation reports
+        2026-02-22T22:14:56Z info: generating attestation report for SEV-SNP
+        2026-02-22T22:14:56Z info: collecting claims
+        2026-02-22T22:14:56Z info: preparing composite attestation report
+        2026-02-22T22:14:56Z info: validating generated reports
+        2026-02-22T22:14:56Z info: requesting verification from: https://inspector.confidentialcloud.io
+        2026-02-22T22:14:58Z info: verification report: {"claims":{"attestations":[{"author_key_digest":"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","chip_id":"9e2cf0ace115931142cc914fa5cc865fafdce55f949080a397752680ef66ee527ef6e848cb29ed2f4e12304cd69bdc7797b117d4b23274fd6d97090978c1430f","committed":{"build":29,"major":1,"minor":55},"committed_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"cpuid_fam_id":25,"cpuid_mod_id":1,"cpuid_step":1,"current":{"build":29,"major":1,"minor":55},"current_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"environment":"SNP","family_id":"00000000000000000000000000000000","guest_svn":0,"host_data":"0000000000000000000000000000000000000000000000000000000000000000","id_key_digest":"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","image_id":"00000000000000000000000000000000","key_info":"00000000","launch_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"measurement":"284778cfa7af0baefb066c253036f3cff4cd1d594eea3811ed96cbfc94317c0914510b4da2ba895d33e49165fd580a8e","platform_info":"2700000000000000","policy":"0000030000000000","report_data":"2d305eaf2d6aca3dde7a0d005aafbf19712f274577ee9e66cdcd9d5375d7d29e782f0b7dd3c6257df47cb96a7cc1299a1ae32b0f4a5170da0e1f07ae62577682", ...
+        2026-02-22T22:14:58Z info: attestation successful
+        ```
 
-### Container / Pod
+### Attest a Container / Pod
 
-TBA
+In addition to Confidential VMs, CanaryBit Inspector can be used to verify the confidentiality of Nodes where containers are running, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or directly on a container platform.
 
+CanaryBit Inspector verifies the Cluster Node characteristics:
+
+- before a container is executed (always);
+
+- at a defined schedule (if enabled);
+
+- when specific system-wide events occur (if enabled).
+
+This is **extremely beneficial** for dynamic clusters where the size of the Kubernetes cluster (# of Nodes) is adjusted based on the utilization of Pods and Nodes in the cluster. This feature, called `autoscaling` is typically recommended by hyperscalers CaaS solutions.
+
+[CanaryBit Surveyor](./surveyor.md) provides the configuration to enable Container Remote Attestation for several use-cases.
+
+### Download the reports
+
+The verification reports and additional insights are available for download on the CanaryBit [Inspector Dashboard](#)
 
 ## Licences
 
@@ -138,4 +144,4 @@ Request a 1-month FREE trial via our [contact form](https://www.canarybit.eu/con
 
 ### Reseller
 
-If you are interested in offering CanaryBit Inspector as a Service (SaaS), join our [Reseller Programme](https://www.canarybit.eu/contacts)!
+If you are interested in offering CanaryBit Inspector as a Service (SaaS), [contact us](https://www.canarybit.eu/contacts).
