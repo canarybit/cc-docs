@@ -60,7 +60,7 @@ nav:
   - Requirements:
     #- 'Infrastructure': 'infrastructure.md'
     - 'Hardware': 'requirements/hardware.md'
-    - 'Virtualization Platform': 'requirements/virtualization.md'
+    - 'Virtualization': 'requirements/virtualization.md'
     - 'Operating Systems': 'requirements/operating-systems.md'
     - 'Containers': 'requirements/containers.md'
     #- 'Encryption': []
