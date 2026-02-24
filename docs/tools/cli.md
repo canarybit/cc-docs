@@ -8,7 +8,7 @@ The CanaryBit Command-Line Interface (CLI) is a cross-platform command-line tool
 
 ## Requirements
 
-- A CanaryBit Account
+- A [CanaryBit Account](https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F);
 
 ## Install 
 
