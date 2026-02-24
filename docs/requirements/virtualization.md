@@ -51,7 +51,7 @@ Below a shortlist of our main deployments:
 <details open>
 <summary>Partnership</summary>
 <br>Are you a CSP, hardware vendor or software solutions provider and interested to support Confidential Cloud?
-<br><a href="https://www.canarybit.eu/become-a-partner/">Become a Partner!</a>
+<br><a href="https://www.canarybit.eu/partners/">Become a Partner!</a>
 <br><br>
 </details>
 
