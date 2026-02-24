@@ -148,12 +148,18 @@ CanaryBit Inspector can be deployed on-prem for internal use or offered as a ser
 
 ### Free Trial
 
-Request a 1-month FREE trial via our [contact form](https://www.canarybit.eu/contact)!
+Try our CanaryBit Inspector SaaS service for 1-month for FREE. 
+
+[Contact us!](https://www.canarybit.eu/contact/)
 
 ### Enterprise
 
-[Choose the licence](https://www.canarybit.eu) that fits your needs and get CanaryBit Inspector up to speed in minutes. 
+Choose between a Basic, Standard or Enterprise licence and get up to speed in minutes. 
+
+[Contact us!](https://www.canarybit.eu/contact)
 
 ### Reseller
 
-If you are interested in offering CanaryBit Inspector as a Service (SaaS), [contact us](https://www.canarybit.eu/contacts).
+If you are interested in offering CanaryBit Inspector as a Service (SaaS).
+
+[Contact us!](https://www.canarybit.eu/contact/)
