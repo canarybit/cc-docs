@@ -20,7 +20,7 @@ It destroys all the resources once the execution is completed or compromised. Ea
 
 ## Deployment
 
-CanaryBit Tower supports multiple configrutions to deploy Confidential VMs with or without CanaryBit Inspector Attestation service.
+CanaryBit Tower supports multiple configurations to deploy Confidential VMs with or without CanaryBit Inspector Attestation service.
 
 !!! info "NEVER TRUST, ALWAYS VERIFY"
 
