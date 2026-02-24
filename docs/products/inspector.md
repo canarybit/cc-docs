@@ -4,7 +4,7 @@
 
 --- 
 
-CanaryBit [Inspector](https://docs.confidentialcloud.io/architecture/#inspector) is a Confidential Computing [Attestation]() service with extended functionalites, helping end-users to fully verify the security of their processing environments before any sensitive data analysis.
+**CanaryBit Inspector** is a Confidential Computing [Remote Attestation]() service with extended functionalites, helping end-users to fully verify the security of their processing environments before any sensitive data analysis.
 
 CanaryBit Inspector validates that the underlying platform has support for and uses Confidential Computing capabilties enabled by the platform's instruction set architecture and firmware.
 CanaryBit Inspector performs the validation based on an Attestation Report provided by a software client deployed in the TEE. The client software collects information on the hardware, firmware, and software level to attest its trustworthiness. CanaryBit Inspector monitors the infrastructure security and enforces customer-defined deployment policies by destroying infrastructure components that fail to meet custom needs.

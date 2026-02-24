@@ -9,8 +9,3 @@ This section describes the technology stack supported by CanaryBit Confidential 
 [Operating Systems](./requirements/operating-systems.md)
 
 [Containers](./requirements/containers.md)
-
-
-
-
-

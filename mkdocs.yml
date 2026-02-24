@@ -27,8 +27,6 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.expand
-    #- navigation.tabs
-    
     
 extra:
   social:
@@ -40,6 +38,12 @@ extra:
 extra_css:
   - stylesheets/canarybit.css
         
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
 plugins:
   - search
   - tags
@@ -53,13 +57,16 @@ markdown_extensions:
   - attr_list
   - md_in_html
   - pymdownx.emoji:
+      # For a full list of supported emojis: https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - Overview: 'overview.md'
+  - Welcome: 'index.md'
+  - Why Confidential Cloud: 'overview.md'
   - 'Create an Account ⧉': https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F" target="_blank
   - Requirements:
+    - Overview: 'requirements.md'
     #- 'Infrastructure': 'infrastructure.md'
     - 'Hardware': 'requirements/hardware.md'
     - 'Virtualization': 'requirements/virtualization.md'

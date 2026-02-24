@@ -1,39 +1,71 @@
 # Hardware
 
-Confidential Computing is an hardware capability at the core of CanaryBit Confidential Cloud, a suite of products that supports multiple hardware platforms for Public or Private Clouds, On-prem or bare-metal setups.
+Today, support for Confidential Computing is widely available on microprocessor product lines available on the market.
 
-## CPU support
+Enterprise vendors offer several Confidential Computing [implementations](https://www.canarybit.eu/comparing-confidential-computing-platforms/), with varying capabilities and performance limitations, and security trade-offs.
 
-### AMD SEV-SNP
+Confidential Cloud currently supports the following hardware: 
 
-*Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP).*
+## CPU
 
-Confidential Computing capability is available from **3rd Gen AMD `EPYC` Processors** (FamilyName: *Milan*) and newer.
+<div class="grid cards" markdown>
+  <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
+  
+  -   :simple-amd:{ .lg .middle } __SEV-SNP__
 
-Read the [official documentation.](https://www.amd.com/en/developer/sev.html)
+      ---
 
-### INTEL TDX
+      *AMD Secure Encrypted Virtualization (SEV) - Secure Nested Paging (SNP)*
 
-*Trust Domain Extensions (TDX).*
+      Confidential Computing capability is available from **3rd Gen AMD `EPYC` Processors** (FamilyName: *Milan*) and newer.
 
-Confidential Computing capability is available from **5th Gen Intel `Xeon` Scalable Processors** (FamilyName: *Emerald Rapids*) and newer.
+      Read the [official documentation.](https://www.amd.com/en/developer/sev.html)
+  
+  -   :simple-intel:{ .lg .middle } __TDX__
 
-Read the [official documentation.](https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html)
+      ---
 
-## GPU support
+      *Intel Trust Domain Extensions (TDX)* <br><br>
 
-### NVIDIA
+      Confidential Computing capability is available from **5th Gen Intel `Xeon` Scalable Processors** (FamilyName: *Emerald Rapids*) and newer.
 
-Confidential Computing capability is available from **H100 `Tensor Core` Processors** (FamilyName: *Hopper*) and newer.
+      Read the [official documentation.](https://www.intel.com/content/www/us/en/developer/tools/trust-domain-extensions/overview.html)
 
-Read the [official documentation.](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/)
+</div>
 
-## Smart NIC support
+## GPU
 
-#### [AMD SEV-TIO](https://www.amd.com/content/dam/amd/en/documents/developer/sev-tio-whitepaper.pdf)
 
-Coming soon!
+<div class="grid cards" markdown>
+  <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
+  
+  -   :simple-nvidia:{ .lg .middle } __NVIDIA__
 
-#### [INTEL TEE-IO](https://www.intel.com/content/www/us/en/content-details/772642/intel-tdx-connect-tee-io-device-guide.html)
+      ---
 
-Coming soon! 
+      Confidential Computing capability is available from **H100 `Tensor Core` Processors** (FamilyName: *Hopper*) and newer.
+
+      Read the [official documentation.](https://www.nvidia.com/en-us/data-center/solutions/confidential-computing/)
+
+</div>
+
+## SmartNIC 
+
+:warning: Coming soon:
+
+<div class="grid cards" markdown>
+  <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
+  
+  -   :simple-amd:{ .lg .middle } __SEV-TIO__
+
+      ---
+
+      Read the [official documentation.](https://www.amd.com/content/dam/amd/en/documents/developer/sev-tio-whitepaper.pdf)
+
+-   :simple-intel:{ .lg .middle } __TEE-IO__
+
+      ---
+
+      Read the [official documentation.](https://www.intel.com/content/www/us/en/content-details/772642/intel-tdx-connect-tee-io-device-guide.html)
+</div>
+
