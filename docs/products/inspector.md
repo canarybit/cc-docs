@@ -144,7 +144,7 @@ The verification reports and additional insights are available for download on t
 
 ## Licences
 
-CanaryBit Inspector can be deployed on-prem for internal use or offered as a service.
+CanaryBit Inspector can be deployed on-prem, for internal use or offered as a service.
 
 ### Free Trial
 
