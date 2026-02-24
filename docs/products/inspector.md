@@ -126,17 +126,35 @@ export CBCLIENT_LOG_LEVEL="info"
 
 In addition to Confidential VMs, CanaryBit Inspector can be used to verify the confidentiality of Nodes where containers are running, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or directly on a container platform.
 
-CanaryBit Inspector verifies the Cluster Node characteristics:
-
-- before a container is executed (always);
-
-- at a defined schedule (if enabled);
-
-- when specific system-wide events occur (if enabled).
-
-This is **extremely beneficial** for dynamic clusters where the size of the Kubernetes cluster (# of Nodes) is adjusted based on the utilization of Pods and Nodes in the cluster. This feature, called `autoscaling` is typically recommended by hyperscalers CaaS solutions.
-
 [CanaryBit Surveyor](./surveyor.md) provides the configuration to enable Container Remote Attestation for several use-cases.
+
+## Apply custom policies
+
+In addition to the standard Remote Attestation mechanisms, CanaryBit Inspector allows end-users to apply custom policies at different levels in the technology stack:
+
+- Hardware
+- Virtualisation
+- Operating System
+- Application
+
+The CanaryBit Inspector [Policy Generator](https://policy.inspector.confidentialcloud.io) and [Policy Playground](https://playground.inspector.confidentialcloud.io) facilitate the creation of custom policies.
+
+This policies will then be enforced on top of CanaryBit Inspector default policies and together verify the correctness and security of each Trusted Execution Environment.
+
+### Example
+
+Custom policy to enforce `6.16.0` as OS kernel version.
+
+``` title="snp.rego"
+
+package snp
+
+default allow := false
+
+allow if {
+  input.claims.attestations.canarybit.kernel_version == "6.16.0"
+}
+```
 
 ## Download the reports
 
