@@ -42,12 +42,6 @@ extra:
 extra_css:
   - stylesheets/canarybit.css
         
-validation:
-  omitted_files: warn
-  absolute_links: warn
-  unrecognized_links: warn
-  anchors: warn
-
 plugins:
   - search
   - tags
@@ -70,7 +64,6 @@ nav:
   - Why Confidential Cloud: 'overview.md'
   - Requirements:
     - 'Overview': 'requirements.md'
-    #- 'Infrastructure': 'infrastructure.md'
     - 'Hardware': 'requirements/hardware.md'
     - 'Virtualization': 'requirements/virtualization.md'
     - 'Operating Systems': 'requirements/operating-systems.md'
