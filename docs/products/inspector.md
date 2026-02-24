@@ -87,16 +87,18 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
 
   5. Access the Confidential VM and run the `cbclient`:
 
-    ```
-    export CBCLIENT_TOKEN=[USER_TOKEN]
+  ```
+  export CBCLIENT_TOKEN=[USER_TOKEN]
 
-    ./cbclient attestation --environments [TARGET_ENV] --inspector-url https://inspector.confidentialcloud.io
-    ```
-    where `TARGET_ENV` is one or more of:
-    - `snp` for AMD SEV-SNP
-    - `tdx` for Intel TDX
-    - `nvtrust` for NVIDIA H100+ 
-    - `vtpm` for vTPM attestation
+  ./cbclient attestation --environments [TARGET_ENV] --inspector-url https://inspector.confidentialcloud.io
+  ```
+
+  where `TARGET_ENV` is one or more of:
+  
+  - `snp` for AMD SEV-SNP
+  - `tdx` for Intel TDX
+  - `nvtrust` for NVIDIA H100+ 
+  - `vtpm` for vTPM attestation
 
 ### Example 
 

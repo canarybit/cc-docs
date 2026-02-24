@@ -6,9 +6,11 @@
 
 The CanaryBit Command-Line Interface (CLI) is a cross-platform command-line tool to connect to your CanaryBit account and execute commands on CanaryBit resources.
 
-## Install 
+## Requirements
 
-You can install the CanaryBit CLI locally on Linux, macOS, or Windows computers. 
+- A CanaryBit Account
+
+## Install 
 
 Download the binary from CanaryBit's S3 public bucket:
 
@@ -27,31 +29,42 @@ and `[OS_TARGET]` is one of the following:
 - Apple Intel: `cb-x86_64-apple-darwin`
 - Apple M-series: `cb-aarch64-apple-darwin`
 
-**Example (Linux)**
+**Example**
 ```
 $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/0.2.5/cb-x86_64-unknown-linux-gnu -o cb
 ```
 
-### Current Version
-
-For information about the current (latest) release, see the release notes. To find your installed version run:
-
-```
-cb --version
-```
-
 ## Authentication
 
-CanaryBit CLI allows you to authenticate and fetch credentials for specific CanaryBit services:
+Authenticate towards CanaryBit Identity Provider and fetch a valid token for specific CanaryBit services.
+
+Source your credentials:
+
+```
+export CB_USERNAME=***
+export CB_PASSWORD=***
+```
+
+and run:
 
 ```
 cb login
 ```
 
-and display your CanaryBit account information:
+## Account info
+
+Display your CanaryBit account information.
 
 ```
 cb account
+```
+
+## Current Version
+
+For information about the current (latest) release, see the release notes. To find your installed version run:
+
+```
+cb --version
 ```
 
 ## Data collection
