@@ -2,47 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://docs.confidentialcloud.io/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/architecture/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/overview/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/compliance/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/requirements/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/infrastructure/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/products/inspector/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/inspector/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/products/surveyor/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/studio/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/products/tower/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/tower/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/requirements/containers/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/workflow/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/requirements/hardware/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
     <url>
-         <loc>https://docs.confidentialcloud.io/x509_certificate/</loc>
-         <lastmod>2024-03-01</lastmod>
-         <changefreq>daily</changefreq>
+         <loc>https://docs.confidentialcloud.io/requirements/operating-systems/</loc>
+         <lastmod>2026-02-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.confidentialcloud.io/requirements/virtualization/</loc>
+         <lastmod>2026-02-24</lastmod>
+    </url>
+    <url>
+         <loc>https://docs.confidentialcloud.io/tools/cli/</loc>
+         <lastmod>2026-02-24</lastmod>
     </url>
 </urlset>
