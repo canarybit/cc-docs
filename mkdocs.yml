@@ -1,13 +1,15 @@
 site_name: Confidential Cloud
 site_url: https://docs.confidentialcloud.io
 site_description: >-
-  CanaryBit Confidential Cloud is a virtual infrastructure security solution for 
+  CanaryBit Confidential Cloud is a digital infrastructure security suite for 
   Businesses and Public Authorities that are willing to collaborate 
   with sensitive data and algorithms, and in need of a hardware-encrypted 
   execution environment protected from unauthorized access.
 site_author: Canary Bit AB
 copyright: >-
-  Copyright © <a href="https://www.canarybit.eu" target="_blank">Canary Bit AB</a> 
+  <iframe src="https://confidentialcloud.status.phare.io/embed-badges/live-status?align=start&background-light=f5f5f5&text-light=000000&background-dark=171717&text-dark=ffffff" width="190" height="30" loading="lazy" frameborder="0" scrolling="no" style="color-scheme: light dark;"></iframe>
+  <br>
+  Copyright © <a href="https://www.canarybit.eu" target="_blank">Canary Bit AB</a>
 
 #repo_url: https://github.com/canarybit
 #repo_name: "/canarybit"
@@ -27,7 +29,9 @@ theme:
     repo: fontawesome/brands/github
   features:
     - navigation.expand
-    
+    - navigation.path
+    - navigation.top
+
 extra:
   social:
     - icon: material/web
@@ -62,11 +66,10 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 nav:
-  - Welcome: 'index.md'
+  - Welcome!: 'index.md'
   - Why Confidential Cloud: 'overview.md'
-  - 'Create an Account ⧉': https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F" target="_blank
   - Requirements:
-    - Overview: 'requirements.md'
+    - 'Overview': 'requirements.md'
     #- 'Infrastructure': 'infrastructure.md'
     - 'Hardware': 'requirements/hardware.md'
     - 'Virtualization': 'requirements/virtualization.md'
@@ -83,7 +86,7 @@ nav:
   - Tools:
     - 'CanaryBit CLI': './tools/cli.md'
 
-  - --- : []
+  - . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . : []
 
-  - 'Customer Support ⧉': https://canarybit.eu" target="_blank
- 
+  - 'Sign up': https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F" target="_blank
+  - 'Contact Support ⧉': https://www.canarybit.eu/contact" target="_blank

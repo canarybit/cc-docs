@@ -32,9 +32,9 @@ CanaryBit Inspector service is **built on microservices** that wholetogether pro
 
 ### cbclient
 
-CanaryBit Inspector verifies Confidential VMs (cVM) and Containers deployed in Public, Private or On-Prem cloud infrastructures.
-
 The `cbclient` agent is the **client implementation** for the CanaryBit Inspector Attestation service. Written in [Rust](https://www.rust-lang.org/), it is responsible to collect the attestation data and call the CanaryBit Inspector API to verify the execution environments, either Confidential VMs or containers.
+
+![Inspector Workflow](../img/inspector-workflow.png)
  
 ## Requirements
 
@@ -164,20 +164,31 @@ The verification reports and additional insights are available for download on t
 
 CanaryBit Inspector can be deployed on-prem, for internal use or offered as a service.
 
-### Free Trial
+<div class="grid cards" markdown>
+  <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
+  
+  -   :material-play-pause:{ .lg .middle } __Free Trial__
 
-Try our CanaryBit Inspector SaaS service for 1-month for FREE. 
+      ---
 
-[Contact us!](https://www.canarybit.eu/contact/)
+      Get 1 month **FREE** access to CanaryBit Inspector service. 
 
-### Enterprise
+      [Contact us!](https://www.canarybit.eu/contact/)
 
-Choose between a Basic, Standard or Enterprise licence and get up to speed in minutes. 
+  -   :material-office-building:{ .lg .middle } __Private__
 
-[Contact us!](https://www.canarybit.eu/contact)
+      ---
+      
+      Choose between *Basic*, *Standard* or *Enterprise* licence and get up to speed in minutes. 
 
-### Reseller
+      [Contact us!](https://www.canarybit.eu/contact/)
 
-If you are interested in offering CanaryBit Inspector as a Service (SaaS).
+  -   :fontawesome-solid-shop:{ .lg .middle } __Reseller__
 
-[Contact us!](https://www.canarybit.eu/contact/)
+      ---
+      
+      If you are interested in offering CanaryBit Inspector as a Service (SaaS).
+
+      [Contact us!](https://www.canarybit.eu/contact/)
+
+</div>
