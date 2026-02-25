@@ -3,6 +3,10 @@
   src: url("../fonts/TitilliumWeb-Regular.ttf") format("truetype");
 }
 
+.md-nav__title {
+  display: none;
+}
+
 .md-typeset h1, .md-typeset h2, .md-typeset h3 {
   color: var(--cb-blue-01);
   font-weight: bold;
