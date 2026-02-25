@@ -34,7 +34,10 @@ and `[OS_TARGET]` is one of the following:
 $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/0.2.5/cb-x86_64-unknown-linux-gnu -o cb
 ```
 
-## Authentication
+
+## Subcommands
+
+### Authentication
 
 Authenticate towards CanaryBit Identity Provider and fetch a valid token for specific CanaryBit services.
 
@@ -51,7 +54,7 @@ and run:
 cb login
 ```
 
-## Account info
+### Account
 
 Display your CanaryBit account information.
 
@@ -59,12 +62,20 @@ Display your CanaryBit account information.
 cb account
 ```
 
-## Current Version
+### Current Version
 
 For information about the current (latest) release, see the release notes. To find your installed version run:
 
 ```
 cb --version
+```
+
+### Help
+
+Print the help of the given subcommand(s).
+
+```
+$ cb --help
 ```
 
 ## Data collection
