@@ -34,7 +34,6 @@ and `[OS_TARGET]` is one of the following:
 $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/0.2.5/cb-x86_64-unknown-linux-gnu -o cb
 ```
 
-
 ## Subcommands
 
 ### Authentication

@@ -74,14 +74,16 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
     ```
     ./cb download cbclient [CBCLIENT_V]/cbclient
     ```
-    where `[CBCLIENT_V]` is the required client version, e.g. `0.2.6`
+  
+    where `[CBCLIENT_V]` is the required client version (e.g. `0.2.6`).
 
-  4. Fetch a user valid token
+  4. Get a Token
 
     ```
     ./cb login inspector
     ```
-    The command returns a valid `USER_TOKEN` that will be used by the `cbclient` to authenticate the user towards CanaryBit Inspector.
+
+    The command returns a fresh token for the user. This token (`[USER_TOKEN]`) must be provided to `cbclient` to authenticate the user towards the CanaryBit Inspector service.
 
 *From <ins>inside</ins> a Confidential VM:*
 
@@ -90,15 +92,13 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
   ```
   export CBCLIENT_TOKEN=[USER_TOKEN]
 
-  ./cbclient attestation --environments [TARGET_ENV] --inspector-url https://inspector.confidentialcloud.io
+  ./cbclient attestation --environments [TARGET_ENV] --inspector-url https://api.inspector.confidentialcloud.io
   ```
 
-  where `TARGET_ENV` is one or more of:
+  where `TARGET_ENV` is currently, one of the following:
   
   - `snp` for AMD SEV-SNP
   - `tdx` for Intel TDX
-  - `nvtrust` for NVIDIA H100+ 
-  - `vtpm` for vTPM attestation
 
 ### Example 
 
@@ -143,7 +143,7 @@ This policies will then be enforced on top of CanaryBit Inspector default polici
 
 ### Example
 
-Custom policy to enforce `6.16.0` as OS kernel version.
+Custom policy to enforce `6.16.x` as OS kernel version.
 
 ``` title="snp.rego"
 
@@ -152,7 +152,7 @@ package snp
 default allow := false
 
 allow if {
-  input.claims.attestations.canarybit.kernel_version == "6.16.0"
+  input.claims.attestations.canarybit.kernel_version == "6.17.0-14-generic"
 }
 ```
 
