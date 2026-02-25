@@ -100,6 +100,13 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
   - `snp` for AMD SEV-SNP
   - `tdx` for Intel TDX
 
+!!! note 
+
+    Currently, `cbclient` requires the `libtss2` library to be installed on the machine. If not available, simply install the package with:
+    ```
+    sudo apt install libtss2-dev
+    ```
+
 ### Example 
 
 For AMD SEV-SNP attestation:

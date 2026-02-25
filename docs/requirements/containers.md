@@ -4,7 +4,9 @@
 - [Kubernetes](https://kubernetes.io/)
 - [Openshift](https://www.redhat.com/en/technologies/cloud-computing/openshift) `v4.20+`
 
-**Note.** Confidential VMs do not currenly support nested virtualization.
+!!! note 
+
+    Confidential VMs do not currenly support nested virtualization.
 
 ## Runtime
 
