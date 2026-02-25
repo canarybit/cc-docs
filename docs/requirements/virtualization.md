@@ -4,7 +4,7 @@
 
 Confidential Cloud provisions & verifies Trusted Execution Environments (TEE) on several hyperscalers and locations.
 
-Below a shortlist of our **verified deployments**:
+Below a shortlist of our **verified providers**:
 
 <div class="grid cards" markdown>
   <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
