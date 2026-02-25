@@ -83,14 +83,14 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
     ./cb login inspector
     ```
 
-    The command returns a fresh token `[USER_TOKEN]` for the user. The token will be used by `cbclient` to authenticate the user towards the CanaryBit Inspector service.
+    The command returns a fresh token for the user. The token will be used by `cbclient` to authenticate the user towards the CanaryBit Inspector service.
 
 *From <ins>inside</ins> a Confidential VM:*
 
-  1. Access the Confidential VM and run the `cbclient` using the [USER_TOKEN] retrieved in the previous step:
+  1. Access the Confidential VM and run the `cbclient` using the fresh token retrieved in the previous step:
 
   ```
-  export CBCLIENT_TOKEN=[USER_TOKEN]
+  export CBCLIENT_TOKEN=***
 
   ./cbclient attestation --environments [TARGET_ENV] --inspector-url https://api.inspector.confidentialcloud.io
   ```
