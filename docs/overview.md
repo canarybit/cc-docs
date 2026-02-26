@@ -8,11 +8,11 @@ AI-powered analytics enables organizations to predict consumer behavior, optimiz
 
 However, while AI and data analytics offer enormous potential, they also carry significant *risks* that industries must carefully manage:
 
-- [Security & Privacy]()
-- [Compliance]()
-- [Legal & IP]()
-- [Liability & Reputational]()
-- [Societal]()
+* Security & Privacy
+* Compliance
+* Legal & IP
+* Liability & Reputational
+* Societal
 
 CanaryBit Confidential Cloud helps mitigate relevant risks ensuring **confidentiality**, **integrity**, and **availability** of sensitive digital assets.
 
