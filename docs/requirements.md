@@ -1,11 +1,23 @@
 # Requirements
 
-This section describes the technology stack supported by CanaryBit Confidential Cloud products:
+CanaryBit Confidential Cloud requires only specific [Hardware](./requirements/hardware.md) (CPU, GPU and more) with **Confidential Computing capabilities enabled**
 
-[Hardware](./requirements/hardware.md)
+Moreover, CanaryBit Confidential Cloud supports a wide range of technologies through the different levels of the technology stack:
 
-[Virtualization](./requirements/virtualization.md)
+![CanaryBit Confidential Cloud Support](./img/canarybit-confidential-cloud-support.png)
 
-[Operating Systems](./requirements/operating-systems.md)
+!!! info "Legend"
 
-[Containers](./requirements/containers.md)
+    🟢 &nbsp; Full support
+
+    🟡 &nbsp; Work in progress
+
+
+## Supported Technologies
+
+* [Virtualization](./requirements/virtualization.md)
+
+* [Operating Systems](./requirements/operating-systems.md)
+
+* [Containers](./requirements/containers.md)
+
