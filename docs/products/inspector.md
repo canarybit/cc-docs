@@ -38,8 +38,8 @@ The `cbclient` agent is the **client implementation** for the CanaryBit Inspecto
  
 ## Requirements
 
-- A [CanaryBit Account](https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F);
-- A CanaryBit [Inspector Licence](./inspector.md#licences);
+- A CanaryBit [account](https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F);
+- A CanaryBit Inspector [licence](./inspector.md#licences);
 - A target environment with a [supported](../requirements.md) technology stack.
 
 ## Attest a Confidential VM
