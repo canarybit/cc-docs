@@ -204,12 +204,14 @@ In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`defau
 Apply the configuration with [Terraform](https://developer.hashicorp.com/terraform/cli/commands/apply):
    
 ```
+terraform init
 terraform apply
 ```
 
 or [OpenTofu](https://opentofu.org/docs/cli/commands/apply/):
 
 ```
+tofu init
 tofu apply
 ```
 
