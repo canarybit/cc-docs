@@ -18,11 +18,14 @@ CanaryBit Tower consists of multiple Terraform / OpenTofu [module](https://devel
 
 ## Requirements
 
+
 - A [CanaryBit Account](https://canarybit-production.auth.eu-north-1.amazoncognito.com/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F);
+
+- Access to the target infrastructure provider;
 
 - [Terraform](https://developer.hashicorp.com/terraform) or [OpenTofu](https://opentofu.org/docs/) installed;
 
-- CLI access to your cloud platform (e.g [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest), [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html), etc...)
+- CLI access to your cloud platform (e.g [Azure CLI](https://learn.microsoft.com/en-us/cli/azure/what-is-azure-cli?view=azure-cli-latest), [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html), etc...).
 
 ## Download
 
@@ -105,6 +108,7 @@ A **Premium License** is required for the following configurations: [:material-d
 
 Automatically deploy Confidential VMs (cVM) applying specific configuration for the selected target infrastructure as follows:
 
+### Credentials 
 
 1. Source your target infrastructure credentials (e.g. **AWS**)
 
@@ -131,61 +135,92 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
         export TF_VAR_cb_password=$(echo $CB_PASSWORD)
         ```
 
-3. Edit the CanaryBit Tower module configuration. The below example shows **the lines/blocks that can be customized** according to the expected target environment (e.g. [AWS](https://github.com/canarybit/terraform-canarybit-tower/blob/main/examples/)). All the other code should be left unaltered. 
+### Configure
 
-    ```
-    ... 
+Edit the CanaryBit Tower module configuration. 
 
-    // ========================
-    //  Confidential VM (CVM)
-    // ========================
+The below example shows **the lines/code-blocks that can be customized** according to the expected target environment. 
 
-    module "confidential-vm" {
+```
+... 
 
-        source = "canarybit/tower/canarybit//modules/aws"       
-        cb_username = var.cb_username
-        cb_password = var.cb_password
+// ========================
+//  Confidential VM (CVM)
+// ========================
 
-        //  ************** CUSTOM CONFIG BELOW THIS LINE ************** // 
+module "confidential-vm" {
 
-        // Confidential VM
-        count = var.n_of_cvm
-        cvm_name = "my-cvm-${count.index}"
-        cvm_ssh_enabled = true
-        cvm_ssh_pubkey = "~/.ssh/id_rsa.pub"
-        cvm_size = "c6a.xlarge"
+    //  ************** DO NOT REMOVE THESE LINES ****************** // 
 
-        // Remote Attestation
-        remote_attestation = {
-            cc_environments = "snp"
-        }
+    source = "canarybit/tower/canarybit//modules/aws"       
+    cb_username = var.cb_username
+    cb_password = var.cb_password
+
+    //  ************** CUSTOM CONFIG BELOW THIS LINE ************** // 
+
+    // Confidential VM
+    count = var.n_of_cvm
+    cvm_name = "my-cvm-${count.index}"
+    cvm_ssh_enabled = true
+    cvm_ssh_pubkey = "~/.ssh/id_rsa.pub"
+    cvm_size = "c6a.xlarge"
+
+    // Remote Attestation
+    remote_attestation = {
+        cc_environments = "snp"
     }
+}
 
-    ...
-    ```
+...
+```
    
-    For more information about the possible arguments, please refer to the **Inputs** tab in each module (e.g. [AWS module: Inputs](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/aws?tab=inputs))
+For more information about the possible arguments, please refer to each module **Inputs** tab (e.g. [AWS module: Inputs](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/aws?tab=inputs))
 
-4. Apply the configuration:
-   
-    ```
-    terraform apply
-    ```
+#### With Attestation (recommended)
 
-    During the deployment CanaryBit Tower:
+To enable Remote Attestation, simply add the `remote_attestation` code-block in the module providing the required variables.
+
+In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`attested.yml`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/attested.yml))  ensuring the security characteristics of each Confidential VM are verified at booting time or at a custom cadence.
+
+!!! success "Never trust, always verify!"
+
+    Environment verification with CanaryBit Inspector service is recommended to certify the security capabilities of the execution environments, **mitigate risks and ensure privacy**.
+
+
+#### Without Attestation
+
+To disable Remote Attestation, simply remove the `remote_attestation` code-block in the module.
+
+In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`default.yml`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/default.yml)) at booting time.
+
+!!! danger "You are at risk!"
     
-    * creates the Confidential VMs and required virtual resources, e.g. networks, security groups, etc...
-    * injects a [`cloud-init`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/attested.yml) in each deployed Confidential VMs, ensuring the security characteristics of each instance are verified at booting time or at a custom cadence.
+    The security characteristics of this environment are NOT VERIFIED! </br>
+    In this scenario, you are still trusting the hypervisor/infrastructure provider.
 
-    !!! info "Never trust, always verify!"
 
-        Environment verification with CanaryBit Inspector service is recommended to certify the security capabilities of the execution environments, mitigate risks and ensure privacy**.
+### Apply 
 
-5. Return the details of the provisioned resources, e.g. Confidential VM, networks, etc...
+Apply the configuration with [Terraform](https://developer.hashicorp.com/terraform/cli/commands/apply):
+   
+```
+terraform apply
+```
 
-6. Login to CanaryBit [Inspector dashboard](https://dashboard.inspector.confidentialcloud.io) to download the full verification report.
+or [OpenTofu](https://opentofu.org/docs/cli/commands/apply/):
 
-    !!! success 
+```
+tofu apply
+```
 
-        The security characteristics of this environment are VERIFIED!
-        In this scenario, the chip vendor (AMD, Intel, NVIDIA or others) is the only component you trust.
+During the deployment CanaryBit Tower:
+
+1. authenticates towards your infrastructure provider;
+2. authenticates towards CanaryBit;
+3. creates the Confidential VMs and required virtual resources, e.g. networks, security groups, etc...;
+4. injects the `cloud-init`(with or without Remote Attestation enabled) in each deployed Confidential VMs;
+5. returns the details of the provisioned resources.
+
+### Collect the Attestation report 
+
+Login to the [Inspector dashboard](https://dashboard.inspector.confidentialcloud.io) with your CanaryBit and download the full verification and audit report.
