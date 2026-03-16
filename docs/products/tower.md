@@ -10,7 +10,7 @@ It creates all the required infrastructure resources and one or more Trusted Exe
 Tower orchestrates TEEs either on the resources of a Cloud Service Provider of your choice, or On-Prem.
 It destroys all the resources once the execution is completed or compromised. Each trusted execution environment is single-use and immutable once created.
 
-CanaryBit Tower consists of multiple Terraform / OpenTofu [module](https://developer.hashicorp.com/terraform/language/modules) configurations. The Tower module is a collection of resources to provision Confidential VMs resources only.
+CanaryBit Tower consists of multiple Terraform / OpenTofu **module** configurations. The Tower module is a collection of resources to provision Confidential VMs resources only.
 
 !!! tip "What is a module?" 
 
