@@ -128,7 +128,7 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
     !!! tip
         
         The module expects your CanaryBit username (`cb_username`) and password (`cb_password`) as input. <br>
-        To faciliate the use of sensitive information use:
+        We recommend using environment variables as follows:
         
         ```
         export TF_VAR_cb_username=$CB_USERNAME  
