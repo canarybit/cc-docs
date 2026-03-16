@@ -131,8 +131,8 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
         To faciliate the use of sensitive information use:
         
         ```
-        export TF_VAR_cb_username=$(echo $CB_USERNAME)  
-        export TF_VAR_cb_password=$(echo $CB_PASSWORD)
+        export TF_VAR_cb_username=$CB_USERNAME  
+        export TF_VAR_cb_password=$CB_PASSWORD
         ```
 
 ### Configure
