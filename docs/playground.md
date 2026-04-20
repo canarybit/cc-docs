@@ -52,44 +52,35 @@ Download CanaryBit Tower configuration for [Public Cloud deployments](./products
 
 Finally, deploy the environment following the steps documented in the [Products :: TOWER](./products/tower.md#deploy-verify) page.
 
+## 3. Get your environment verified by CanaryBit Inspector
 
-## 3. Verify your environment with CanaryBit Inspector
+The verification of your Confidential environment is triggered **automatically** when using by CanaryBit Tower. 
 
-### Automatic 
+!!! abstract "Optional: Manual verification"
 
-The verification of your Confidential environment is automatically performed with CanaryBit Tower. 
+    If manual verification is required, you would need to upload the CanaryBit (`cbclient`) agent on each Confidential VM you would like to attest.
+    
+    Specifically, you would need to:
+    
+    1. Install the [CanaryBit (`cb`) CLI](./tools/cli.md) tool
 
-Go to [Step 4. View the final report](#4-view-the-final-report) to monitor your environment.
-
-### Manual
-
-For ad-hoc setup, you would to upload the CanaryBit (`cbclient`) agent on the Confidential VM you would like to attest.
-
-a. Install the [CanaryBit (`cb`) CLI](./tools/cli.md) tool
-b. Retrieve your CanaryBit token (`CBTOKEN`):
+    2. Authenticate and retrieve your CanaryBit Inspector token (`$CBTOKEN`):
     ```
     cb login cbinspector
     ```
-    The command prompts a temporary token to be used to communicate with CanaryBit Inspector.
-
-c. Download the CanaryBit (`cbclient`) agent:
+    The returned temporary token will be used by `cbclient` to communicate with CanaryBit Inspector. 
+    
+    3. Download the `cbclient`:
     ```
-    ./cb download cbclient ${CBCLIENT_V}/cbclient
-    ```
-    where `CBCLIENT_V` is the agent version (e.g. `0.3.0`)
-
-d. Copy the `cbclient` to the Confidential VM
-e. On the Confidential VM, run the `cbclient`:
+    ./cb download cbclient 0.3.0/cbclient
+    ``` 
+    4. Copy the `cbclient` on each Confidential VM.
+    
+    5. From each Confidential VM, run:
     ```
     cbclient attestation --token $CBTOKEN --environment $HW_ENV --inspector-url https://api.inspector.confidentialcloud.io
     ```
-    
-providing `$CBTOKEN` (see step b.) and `$HW_ENV` (`"snp"` or `"tdx"`, depending on your hardware chipset) as arguments.
-
-
-!!! info
-
-    For **ad-hoc setups** please [get in touch](https://www.canarybit.eu/contact) with the CanaryBit team. We will be happy to discuss and help you up fullfil your needs.
+    providing `$CBTOKEN` and `$HW_ENV` (`"snp"` or `"tdx"`, depending on your hardware chipset) as arguments.
 
 ## 4. View the final report
 
@@ -105,7 +96,4 @@ Simply [log in](https://inspector.confidentialcloud.io) to the CanaryBit Inspect
 
 ## 5. Need help?
 
-We will be happy to help you up to speed with our Confidential Cloud solution. 
-
-[Contact Support!](https://www.canarybit.eu/contact)
-
+For **custom setups**, please [get in touch](https://www.canarybit.eu/contact) with the CanaryBit support team. We will be happy to discuss and help you with your requirements.
