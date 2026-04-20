@@ -58,11 +58,16 @@ Below a shortlist of our **verified providers**:
 ## Private / Bare-metal
 
 <div class="grid cards" markdown>
+
   <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
   
-  -   :simple-proxmox:{ .lg .middle } __Proxmox VE `v8.4+`__
+  -   :simple-proxmox:{ .lg .middle } __Proxmox VE `v8.4`__
 
   -   :simple-vmware:{ .lg .middle } __VMware vSphere `v9+`__
+
+  -   :simple-suse:{ .lg .middle } __Harvester `v1.7.1+`__
+
+  -   :simple-suse:{ .lg .middle } __KubeVirt `v1.7+`__
 
   -   :simple-qemu:{ .lg .middle } __Libvirt `v11+` / Qemu `v9.2+`__
 
