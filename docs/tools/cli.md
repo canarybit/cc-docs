@@ -18,11 +18,7 @@ Download the binary from CanaryBit's S3 public bucket:
 $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/[VERSION]/[OS_TARGET] -o cb
 ```
 
-where `[VERSION]` is 
-
-- `0.2.5` (latest) 
-
-and `[OS_TARGET]` is one of the following:
+where `[VERSION]` is the `cb` version (e.g. `0.3.0`) and `[OS_TARGET]` is one of the following reference architectures:
 
 - Linux: `cb-x86_64-unknown-linux-gnu`
 - Windows: `cb-x86_64-pc-windows-msvc.exe`

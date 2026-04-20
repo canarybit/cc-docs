@@ -174,11 +174,11 @@ CanaryBit Inspector can be deployed on-prem, for internal use or offered as a se
 <div class="grid cards" markdown>
   <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
   
-  -   :material-play-pause:{ .lg .middle } __Free Trial__
+  -   :material-play-pause:{ .lg .middle } __Trial__
 
       ---
 
-      Get 1 month **FREE** access to CanaryBit Inspector service. 
+      Try CanaryBit Inspector and related products for **FREE** with our "Not For Resale (NFR)" licence.
 
       [Contact us!](https://www.canarybit.eu/contact/)
 

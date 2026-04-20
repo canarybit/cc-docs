@@ -80,6 +80,8 @@ nav:
   - Tools:
     - 'CanaryBit CLI': './tools/cli.md'
 
+  - 'Playground': './playground.md'
+
   - . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . : []
 
   - 'Sign up': https://auth.confidentialcloud.io/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F" target="_blank

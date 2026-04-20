@@ -110,15 +110,7 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
 
 ### Credentials 
 
-1. Source your target infrastructure credentials (e.g. **AWS**)
-
-    ``` title="aws.rc"
-    export AWS_ACCESS_KEY_ID=***
-    export AWS_SECRET_ACCESS_KEY=***
-    export AWS_REGION=***
-
-    ```
-2. Source your CanaryBit credentials:
+1. Source your **CanaryBit** credentials:
 
     ``` title="cb.rc"
     export CB_USERNAME=***
@@ -127,7 +119,7 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
 
     !!! tip
         
-        The module expects your CanaryBit username (`cb_username`) and password (`cb_password`) as input. <br>
+        The Terraform/OpenTofu module expects your CanaryBit username (`cb_username`) and password (`cb_password`) as input. <br>
         We recommend using environment variables as follows:
         
         ```
@@ -135,13 +127,26 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
         export TF_VAR_cb_password=$CB_PASSWORD
         ```
 
+2. Source your target infrastructure credentials (e.g. AWS)
+
+    ``` title="aws.rc"
+    export AWS_ACCESS_KEY_ID=***
+    export AWS_SECRET_ACCESS_KEY=***
+    export AWS_REGION=***
+
+    ```
+
 ### Configure
 
 Edit the CanaryBit Tower module configuration. 
 
-The below example shows **the lines/code-blocks that can be customized** according to the expected target environment. 
+The below example shows an example of **the lines/code-blocks that can be customized** according to the expected target environment. 
 
-```
+!!! note
+    Always refer to the provided [example files](https://github.com/canarybit/terraform-canarybit-tower/tree/main/examples) for up-to-date, supported configuration.
+
+
+``` title="Example - Module configuration for AWS deployment"
 ... 
 
 // ========================
@@ -159,22 +164,15 @@ module "confidential-vm" {
     //  ************** CUSTOM CONFIG BELOW THIS LINE ************** // 
 
     // Confidential VM
-    count = var.n_of_cvm
+    count = 2
     cvm_name = "my-cvm-${count.index}"
-    cvm_ssh_enabled = true
-    cvm_ssh_pubkey = "~/.ssh/id_rsa.pub"
-    cvm_size = "c6a.xlarge"
-
-    // Remote Attestation
-    remote_attestation = {
-        cc_environments = "snp"
-    }
+    ...
 }
 
 ...
 ```
    
-For more information about the possible arguments, please refer to each module **Inputs** tab (e.g. [AWS module: Inputs](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/aws?tab=inputs))
+For more information about the expected arguments, please refer to each module **Inputs** tab (e.g. [AWS: Inputs](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/aws?tab=inputs))
 
 #### With Attestation (recommended)
 
@@ -189,9 +187,8 @@ In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`attes
 
 #### Without Attestation
 
-To disable Remote Attestation, simply remove the `remote_attestation` code-block in the module.
-
-In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`default.yml`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/default.yml)) at booting time.
+Whenever a Confidential VM is created and **not attested**, the end-user is still trusting the hypervisor and infrastructure provider.
+In this scenario, the need of Confidential VMs becomes **worthless**.
 
 !!! danger "You are at risk!"
     
@@ -201,24 +198,23 @@ In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`defau
 
 ### Apply 
 
-Apply the configuration with [Terraform](https://developer.hashicorp.com/terraform/cli/commands/apply):
-   
-```
+In your terminal, apply the configuration via:
+
+``` title="Terraform"
 terraform init
 terraform apply
 ```
+or 
 
-or [OpenTofu](https://opentofu.org/docs/cli/commands/apply/):
-
-```
+``` title="OpenTofu"
 tofu init
 tofu apply
 ```
 
 During the deployment CanaryBit Tower:
 
-1. authenticates towards your infrastructure provider;
-2. authenticates towards CanaryBit;
+1. authenticates the user towards CanaryBit;
+2. authenticates the user towards your infrastructure provider;
 3. creates the Confidential VMs and required virtual resources, e.g. networks, security groups, etc...;
 4. injects the `cloud-init`(with or without Remote Attestation enabled) in each deployed Confidential VMs;
 5. returns the details of the provisioned resources.
