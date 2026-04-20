@@ -55,15 +55,43 @@ Finally, deploy the environment following the steps documented in the [Products 
 
 ## 3. Verify your environment with CanaryBit Inspector
 
-### Automatic Verification 
+### Automatic 
 
-CanaryBit Tower will automatically perform an attestation of your environment using CanaryBit Inspector SaaS service.
+The verification of your Confidential environment is automatically performed with CanaryBit Tower. 
 
-!!! tip
+Go to [Step 4. View the final report](#4-view-the-final-report) to monitor your environment.
 
-    For more **ad-hoc setups** please [get in touch](https://www.canarybit.eu/contact) with the CanaryBit team. We will be happy to discuss and help you up fullfil your needs.
+### Manual
 
-### View the final report
+For ad-hoc setup, you would to upload the CanaryBit (`cbclient`) agent on the Confidential VM you would like to attest.
+
+a. Install the [CanaryBit (`cb`) CLI](./tools/cli.md) tool
+b. Retrieve your CanaryBit token (`CBTOKEN`):
+    ```
+    cb login cbinspector
+    ```
+    The command prompts a temporary token to be used to communicate with CanaryBit Inspector.
+
+c. Download the CanaryBit (`cbclient`) agent:
+    ```
+    ./cb download cbclient ${CBCLIENT_V}/cbclient
+    ```
+    where `CBCLIENT_V` is the agent version (e.g. `0.3.0`)
+
+d. Copy the `cbclient` to the Confidential VM
+e. On the Confidential VM, run the `cbclient`:
+    ```
+    cbclient attestation --token $CBTOKEN --environment $HW_ENV --inspector-url https://api.inspector.confidentialcloud.io
+    ```
+    
+providing `$CBTOKEN` (see step b.) and `$HW_ENV` (`"snp"` or `"tdx"`, depending on your hardware chipset) as arguments.
+
+
+!!! info
+
+    For **ad-hoc setups** please [get in touch](https://www.canarybit.eu/contact) with the CanaryBit team. We will be happy to discuss and help you up fullfil your needs.
+
+## 4. View the final report
 
 Simply [log in](https://inspector.confidentialcloud.io) to the CanaryBit Inspector Dashboard to view the final report, monitor and observe the security of your environment.
 
@@ -75,7 +103,7 @@ Simply [log in](https://inspector.confidentialcloud.io) to the CanaryBit Inspect
 
 ![Inspector Dashboard Graph](./img/inspector-dashboard-graph.png)
 
-## 4. Need help?
+## 5. Need help?
 
 We will be happy to help you up to speed with our Confidential Cloud solution. 
 
