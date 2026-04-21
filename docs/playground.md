@@ -14,7 +14,7 @@ The playground gives you the opportunity to deploy and verify Confidential envir
 
 ## How-To
 
-## 1. Source your credentials
+### 1. Source your credentials
 
 In your terminal, source as environment variables your **CanaryBit** credentials:
 
@@ -44,7 +44,7 @@ export GOOGLE_PROJECT=***
 export GOOGLE_ZONE=***
 ```
 
-## 2. Deploy your Confidential environment with CanaryBit Tower
+### 2. Deploy your Confidential environment with CanaryBit Tower
 
 CanaryBit Tower comes with a set of [examples](https://github.com/canarybit/terraform-canarybit-tower/tree/main/examples) that can be used to provision a secure environment in your target infrastructure.  
 
@@ -52,7 +52,7 @@ Download CanaryBit Tower configuration for [Public Cloud deployments](./products
 
 Finally, deploy the environment following the steps documented in the [Products :: TOWER](./products/tower.md#deploy-verify) page.
 
-## 3. Get your environment verified by CanaryBit Inspector
+### 3. Get your environment verified by CanaryBit Inspector
 
 The verification of your Confidential environment is triggered **automatically** when using CanaryBit Tower. 
 
@@ -82,7 +82,7 @@ The verification of your Confidential environment is triggered **automatically**
     ```
     providing `$CBTOKEN` and `$HW_ENV` (`"snp"` or `"tdx"`, depending on your hardware chipset) as arguments.
 
-## 4. View the final report
+### 4. View the final report
 
 Simply [log in](https://inspector.confidentialcloud.io) to the CanaryBit Inspector Dashboard to view the final report, monitor and observe the security of your environment.
 
@@ -94,6 +94,6 @@ Simply [log in](https://inspector.confidentialcloud.io) to the CanaryBit Inspect
 
 ![Inspector Dashboard Graph](./img/inspector-dashboard-graph.png)
 
-## 5. Need help?
+### 5. Need help?
 
 For **custom setups**, please [get in touch](https://www.canarybit.eu/contact) with the CanaryBit support team. We will be happy to discuss and help you with your requirements.
