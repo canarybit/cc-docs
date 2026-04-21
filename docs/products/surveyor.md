@@ -4,9 +4,9 @@
 
 ---
 
-For contenerised application that analyse sensitive data, it became crucial to verify the confidentiality of the nodes where the containers are running, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or directly on a container platform.
+For containerized application that analyze sensitive data, it became crucial to verify the confidentiality of the nodes where the containers are running, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or directly on a container platform.
 
-CanaryBit Surveyor ensures the contenerised platform uses isolation mechanisms to protect the privacy of the workloads and dataset, and verifies the cluster characteristics:
+CanaryBit Surveyor ensures the containerized platform uses isolation mechanisms to protect the privacy of the workloads and dataset, and verifies the cluster characteristics:
 
 * before a container is executed (always);
 
