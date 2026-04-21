@@ -54,7 +54,7 @@ Finally, deploy the environment following the steps documented in the [Products 
 
 ## 3. Get your environment verified by CanaryBit Inspector
 
-The verification of your Confidential environment is triggered **automatically** when using by CanaryBit Tower. 
+The verification of your Confidential environment is triggered **automatically** when using CanaryBit Tower. 
 
 !!! abstract "Optional: Manual verification"
 
