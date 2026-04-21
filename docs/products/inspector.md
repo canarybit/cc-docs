@@ -152,9 +152,9 @@ This policies will then be enforced on top of CanaryBit Inspector default polici
 
 Custom policy to enforce `6.16.x` as OS kernel version.
 
-``` title="snp.rego"
+``` title="mypolicy.rego"
 
-package snp
+package mypolicy
 
 default allow := false
 
