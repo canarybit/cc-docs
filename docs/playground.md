@@ -4,7 +4,7 @@
 
 ---
 
-The playground gives you the opportunity to deploy and verify Confidential environments on Azure, AWS and GCP with the CanaryBit Confidential Cloud suite. 
+The playground gives you the opportunity to deploy and verify Confidential environments on Azure, AWS and GCP with CanaryBit Tower and Inspector, part of the CanaryBit Confidential Cloud suite. 
 
 ## Requirements
 
