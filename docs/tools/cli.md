@@ -57,6 +57,19 @@ Display your CanaryBit account information.
 cb account
 ```
 
+
+### Assets
+
+Get access to CanaryBit assets such as `cbclient` agent, Tower Premium and more.
+
+```title="List"
+./cb list cbclient
+```
+
+```title="Download"
+./cb download cbclient 0.2.6/cbclient
+```
+
 ### Current Version
 
 For information about the current (latest) release, see the release notes. To find your installed version run:
