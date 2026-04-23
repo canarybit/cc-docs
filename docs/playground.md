@@ -58,7 +58,7 @@ The verification of your Confidential environment is triggered **automatically**
 
 !!! abstract "Optional: Manual verification"
 
-    If manual verification is required, you would need to upload the CanaryBit (`cbclient`) agent on each Confidential VM you would like to attest.
+    If manual verification is preferred, you would need to upload the CanaryBit (`cbclient`) agent on each Confidential VM you would like to attest.
     
     Specifically, you would need to:
     
