@@ -1,0 +1,1546 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CanaryBit Confidential Cloud is a digital infrastructure security suite for  Businesses and Public Authorities that are willing to collaborate  with sensitive data and algorithms, and in need of a hardware-encrypted  execution environment protected from unauthorized access.">
+      
+      
+        <meta name="author" content="Canary Bit AB">
+      
+      
+        <link rel="canonical" href="https://docs.confidentialcloud.io/products/inspector/">
+      
+      
+        <link rel="prev" href="../tower/">
+      
+      
+        <link rel="next" href="../surveyor/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>INSPECTOR - CanaryBit Confidential Cloud</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/canarybit.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="canarybit" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#canarybit-inspector" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CanaryBit Confidential Cloud" class="md-header__button md-logo" aria-label="CanaryBit Confidential Cloud" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CanaryBit Confidential Cloud
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              INSPECTOR
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="canarybit" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CanaryBit Confidential Cloud" class="md-nav__button md-logo" aria-label="CanaryBit Confidential Cloud" data-md-component="logo">
+      
+  <img src="../../img/logo.png" alt="logo">
+
+    </a>
+    CanaryBit Confidential Cloud
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why Confidential Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/operating-systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating Systems
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requirements/containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tower/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TOWER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECTOR
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECTOR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cbclient
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attest-a-confidential-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attest a Confidential VM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attest a Confidential VM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-canarybit-tower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        via CanaryBit Tower
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-custom-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        via Custom deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-manual-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        via Manual configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attest-a-containerpod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attest a Container/Pod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-custom-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply custom policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apply custom policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download the reports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licences
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../surveyor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SURVEYOR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tools/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CanaryBit CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../playground/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://auth.confidentialcloud.io/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F" target="_blank" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign up
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.canarybit.eu/contact" target="_blank" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact Support ⧉
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cbclient" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cbclient
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requirements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attest-a-confidential-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attest a Confidential VM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attest a Confidential VM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#via-canarybit-tower" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        via CanaryBit Tower
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-custom-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        via Custom deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#via-manual-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        via Manual configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attest-a-containerpod" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Attest a Container/Pod
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#apply-custom-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Apply custom policies
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Apply custom policies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Download the reports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#licences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Licences
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Welcome!
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../tower/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Products
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="canarybit-inspector">CanaryBit Inspector</h1>
+<p><em>Audit &amp; Certify Trusted Execution Environments (TEE)</em></p>
+<hr />
+<p><strong>CanaryBit Inspector</strong> is a Confidential Computing <a href="">Remote Attestation</a> service with extended functionalites, helping end-users to fully verify the security of their processing environments before any sensitive data analysis.</p>
+<p>CanaryBit Inspector validates that the underlying platform has support for and uses Confidential Computing capabilties enabled by the platform's instruction set architecture and firmware.
+CanaryBit Inspector performs the validation based on an Attestation Report provided by a software client deployed in the TEE. The client software collects information on the hardware, firmware, and software level to attest its trustworthiness. CanaryBit Inspector monitors the infrastructure security and enforces customer-defined deployment policies by destroying infrastructure components that fail to meet custom needs.</p>
+<h2 id="architecture">Architecture</h2>
+<p>CanaryBit Inspector service is <strong>built on microservices</strong> that wholetogether provide an holistic view on the underlying insfrastructure and technology stack.</p>
+<ul>
+<li>
+<p><strong>Core</strong>: the core logic of CanaryBit's Inspector Remote Attestations (RA) service. It verifies the integrity of a processing environment running on hardware with Confidential Computing capabilities. <br>
+<a href="https://api.inspector.confidentialcloud.io">https://api.inspector.confidentialcloud.io</a></p>
+</li>
+<li>
+<p><strong>Dashboard</strong>: it offers multiple services and functionalities to fine-tune the expected processing environments and collect the final results through a single, unified interface. <br>
+<a href="https://dashboard.inspector.confidentialcloud.io">https://dashboard.inspector.confidentialcloud.io</a></p>
+</li>
+<li>
+<p><strong>Policy Generator</strong>: it allows end-users to generate and save custom policies to enforce additional constraints on the deployed environments at both hardware, hypervsisor and hypervisor level. <br>
+<a href="https://policy.inspector.confidentialcloud.io">https://policy.inspector.confidentialcloud.io</a></p>
+</li>
+<li>
+<p><strong>Policy Playground</strong>: it allows end-users to test custom policies against CanaryBit Inspector data schema, ensuring smoother operations and extended verification. <br>
+<a href="https://playground.inspector.confidentialcloud.io">https://playground.inspector.confidentialcloud.io</a></p>
+</li>
+<li>
+<p><strong>Vulnerabilities Search</strong>: it structures and exposes CVE vulnerabilities to the Inspector Dashboard, highlighting security vulnerabilities of the target setup. </p>
+</li>
+<li>
+<p><strong>Cache</strong>: it optimises the retrieval of hardware certificates (leaf, intermediate and root) and relevant assets needed for cryptographic verification of the attestation reports generated by Confidential Computing-capable processing units.</p>
+</li>
+<li>
+<p><strong>Database</strong>: a data store used by all the microservices; </p>
+</li>
+</ul>
+<h3 id="cbclient">cbclient</h3>
+<p>The <code>cbclient</code> agent is the <strong>client implementation</strong> for the CanaryBit Inspector Attestation service. Written in <a href="https://www.rust-lang.org/">Rust</a>, it is responsible to collect the attestation data and call the CanaryBit Inspector API to verify the execution environments, either Confidential VMs or containers.</p>
+<p><img alt="Inspector Workflow" src="../../img/inspector-workflow.png" /></p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>A CanaryBit <a href="https://auth.confidentialcloud.io/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&amp;response_type=code&amp;scope=email+openid+profile&amp;redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F">account</a>;</li>
+<li>A CanaryBit Inspector <a href="./#licences">licence</a>;</li>
+<li>A target environment with a <a href="../../requirements/">supported</a> technology stack.</li>
+</ul>
+<h2 id="attest-a-confidential-vm">Attest a Confidential VM</h2>
+<p>CanaryBit Inspector verifies Confidential VMs (cVM) deployed:</p>
+<h3 id="via-canarybit-tower">via CanaryBit Tower</h3>
+<p>A Confidential VM is <strong>automatically deployed</strong> by the end-user using <a href="../tower/">CanaryBit Tower</a> on the target infrastructure provider and attested by CanaryBit Inspector via the CanaryBit <code>cloud-init</code> configuration injected at creation time.</p>
+<h3 id="via-custom-deployment">via Custom deployment</h3>
+<p>A Confidential VM is deployed by the end-user on the target infrastructure provider and attested by CanaryBit Inspector via the CanaryBit <code>cloud-init</code> configuration injected at creation time.</p>
+<h3 id="via-manual-configuration">via Manual configuration</h3>
+<p>A Confidential VM is deployed by the end-user on the target infrastructure provider and attested by CanaryBit Inspector following the steps below:</p>
+<p><em>From <ins>outside</ins> a Confidential VM:</em></p>
+<ol>
+<li>
+<p>Download the <a href="../../tools/cli/">CanaryBit Command-Line Interface (CLI)</a></p>
+</li>
+<li>
+<p>Source your CanaryBit credentials:</p>
+<div class="highlight"><pre><span></span><code>export CB_USERNAME=***
+export CB_PASSWORD=***
+</code></pre></div>
+</li>
+<li>
+<p>Download the CanaryBit Inspector agent (<code>cbclient</code>)</p>
+<div class="highlight"><pre><span></span><code>./cb download cbclient [CBCLIENT_V]/cbclient
+</code></pre></div>
+<p>where <code>[CBCLIENT_V]</code> is the required client version (e.g. <code>0.2.6</code>).</p>
+</li>
+<li>
+<p>Get a Token</p>
+<div class="highlight"><pre><span></span><code>./cb login inspector
+</code></pre></div>
+<p>The command returns a fresh token for the user. The token will be used by <code>cbclient</code> to authenticate the user towards the CanaryBit Inspector service.</p>
+</li>
+</ol>
+<p><em>From <ins>inside</ins> a Confidential VM:</em></p>
+<ol>
+<li>Access the Confidential VM and run the <code>cbclient</code> using the fresh token retrieved in the previous step:</li>
+</ol>
+<div class="highlight"><pre><span></span><code>export CBCLIENT_TOKEN=***
+
+./cbclient attestation --environments [TARGET_ENV] --inspector-url https://api.inspector.confidentialcloud.io
+</code></pre></div>
+<p>where <code>TARGET_ENV</code> is currently, one of the following:</p>
+<ul>
+<li><code>snp</code> for AMD SEV-SNP</li>
+<li><code>tdx</code> for Intel TDX</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Currently, <code>cbclient</code> requires the <code>libtss2</code> library to be installed on the machine. If not available, simply install the package with:
+<div class="highlight"><pre><span></span><code>sudo apt install libtss2-dev
+</code></pre></div></p>
+</div>
+<h3 id="example">Example</h3>
+<p>For AMD SEV-SNP attestation:</p>
+<div class="highlight"><pre><span></span><code>export CBCLIENT_TOKEN=&#39;***&#39;
+export CBCLIENT_LOG_LEVEL=&quot;info&quot;
+
+./cbclient attestation --environments snp --inspector-url https://inspector.confidentialcloud.io
+2026-02-22T22:14:55Z info: starting attestation
+2026-02-22T22:14:55Z info: generating attestation reports for enclave c2fdb0228f9e3edb1c5999f2401e76929fd79d7ec9e0d08cd914dfb5347aeb28
+2026-02-22T22:14:55Z info: requesting nonce from: https://inspector.confidentialcloud.io
+2026-02-22T22:14:56Z info: generating attestation reports
+2026-02-22T22:14:56Z info: generating attestation report for SEV-SNP
+2026-02-22T22:14:56Z info: collecting claims
+2026-02-22T22:14:56Z info: preparing composite attestation report
+2026-02-22T22:14:56Z info: validating generated reports
+2026-02-22T22:14:56Z info: requesting verification from: https://inspector.confidentialcloud.io
+2026-02-22T22:14:58Z info: verification report: {&quot;claims&quot;:{&quot;attestations&quot;:[{&quot;author_key_digest&quot;:&quot;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,&quot;chip_id&quot;:&quot;9e2cf0ace115931142cc914fa5cc865fafdce55f949080a397752680ef66ee527ef6e848cb29ed2f4e12304cd69bdc7797b117d4b23274fd6d97090978c1430f&quot;,&quot;committed&quot;:{&quot;build&quot;:29,&quot;major&quot;:1,&quot;minor&quot;:55},&quot;committed_tcb&quot;:{&quot;bootloader&quot;:4,&quot;microcode&quot;:222,&quot;snp&quot;:24,&quot;tee&quot;:0},&quot;cpuid_fam_id&quot;:25,&quot;cpuid_mod_id&quot;:1,&quot;cpuid_step&quot;:1,&quot;current&quot;:{&quot;build&quot;:29,&quot;major&quot;:1,&quot;minor&quot;:55},&quot;current_tcb&quot;:{&quot;bootloader&quot;:4,&quot;microcode&quot;:222,&quot;snp&quot;:24,&quot;tee&quot;:0},&quot;environment&quot;:&quot;SNP&quot;,&quot;family_id&quot;:&quot;00000000000000000000000000000000&quot;,&quot;guest_svn&quot;:0,&quot;host_data&quot;:&quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,&quot;id_key_digest&quot;:&quot;000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000&quot;,&quot;image_id&quot;:&quot;00000000000000000000000000000000&quot;,&quot;key_info&quot;:&quot;00000000&quot;,&quot;launch_tcb&quot;:{&quot;bootloader&quot;:4,&quot;microcode&quot;:222,&quot;snp&quot;:24,&quot;tee&quot;:0},&quot;measurement&quot;:&quot;284778cfa7af0baefb066c253036f3cff4cd1d594eea3811ed96cbfc94317c0914510b4da2ba895d33e49165fd580a8e&quot;,&quot;platform_info&quot;:&quot;2700000000000000&quot;,&quot;policy&quot;:&quot;0000030000000000&quot;,&quot;report_data&quot;:&quot;2d305eaf2d6aca3dde7a0d005aafbf19712f274577ee9e66cdcd9d5375d7d29e782f0b7dd3c6257df47cb96a7cc1299a1ae32b0f4a5170da0e1f07ae62577682&quot;, ...
+2026-02-22T22:14:58Z info: attestation successful
+</code></pre></div>
+<h2 id="attest-a-containerpod">Attest a Container/Pod</h2>
+<p>In addition to Confidential VMs, CanaryBit Inspector can be used to verify the confidentiality of Nodes where containers are running, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or directly on a container platform.</p>
+<p><a href="../surveyor/">CanaryBit Surveyor</a> provides the configuration to enable Container Remote Attestation for several use-cases.</p>
+<h2 id="apply-custom-policies">Apply custom policies</h2>
+<p>In addition to the standard Remote Attestation mechanisms, CanaryBit Inspector allows end-users to apply custom policies at different levels in the technology stack:</p>
+<ul>
+<li>Hardware</li>
+<li>Virtualisation</li>
+<li>Operating System</li>
+<li>Application</li>
+</ul>
+<p>The CanaryBit Inspector <a href="https://policy.inspector.confidentialcloud.io">Policy Generator</a> and <a href="https://playground.inspector.confidentialcloud.io">Policy Playground</a> facilitate the creation of custom policies.</p>
+<p>This policies will then be enforced on top of CanaryBit Inspector default policies and together verify the correctness and security of each Trusted Execution Environment.</p>
+<h3 id="example_1">Example</h3>
+<p>Custom policy to enforce <code>6.16.x</code> as OS kernel version.</p>
+<div class="highlight"><span class="filename">mypolicy.rego</span><pre><span></span><code>package mypolicy
+
+default allow := false
+
+allow if {
+  input.claims.attestations.canarybit.kernel_version == &quot;6.17.0-14-generic&quot;
+}
+</code></pre></div>
+<h2 id="download-the-reports">Download the reports</h2>
+<p>The verification reports and additional insights are available for download on the CanaryBit <strong>Inspector Dashboard</strong> at <a href="https://dashboard.inspector.confidentialcloud.io">dashboard.inspector.confidentialcloud.io</a></p>
+<h2 id="licences">Licences</h2>
+<p>CanaryBit Inspector can be deployed on-prem, for internal use or offered as a service.</p>
+<div class="grid cards">
+<!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 5v14l8-7m2 7h3V5h-3m5 0v14h3V5"/></svg></span> <strong>Trial</strong></p>
+<hr />
+<p>Try CanaryBit Inspector and related products for <strong>FREE</strong> with our "Not For Resale (NFR)" licence.</p>
+<p><a href="https://www.canarybit.eu/contact/">Contact us!</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 3v18h6v-3.5h2V21h6V3zm2 2h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zM7 9h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2zm-8 4h2v2H7zm8 0h2v2h-2z"/></svg></span> <strong>Private</strong></p>
+<hr />
+<p>Choose between <em>Basic</em>, <em>Standard</em> or <em>Enterprise</em> licence and get up to speed in minutes. </p>
+<p><a href="https://www.canarybit.eu/contact/">Contact us!</a></p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M21.5 181.1 78.3 67.4c10.9-21.7 33-35.4 57.3-35.4h304.9c24.2 0 46.4 13.7 57.2 35.4l56.8 113.7c3.6 7.2 5.5 15.1 5.5 23.2 0 27.3-21.2 49.7-48 51.6V448c0 17.7-14.3 32-32 32s-32-14.3-32-32V256h-96v176c0 26.5-21.5 48-48 48H112c-26.5 0-48-21.5-48-48V255.9c-26.8-1.9-48-24.3-48-51.6 0-8 1.9-16 5.5-23.2M128 256v112c0 8.8 7.2 16 16 16h128c8.8 0 16-7.2 16-16V256z"/></svg></span> <strong>Reseller</strong></p>
+<hr />
+<p>If you are interested in offering CanaryBit Inspector as a Service (SaaS).</p>
+<p><a href="https://www.canarybit.eu/contact/">Contact us!</a></p>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../tower/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TOWER">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                TOWER
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../surveyor/" class="md-footer__link md-footer__link--next" aria-label="Next: SURVEYOR">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                SURVEYOR
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <iframe src="https://status.confidentialcloud.io/embed-badges/live-status?align=start&background-light=f5f5f5&text-light=000000&background-dark=171717&text-dark=ffffff" width="190" height="30" loading="lazy" frameborder="0" scrolling="no" style="color-scheme: light dark;"></iframe> <br> Copyright © <a href="https://www.canarybit.eu" target="_blank">Canary Bit AB</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.canarybit.eu" target="_blank" rel="noopener" title="www.canarybit.eu" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/canarybit/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.expand", "navigation.path", "navigation.footer"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
