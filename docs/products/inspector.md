@@ -133,7 +133,7 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
 
 In addition to Confidential VMs, CanaryBit Inspector can attest confidential containers/pods, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or a specific container platform.
 
-[CanaryBit Surveyor](./surveyor.md) helps to correctly configure the containerisation platform and enforces Remote Attestation for confidential containers/pods. 
+[CanaryBit Surveyor](./surveyor.md) helps to correctly configure the containerisation platform and enforces CanaryBit Inspector remote attestation, for confidential containers/pods. 
 
 ## Apply custom policies
 
