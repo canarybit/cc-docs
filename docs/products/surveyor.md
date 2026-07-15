@@ -16,9 +16,9 @@ It guarantees confidentiality and privacy allowing end-users to select between t
 
 ## Requirements
 
-- A [CanaryBit account](https://auth.confidentialcloud.io/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F);
-- A CanaryBit Inspector [licence](./inspector.md#licences);
-- The [CanaryBit CLI](https://docs.confidentialcloud.io/tools/cli/) (`cb-cli`) installed;
+- A CanaryBit [account](https://auth.confidentialcloud.io/signup?client_id=54g4h9tpulnnkmhivgn5nipjki&response_type=code&scope=email+openid+profile&redirect_uri=https%3A%2F%2Fdocs.confidentialcloud.io%2F);
+- A CanaryBit [Inspector licence](./inspector.md#licences);
+- The CanaryBit [CLI](https://docs.confidentialcloud.io/tools/cli/) (`cb-cli`) installed;
 - Access to a Kubernetes cluster (`kubeconfig`) running on a [supported](../requirements.md) hardware platform;
 - [Helm](https://helm.sh) - the package manager for Kubernetes - installed.
 
