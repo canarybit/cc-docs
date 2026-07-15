@@ -40,9 +40,9 @@ $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli
 
 Authenticate towards CanaryBit Identity Provider and fetch a valid token for specific CanaryBit services.
 
-Source your credentials:
+Source your credentials (e.g. `cb.rc`):
 
-```
+```title="cb.rc"
 export CB_USERNAME=***
 export CB_PASSWORD=***
 ```
@@ -50,7 +50,7 @@ export CB_PASSWORD=***
 and run:
 
 ```
-cb login
+$ cb login
 ```
 
 ### Account
@@ -58,7 +58,7 @@ cb login
 Display your CanaryBit account information.
 
 ```
-cb account
+$ cb account
 ```
 
 
@@ -67,11 +67,11 @@ cb account
 Get access to CanaryBit assets such as `cbclient` agent, Tower Premium and more.
 
 ```title="List"
-./cb list cbclient
+$ cb list cbclient
 ```
 
 ```title="Download"
-./cb download cbclient 0.2.6/cbclient
+$ cb download cbclient 0.2.6/cbclient
 ```
 
 ### Current Version

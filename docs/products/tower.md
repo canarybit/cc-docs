@@ -104,11 +104,92 @@ A **Premium License** is required for the following configurations: [:material-d
 
 </div>
 
-## Deployment
+## Configure
 
-Automatically deploy Confidential VMs (cVM) applying specific configuration for the selected target infrastructure as follows:
+Edit the CanaryBit Tower module configuration. 
 
-### Authenticate
+!!! Note
+    Always refer to the provided [example files](https://github.com/canarybit/terraform-canarybit-tower/tree/main/examples) for up-to-date, supported configuration.
+
+
+!!! Example "Example: AWS"
+
+    ```
+    ... 
+    
+    // ========================
+    //  Confidential VM (CVM)
+    // ========================
+    
+    module "confidential-vm" {
+    
+        //  ************** DO NOT REMOVE THESE LINES ****************** // 
+    
+        source = "canarybit/tower/canarybit//modules/aws"       
+        cb_username = var.cb_username
+        cb_password = var.cb_password
+    
+        //  ************** CUSTOM CONFIG BELOW THIS LINE ************** // 
+    
+        // Confidential VM
+        count = 2
+        cvm_name = "my-cvm-${count.index}"
+        ...
+    }
+    
+    ...
+    ```
+   
+For more information about the expected arguments, please refer to each module **Inputs** tab (e.g. [AWS: Inputs](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/aws?tab=inputs))
+
+#### Remote Attestation
+
+To enable Remote Attestation, simply add the `remote_attestation` code-block in the module providing the required variables.
+
+In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`attested.yml`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/attested.yml))  ensuring the security characteristics of each Confidential VM are verified at booting time or at a custom cadence.
+
+!!! success "Never trust, always verify!"
+
+    Environment verification with CanaryBit Inspector service is recommended to certify the security capabilities of the execution environments, **mitigate risks and ensure privacy**.
+
+Whenever a Confidential VM is created and **not attested**, the end-user is still trusting the hypervisor and infrastructure provider.
+In this scenario, the need of Confidential VMs becomes **worthless**.
+
+!!! danger "You are at risk!"
+    
+    The security characteristics of this environment are NOT VERIFIED! </br>
+    In this scenario, you are still trusting the hypervisor/infrastructure provider.
+
+### Add custom policies
+
+It's possible to add a custom policies (e.g. `mypolicy.rego`) at different levels in the technology stack (hardware, hypervisor, OS and more). 
+Custom policies will be enforced on top of the verifier defaults policies, and together assess both the security level and correctness of each TEE.
+
+To create a custom policy, simply create a file with a custom Rego policy expression.
+
+!!! Example
+
+    A custom policy to enforce a specific OS kernel version, hypervisor, and region for the deployed TEE.
+
+    ``` title="mypolicy.rego"
+    package mypolicy
+    
+    default allow := false
+    
+    allow if {
+      input.claims.attestations.canarybit.kernel_version == "6.17.0-14-generic"
+      input.claims.metadata.hypervisor.cpuid_hypervisor == "HyperV"
+      input.claims.metadata.instance.region = "northeurope"
+    }
+    ```
+
+## Deploy & Attest
+
+Automatically deploy Confidential VMs (cVM) applying your configuration for the selected target infrastructure.
+
+### Source your credentials
+
+To deploy the configuration on the selected target infrastructure you first need to source both CanaryBit and the target infrastructure required credentials.
 
 1. Source your **CanaryBit** credentials:
 
@@ -134,85 +215,8 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
 
     ```
 
-### Configure
-
-Edit the CanaryBit Tower module configuration. 
-
-The below example shows an example of **the lines/code-blocks that can be customized** according to the expected target environment. 
-
-!!! note
-    Always refer to the provided [example files](https://github.com/canarybit/terraform-canarybit-tower/tree/main/examples) for up-to-date, supported configuration.
-
-
-``` title="Example - Module configuration for AWS deployment"
-... 
-
-// ========================
-//  Confidential VM (CVM)
-// ========================
-
-module "confidential-vm" {
-
-    //  ************** DO NOT REMOVE THESE LINES ****************** // 
-
-    source = "canarybit/tower/canarybit//modules/aws"       
-    cb_username = var.cb_username
-    cb_password = var.cb_password
-
-    //  ************** CUSTOM CONFIG BELOW THIS LINE ************** // 
-
-    // Confidential VM
-    count = 2
-    cvm_name = "my-cvm-${count.index}"
-    ...
-}
-
-...
-```
-   
-For more information about the expected arguments, please refer to each module **Inputs** tab (e.g. [AWS: Inputs](https://registry.terraform.io/modules/canarybit/tower/canarybit/latest/submodules/aws?tab=inputs))
-
-#### With Attestation (recommended)
-
-To enable Remote Attestation, simply add the `remote_attestation` code-block in the module providing the required variables.
-
-In this scenario, CanaryBit Tower will use a specific *cloud-init* file ([`attested.yml`](https://github.com/canarybit/terraform-canarybit-tower/blob/main/cloud-init/attested.yml))  ensuring the security characteristics of each Confidential VM are verified at booting time or at a custom cadence.
-
-!!! success "Never trust, always verify!"
-
-    Environment verification with CanaryBit Inspector service is recommended to certify the security capabilities of the execution environments, **mitigate risks and ensure privacy**.
-
-
-#### Without Attestation
-
-Whenever a Confidential VM is created and **not attested**, the end-user is still trusting the hypervisor and infrastructure provider.
-In this scenario, the need of Confidential VMs becomes **worthless**.
-
-!!! danger "You are at risk!"
-    
-    The security characteristics of this environment are NOT VERIFIED! </br>
-    In this scenario, you are still trusting the hypervisor/infrastructure provider.
-
-### Custom policy (optional)
-
-It's possible to create a custom policy and enforce specific requirements on the stack configuration using Rego expressions.
-
-**Example**
-
-A custom policy to enforce a specific OS kernel version, Hypervisor, and Region for the deployed TEE.
-
-``` title="mypolicy.rego"
-package mypolicy
-
-default allow := false
-
-allow if {
-  input.claims.attestations.canarybit.kernel_version == "6.17.0-14-generic"
-  input.claims.metadata.hypervisor.cpuid_hypervisor == "HyperV"
-  input.claims.metadata.instance.region = "northeurope"
-}
-```
-
+!!! info 
+    CanaryBit Tower configuration will **automatically authenticate** towards both CanaryBit and the target infrastructure Identity Providers (IdP) during the provisioning (apply) step.
 
 ### Apply 
 

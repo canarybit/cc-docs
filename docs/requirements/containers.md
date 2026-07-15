@@ -10,7 +10,7 @@
 
 ## Runtime
 
-- [Kata-runtime](https://katacontainers.io/) (Recommended for full isolation)
+- [Kata-runtime](https://katacontainers.io/) (recommended for full isolation)
     - `kata-qemu-snp` for AMD SEV-SNP 
     - `kata-qemu-tdx` for Intel TDX
 - Any other container runtime

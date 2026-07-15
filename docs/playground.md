@@ -16,29 +16,29 @@ The playground gives you the opportunity to deploy and verify Confidential envir
 
 ### 1. Source your credentials
 
-In your terminal, source as environment variables your **CanaryBit** credentials:
+In your terminal, source your CanaryBit credentials as environment variables:
 
-``` title="CanaryBit"
+``` title="CanaryBit - cb.rc"
 export CB_USERNAME=***
 export CB_PASSWORD=***
 ```
 
 as well as your infrastructure provider credentials: 
 
-``` title="Azure"
+``` title="Azure - azure.rc"
 export ARM_SUBSCRIPTION_ID=***
 export ARM_TENANT_ID=***
 export ARM_CLIENT_ID=***
 export ARM_CLIENT_SECRET=***
 ```
 
-``` title="AWS"
+``` title="AWS - aws.rc"
 export AWS_ACCESS_KEY_ID=***
 export AWS_SECRET_ACCESS_KEY=***
 export AWS_REGION=***
 ```
 
-``` title="GCP"
+``` title="GCP - gcp.rc"
 export GOOGLE_APPLICATION_CREDENTIALS=***
 export GOOGLE_PROJECT=***
 export GOOGLE_ZONE=***
