@@ -107,33 +107,33 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
     sudo apt install libtss2-dev
     ```
 
-### Example 
+!!! Example "Example: AMD SEV-SNP attestation"
 
-For AMD SEV-SNP attestation:
+      ```
+      # Export your CanaryBit token as environment variable
+      $ export CBCLIENT_TOKEN='***' 
 
-```
-export CBCLIENT_TOKEN='***'
-export CBCLIENT_LOG_LEVEL="info"
-
-./cbclient attestation --environments snp --inspector-url https://inspector.confidentialcloud.io
-2026-02-22T22:14:55Z info: starting attestation
-2026-02-22T22:14:55Z info: generating attestation reports for enclave c2fdb0228f9e3edb1c5999f2401e76929fd79d7ec9e0d08cd914dfb5347aeb28
-2026-02-22T22:14:55Z info: requesting nonce from: https://inspector.confidentialcloud.io
-2026-02-22T22:14:56Z info: generating attestation reports
-2026-02-22T22:14:56Z info: generating attestation report for SEV-SNP
-2026-02-22T22:14:56Z info: collecting claims
-2026-02-22T22:14:56Z info: preparing composite attestation report
-2026-02-22T22:14:56Z info: validating generated reports
-2026-02-22T22:14:56Z info: requesting verification from: https://inspector.confidentialcloud.io
-2026-02-22T22:14:58Z info: verification report: {"claims":{"attestations":[{"author_key_digest":"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","chip_id":"9e2cf0ace115931142cc914fa5cc865fafdce55f949080a397752680ef66ee527ef6e848cb29ed2f4e12304cd69bdc7797b117d4b23274fd6d97090978c1430f","committed":{"build":29,"major":1,"minor":55},"committed_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"cpuid_fam_id":25,"cpuid_mod_id":1,"cpuid_step":1,"current":{"build":29,"major":1,"minor":55},"current_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"environment":"SNP","family_id":"00000000000000000000000000000000","guest_svn":0,"host_data":"0000000000000000000000000000000000000000000000000000000000000000","id_key_digest":"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000","image_id":"00000000000000000000000000000000","key_info":"00000000","launch_tcb":{"bootloader":4,"microcode":222,"snp":24,"tee":0},"measurement":"284778cfa7af0baefb066c253036f3cff4cd1d594eea3811ed96cbfc94317c0914510b4da2ba895d33e49165fd580a8e","platform_info":"2700000000000000","policy":"0000030000000000","report_data":"2d305eaf2d6aca3dde7a0d005aafbf19712f274577ee9e66cdcd9d5375d7d29e782f0b7dd3c6257df47cb96a7cc1299a1ae32b0f4a5170da0e1f07ae62577682", ...
-2026-02-22T22:14:58Z info: attestation successful
-```
+      # Attest the Confidential VM
+      $ export CBCLIENT_LOG_LEVEL="info"
+      $ ./cbclient attestation --environments snp --inspector-url https://inspector.confidentialcloud.io
+      2026-02-22T22:14:55Z info: starting attestation
+      2026-02-22T22:14:55Z info: generating attestation reports for enclave c2fdb0228f9e3edb1c5999f2401e76929fd79d7ec9e0d08cd914dfb5347aeb28
+      2026-02-22T22:14:55Z info: requesting nonce from: https://inspector.confidentialcloud.io
+      2026-02-22T22:14:56Z info: generating attestation reports
+      2026-02-22T22:14:56Z info: generating attestation report for SEV-SNP
+      2026-02-22T22:14:56Z info: collecting claims
+      2026-02-22T22:14:56Z info: preparing composite attestation report
+      2026-02-22T22:14:56Z info: validating generated reports
+      2026-02-22T22:14:56Z info: requesting verification from: https://inspector.confidentialcloud.io
+      2026-02-22T22:14:58Z info: verification report: {"claims":{"attestations":[{<ATTESTATION_REPORT>}]}} 
+      2026-02-22T22:14:58Z info: attestation successful
+      ```
 
 ## Attest a Container/Pod
 
-In addition to Confidential VMs, CanaryBit Inspector can be used to verify the confidentiality of Nodes where containers are running, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or directly on a container platform.
+In addition to Confidential VMs, CanaryBit Inspector can attest confidential containers/pods, no matter if they are managed by an orchestration service (e.g. Azure AKS or AWS EKS) or a specific container platform.
 
-[CanaryBit Surveyor](./surveyor.md) provides the configuration to enable Container Remote Attestation for several use-cases.
+[CanaryBit Surveyor](./surveyor.md) helps to correctly configure the containerisation platform and enforces Remote Attestation for confidential containers/pods. 
 
 ## Apply custom policies
 
