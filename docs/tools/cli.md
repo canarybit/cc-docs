@@ -92,4 +92,4 @@ $ cb --help
 
 ## Data collection
 
-CanaryBit CLI does not collect data by default. 
+CanaryBit CLI does not store any sort of data. 

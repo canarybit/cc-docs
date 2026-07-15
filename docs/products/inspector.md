@@ -144,28 +144,14 @@ In addition to the standard Remote Attestation mechanisms, CanaryBit Inspector a
 - Operating System
 - Application
 
-The CanaryBit Inspector [Policy Generator](https://policy.inspector.confidentialcloud.io) and [Policy Playground](https://playground.inspector.confidentialcloud.io) facilitate the creation of custom policies.
+The _Policy Generator_ and _Policy Playground_ in CanaryBit Inspector [Dashboard](https://dashboard.inspector.confidentialcloud.io), help you define your custom policies. These policies will then be **enforced on top of the verifier** default policies and together assess the correctness and the security level of each TEE.
 
-This policies will then be enforced on top of CanaryBit Inspector default policies and together verify the correctness and security of each Trusted Execution Environment.
-
-### Example
-
-Custom policy to enforce `6.16.x` as OS kernel version.
-
-``` title="mypolicy.rego"
-
-package mypolicy
-
-default allow := false
-
-allow if {
-  input.claims.attestations.canarybit.kernel_version == "6.17.0-14-generic"
-}
-```
+!!! note 
+      Follow the related documentation to apply custom policy with [CanaryBit Tower]() or [CanaryBit Surveyor](). 
 
 ## Download the reports
 
-The verification reports and additional insights are available for download on the CanaryBit **Inspector Dashboard** at [dashboard.inspector.confidentialcloud.io](https://dashboard.inspector.confidentialcloud.io)
+The final report and additional insights are available for download on the CanaryBit Inspector [Dashboard](https://dashboard.inspector.confidentialcloud.io).
 
 ## Licences
 

@@ -6,9 +6,9 @@
 
 **CanaryBit Tower** is a Confidential Computing resources orchestration service. It helps end-users to deploy secure processing environments and provides control over configuration drifts.
 
-It creates all the required infrastructure resources and one or more Trusted Execution Environments (TEEs, see [Confidential Computing](https://www.canarybit.eu/what-is-confidential-computing-and-why-should-i-care/)). 
+It creates all the required infrastructure resources and one or more TEE (see [Confidential Computing](https://www.canarybit.eu/what-is-confidential-computing-and-why-should-i-care/)). 
 Tower orchestrates TEEs either on the resources of a Cloud Service Provider of your choice, or On-Prem.
-It destroys all the resources once the execution is completed or compromised. Each trusted execution environment is single-use and immutable once created.
+It destroys all the resources once the execution is completed or compromised. Each TEE is single-use and immutable once created.
 
 CanaryBit Tower consists of multiple Terraform / OpenTofu **module** configurations. The Tower module is a collection of resources to provision Confidential VMs resources only.
 
@@ -104,11 +104,11 @@ A **Premium License** is required for the following configurations: [:material-d
 
 </div>
 
-## Deploy & Verify
+## Deployment
 
 Automatically deploy Confidential VMs (cVM) applying specific configuration for the selected target infrastructure as follows:
 
-### Credentials 
+### Authenticate
 
 1. Source your **CanaryBit** credentials:
 
@@ -119,12 +119,10 @@ Automatically deploy Confidential VMs (cVM) applying specific configuration for 
 
     !!! tip
         
-        The Terraform/OpenTofu module expects your CanaryBit username (`cb_username`) and password (`cb_password`) as input. <br>
-        We recommend using environment variables as follows:
+        The Terraform/OpenTofu module expects your CanaryBit username (`cb_username`) and password (`cb_password`) as input. We recommend to use Terraform environment variables (`TF_VAR_*`):
         
         ```
-        export TF_VAR_cb_username=$CB_USERNAME  
-        export TF_VAR_cb_password=$CB_PASSWORD
+        $ export TF_VAR_cb_username=$CB_USERNAME; export TF_VAR_cb_password=$CB_PASSWORD
         ```
 
 2. Source your target infrastructure credentials (e.g. AWS)
@@ -195,6 +193,26 @@ In this scenario, the need of Confidential VMs becomes **worthless**.
     The security characteristics of this environment are NOT VERIFIED! </br>
     In this scenario, you are still trusting the hypervisor/infrastructure provider.
 
+### Custom policy (optional)
+
+It's possible to create a custom policy and enforce specific requirements on the stack configuration using Rego expressions.
+
+**Example**
+
+A custom policy to enforce a specific OS kernel version, Hypervisor, and Region for the deployed TEE.
+
+``` title="mypolicy.rego"
+package mypolicy
+
+default allow := false
+
+allow if {
+  input.claims.attestations.canarybit.kernel_version == "6.17.0-14-generic"
+  input.claims.metadata.hypervisor.cpuid_hypervisor == "HyperV"
+  input.claims.metadata.instance.region = "northeurope"
+}
+```
+
 
 ### Apply 
 
@@ -219,6 +237,6 @@ During the deployment CanaryBit Tower:
 4. injects the `cloud-init`(with or without Remote Attestation enabled) in each deployed Confidential VMs;
 5. returns the details of the provisioned resources.
 
-### Collect the Attestation report 
+## Download the report 
 
-Login to the [Inspector dashboard](https://dashboard.inspector.confidentialcloud.io) with your CanaryBit and download the full verification and audit report.
+The final report and additional insights are available for download on the CanaryBit Inspector [Dashboard](https://dashboard.inspector.confidentialcloud.io).

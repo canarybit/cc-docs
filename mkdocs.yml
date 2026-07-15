@@ -73,8 +73,8 @@ nav:
     #- 'Legal': []
 
   - Products:
-    - 'TOWER': './products/tower.md'
     - 'INSPECTOR': './products/inspector.md'
+    - 'TOWER': './products/tower.md'
     - 'SURVEYOR': './products/surveyor.md'
 
   - Tools:
