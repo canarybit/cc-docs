@@ -241,4 +241,4 @@ During the deployment CanaryBit Tower:
 
 ## Download the report 
 
-The final report and additional insights are available for download on the CanaryBit Inspector [Dashboard](https://dashboard.inspector.confidentialcloud.io).
+The final report and additional insights are available for download on the CanaryBit [Inspector Dashboard](https://dashboard.inspector.confidentialcloud.io).

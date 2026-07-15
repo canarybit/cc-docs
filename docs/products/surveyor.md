@@ -35,7 +35,7 @@ export CB_PASSWORD=***
 
 There are two ways to download CanaryBit Surveyor:
 
-1. On the CanaryBit Inspector [Dashboard](https://dashboard.inspector.confidentialcloud.io)
+1. On the CanaryBit [Inspector Dashboard](https://dashboard.inspector.confidentialcloud.io)
 
 2. Via the CanaryBit CLI.
 
@@ -160,5 +160,5 @@ $ surveyor deploy \
 
 ## Download the reports
 
-The verification reports and additional insights are available for download on the [CanaryBit Inspector Dashboard.](https://dashboard.inspector.confidentialcloud.io)
+The verification reports and additional insights are available for download on the CanaryBit [Inspector Dashboard.](https://dashboard.inspector.confidentialcloud.io)
 

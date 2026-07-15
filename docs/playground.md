@@ -82,9 +82,9 @@ The verification of your Confidential environment is triggered **automatically**
     ```
     providing `$CBTOKEN` and `$HW_ENV` (`"snp"` or `"tdx"`, depending on your hardware chipset) as arguments.
 
-### 4. View the final report
+### 4. View the report
 
-Simply [log in](https://inspector.confidentialcloud.io) to the CanaryBit Inspector Dashboard to view the final report, monitor and observe the security of your environment.
+Simply log-in to the CanaryBit [Inspector Dashboard](https://inspector.confidentialcloud.io) to view the final report, monitor and observe the security of your environment.
 
 **List View:**
 
