@@ -110,9 +110,6 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
 !!! Example "Example: AMD SEV-SNP attestation"
 
       ```
-      # Export your CanaryBit token as environment variable
-      $ export CBCLIENT_TOKEN='***' 
-
       # Attest the Confidential VM
       $ export CBCLIENT_LOG_LEVEL="info"
       $ ./cbclient attestation --environments snp --inspector-url https://inspector.confidentialcloud.io
