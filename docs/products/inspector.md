@@ -17,12 +17,6 @@ CanaryBit Inspector service is **built on microservices** that wholetogether pro
 
 - **Dashboard**: it offers multiple services and functionalities to fine-tune the expected processing environments and collect the final results through a single, unified interface. <br>
 [https://dashboard.inspector.confidentialcloud.io](https://dashboard.inspector.confidentialcloud.io)
-
-- **Policy Generator**: it allows end-users to generate and save custom policies to enforce additional constraints on the deployed environments at both hardware, hypervsisor and hypervisor level. <br>
-[https://policy.inspector.confidentialcloud.io](https://policy.inspector.confidentialcloud.io)
-
-- **Policy Playground**: it allows end-users to test custom policies against CanaryBit Inspector data schema, ensuring smoother operations and extended verification. <br>
-[https://playground.inspector.confidentialcloud.io](https://playground.inspector.confidentialcloud.io)
   
 - **Vulnerabilities Search**: it structures and exposes CVE vulnerabilities to the Inspector Dashboard, highlighting security vulnerabilities of the target setup. 
 
