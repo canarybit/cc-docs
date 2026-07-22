@@ -15,7 +15,7 @@ The CanaryBit Command-Line Interface (CLI) is a cross-platform command-line tool
 Download the binary from CanaryBit's S3 public bucket:
 
 ```
-$ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/[VERSION]/[OS_TARGET] -o cb
+$ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli/[VERSION]/[OS_TARGET] -o cb
 ```
 
 where `[VERSION]` is the `cb` version 
