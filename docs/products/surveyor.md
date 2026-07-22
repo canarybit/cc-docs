@@ -40,9 +40,6 @@ There are two ways to download CanaryBit Surveyor:
 2. Via the CanaryBit CLI.
 
     ```commandline
-    # Install latest
-    $ cb download surveyor latest
-    
     # Install a specific version
     $ cb download surveyor 0.2.0
     
