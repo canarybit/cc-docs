@@ -40,13 +40,22 @@ There are two ways to download CanaryBit Surveyor:
 2. Via the CanaryBit CLI.
 
     ```commandline
-    # Install a specific version
-    $ cb download surveyor 0.2.0
+    # View all available versions
+    $ cb list surveyor
     
     # Install a specific version and distro
-    $ cb download surveyor 0.2.0/surveyor-x86_64-unknown-linux-gnu
+    $ cb download surveyor <VERSION>/<FILENAME>
     ```
+       
+!!! Example
+    ```
+    $ cb list surveyor
+    0.2.0/surveyor-x86_64-unknown-linux-gnu
+    latest
 
+    $ cb download surveyor 0.2.0/surveyor-x86_64-unknown-linux-gnu
+    Downloaded 0.2.0/surveyor-x86_64-unknown-linux-gnu to surveyor-x86_64-unknown-linux-gnu
+    ```
 
 ## Configure
 
