@@ -27,7 +27,7 @@ where `[VERSION]` is the `cb` version and `[OS_TARGET]` is one of the following 
 
 **Example**
 ```
-#List all available versions
+# List all available versions
 $ curl -s "https://canarybit-public-binaries.s3.amazonaws.com/?prefix=cb-cli/" | grep -oE '<Key>[^<]+</Key>' | sed -E 's/<\/?Key>//g' | awk -F'/' 'NF>2 {print $2}' | sort -u | awk '{printf "  📁  %s\n", $0}'
   📁  0.2.4
   📁  0.2.5
