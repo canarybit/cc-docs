@@ -12,16 +12,13 @@ The CanaryBit Command-Line Interface (CLI) is a cross-platform command-line tool
 
 ## Install 
 
-List all available versions
+List all available versions:
 
 ``` 
 $ curl -s "https://canarybit-public-binaries.s3.amazonaws.com/?prefix=cb-cli/" | grep -oE '<Key>[^<]+</Key>' | sed -E 's/<\/?Key>//g' | awk -F'/' 'NF>2 {print $2}' | sort -u | awk '{printf "  📁  %s\n", $0}'
-  📁  0.2.4
-  📁  0.2.5
-  📁  0.2.6
 ```
 
-and download the binary from CanaryBit's S3 public bucket:
+Download the binary from CanaryBit's S3 public bucket:
 
 ```
 $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli/[VERSION]/[OS_TARGET] -o cb
