@@ -27,7 +27,14 @@ where `[VERSION]` is the `cb` version and `[OS_TARGET]` is one of the following 
 
 **Example**
 ```
-$ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli/0.2.5/cb-x86_64-unknown-linux-gnu -o cb
+#List all available versions
+$ curl -s "https://canarybit-public-binaries.s3.amazonaws.com/?prefix=cb-cli/" | grep -oE '<Key>[^<]+</Key>' | sed -E 's/<\/?Key>//g' | awk -F'/' 'NF>2 {print $2}' | sort -u | awk '{printf "  📁  %s\n", $0}'
+  📁  0.2.4
+  📁  0.2.5
+  📁  0.2.6
+
+# Install a specific version and distro
+$ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli/0.2.6/cb-x86_64-unknown-linux-gnu -o cb
 ```
 
 ## Subcommands
