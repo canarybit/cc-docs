@@ -1,4 +1,8 @@
-# Software Licenses and Professional Services Terms & Conditions
+# Terms & Conditions
+**For Software Licenses and Professional Services.**
+
+<br/>
+
 Effective Date: May 18, 2026
 
 These Terms & Conditions (“Terms”) govern the licensing, use, resale, and delivery of software products and professional services provided by Canary Bit AB (“CanaryBit”, “we”, “our”, or “us”).
