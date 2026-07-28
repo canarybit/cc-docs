@@ -7,6 +7,7 @@ By purchasing, accessing, using, reselling, or receiving CanaryBit software lice
 
 ## 1. Scope
 These Terms apply to:
+
 - CanaryBit software licenses;
 - Subscription services;
 - Maintenance and support services;
@@ -25,6 +26,7 @@ All intellectual property rights remain the exclusive property of CanaryBit and 
 
 ## 3. Authorized Use and Resale
 CanaryBit software licenses may be:
+
 - Used directly by end users; or
 - Resold only in accordance with CanaryBit authorization, reseller approval, or applicable partner agreements.
 
@@ -34,6 +36,7 @@ Customers and partners must ensure that end users comply with these Terms.
 
 ## 4. License Term and Renewal
 Unless otherwise agreed in writing:
+
 - Software licenses are provided for an initial term of one (1) year;
 - License subscriptions automatically renew for successive one-year periods;
 - Renewal will occur automatically unless either party provides written notice of non-renewal at least thirty (30) days before the end of the current term.
@@ -42,11 +45,13 @@ Fees for renewed subscriptions will be invoiced according to the applicable comm
 
 ## 5. Permitted Use
 The Customer may:
+
 - Install and use the software within purchased license limits;
 - Allow authorized employees, contractors, or end users to access the software;
 - Make reasonable backup copies for internal operational purposes.
 
 The Customer may not:
+
 - Reverse engineer, decompile, or attempt to extract source code except where legally permitted;
 - Remove proprietary notices or branding;
 - Use the software for unlawful, harmful, or fraudulent activities;
@@ -55,6 +60,7 @@ The Customer may not:
 ## 6. Professional Services
 
 CanaryBit may provide professional services including:
+
 - Software deployment and configuration;
 - Integration services;
 - Technical consulting;
@@ -64,6 +70,7 @@ CanaryBit may provide professional services including:
 Professional services may be governed by a separate Statement of Work (“SOW”) describing deliverables, timelines, responsibilities, and fees.
 
 Unless otherwise agreed:
+
 - Professional services are delivered on a reasonable efforts basis;
 - Timelines are estimates only;
 - Customer cooperation and access to required systems and personnel are necessary for service delivery.
@@ -72,6 +79,7 @@ Unless otherwise agreed:
 The Customer agrees to pay all applicable license, subscription, support, and professional service fees.
 
 Unless otherwise stated:
+
 - Fees are invoiced in advance for subscription licenses;
 - Professional services may be invoiced on a fixed-price or time-and-materials basis;
 - Payments are due within thirty (30) days from invoice date.
@@ -89,6 +97,7 @@ CanaryBit reserves the right to modify, enhance, or discontinue software feature
 
 ## 9. Customer Responsibilities
 The Customer is responsible for:
+
 - Maintaining secure access credentials and environments;
 - Ensuring compliance with applicable laws and regulations;
 - Maintaining compatible systems and infrastructure;
@@ -101,6 +110,7 @@ The Customer remains responsible for all activities performed using its licenses
 Each party agrees to protect confidential information received from the other party using reasonable care.
 
 Confidential information shall not be disclosed to third parties except:
+
 - To authorized employees, contractors, or advisors with a need to know;
 - Where required by law or court order.
 
@@ -118,6 +128,7 @@ CanaryBit does not guarantee uninterrupted or error-free operation.
 
 ## 13. Limitation of Liability
 To the maximum extent permitted by applicable law:
+
 - CanaryBit shall not be liable for any indirect material or non-material damage
 - CanaryBit’s total aggregate liability arising from the software or services shall not exceed the fees paid by the Customer during the twelve (12) months preceding the event giving rise to the claim.
 
@@ -125,6 +136,7 @@ To the maximum extent permitted by applicable law:
 Either party may terminate for material breach if the breach is not remedied within thirty (30) days after receipt of written notice.
 
 Upon termination or expiration:
+
 - License rights immediately cease;
 - The Customer must stop using the software;
 - Outstanding fees become immediately due;
