@@ -4,15 +4,15 @@
 
 ---
 
-CanaryBit Surveyor is a **Confidential Container launcher**. It helps end-users to run containar/pods only upon validation of the underlying infrastructure, running under Kata Containers (AMD SEV-SNP, Intel TDX) or on confidential nodes directly.
+CanaryBit Surveyor is a **Confidential Container launcher**. It helps end-users to run containers/pods only upon validation of the underlying infrastructure, running under Kata Containers (AMD SEV-SNP, Intel TDX) or on confidential nodes directly.
 
 It guarantees confidentiality and privacy allowing end-users to select between two modes:
 
-   1. `kata` **(recommended)**: each container/pod is hypervisor isolated inside a lightweight VM - known as [Kata Containers](https://katacontainers.io/) - and remotely attested by CanaryBit Inspector. This mode guarantees security and isolation.
-   2. `node`: each container/pod runs on confidential nodes directly, and remotely attested by CanaryBit Inspector. This mode guarantees security but no isolation between containers/pods.
+   1. `kata` **(recommended)**: each container/pod on a hypervisor is isolated inside a lightweight VM - known as [Kata Containers](https://katacontainers.io/) - and remotely attested by CanaryBit Inspector. This mode guarantees security and isolation.
+   2. `node`: each container/pod runs on confidential nodes directly, and is remotely attested by CanaryBit Inspector. This mode guarantees security but no isolation between containers/pods.
 
 !!! Info 
-      Kata containers gives stronger isolation but running a container/pod as a kata container means launching a nested VM dedicated to the container/pod. Confidential Computing does not currently support nested virtualization.
+      Kata containers gives stronger isolation but running a container/pod as a kata container means launching a VM dedicated to the container/pod. Confidential Computing  does not currently support nested virtualization.
 
 ## Requirements
 
@@ -35,7 +35,7 @@ export CB_PASSWORD=***
 
 There are two ways to download CanaryBit Surveyor:
 
-1. On the CanaryBit [Inspector Dashboard](https://dashboard.inspector.confidentialcloud.io)
+1. Through the CanaryBit [Inspector Dashboard](https://dashboard.inspector.confidentialcloud.io)
 
 2. Via the CanaryBit CLI.
 
@@ -101,9 +101,9 @@ $ surveyor init
 Surveyor requires two secrets to perform a remote attestation: 
 
 - the `inspector` secret to authenticate to CanaryBit Inspector and refresh the user's access token overtime;
-- the `registry` secret to pull the CanaryBit Inspector client (`cbclient`) container image.
+- the `registry` secret to pull the CanaryBit Inspector client (`cb-inspector-client`) container image.
 
-To create the new secrets, first login via the CanaryBit CLI and export your authentication token (`CB_TOKENS`):
+To create new secrets, first login via the CanaryBit CLI and export your authentication token (`CB_TOKENS`):
 
 ```
 $ export CB_TOKENS=$(cb login)
@@ -162,7 +162,7 @@ $ surveyor deploy \
 ```
 
 !!! info
-    CanaryBit Surveyor will extend the Pod manifest by adding the CanaryBit Inspector client (`cbclient`) as init container, ensuring the workload is launched only upon a successful attestation and verified by CanaryBit Inspector at a custom schedule (defaults to `daily`)
+    CanaryBit Surveyor will extend the Pod manifest by adding the CanaryBit Inspector client (`cb-inspector-client`) as init container, ensuring the workload is launched only upon a successful attestation and verified by CanaryBit Inspector at a custom schedule (defaults to `daily`)
 
 ## Download the reports
 
