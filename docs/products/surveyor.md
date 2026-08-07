@@ -114,15 +114,15 @@ Then, create the `inspector` secret in your cluster with :
 ```
 $ surveyor secret create inspector \
     --cb-tokens "$CB_TOKENS" \
-    --namespace default \
+    --namespace default
 ```
 
 Finally, create the `registry` secret with:
 
 ```
 $ surveyor secret create registry \
-    --password $(cb login registry cbclient | base64 -d | cut -f 2 -d :) \
-    --namespace default \ 
+    --password $(cb login registry cb-inspector-client | base64 -d | cut -f 2 -d :) \
+    --namespace default
 ```
 
 ### Add custom policies
@@ -157,7 +157,7 @@ $ surveyor deploy \
   --cc-mode kata \
   --kata-runtime-class kata-qemu-snp \
   --attestation-targets snp \
-  --attestation-policy mypolicy.rego (if specified)
+  --attestation-policy mypolicy.rego \
   mypod.yaml
 ```
 
