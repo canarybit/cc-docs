@@ -8,7 +8,7 @@ CanaryBit Surveyor is a **Confidential Container launcher**. It helps end-users 
 
 It guarantees confidentiality and privacy allowing end-users to select between two modes:
 
-   1. `kata` **(recommended)**: each container/pod on a hypervisor is isolated inside a lightweight VM - known as [Kata Containers](https://katacontainers.io/) - and remotely attested by CanaryBit Inspector. This mode guarantees security and isolation.
+   1. `kata` **(recommended)**: each container/pod on is hypervisor-isolated inside a lightweight VM - known as [Kata Containers](https://katacontainers.io/) - and remotely attested by CanaryBit Inspector. This mode guarantees security and isolation.
    2. `node`: each container/pod runs on confidential nodes directly, and is remotely attested by CanaryBit Inspector. This mode guarantees security but no isolation between containers/pods.
 
 !!! Info 
