@@ -71,14 +71,14 @@ $ cb account
 
 ### Assets
 
-Get access to CanaryBit assets such as `cbclient` agent, Tower Premium and more.
+Get access to CanaryBit assets such as `cb-inspector-client` agent, Tower Premium and more.
 
 ```title="List"
-$ cb list cbclient
+$ cb list cb-inspector-client
 ```
 
 ```title="Download"
-$ cb download cbclient 0.2.6/cbclient
+$ cb download cb-inspector-client 0.1.0/cb-inspector-client
 ```
 
 ### Current Version

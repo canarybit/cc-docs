@@ -24,9 +24,9 @@ CanaryBit Inspector service is **built on microservices** that wholetogether pro
 
 - **Database**: a data store used by all the microservices; 
 
-### cbclient
+### The client
 
-The `cbclient` agent is the **client implementation** for the CanaryBit Inspector Attestation service. Written in [Rust](https://www.rust-lang.org/), it is responsible to collect the attestation data and call the CanaryBit Inspector API to verify the execution environments, either Confidential VMs or containers.
+The `cb-inspector-client` is the **client implementation** for the CanaryBit Inspector Attestation service. Written in [Rust](https://www.rust-lang.org/), it is responsible to collect the attestation data and call the CanaryBit Inspector API to verify the execution environments, either Confidential VMs or containers.
 
 ![Inspector Workflow](../img/inspector-workflow.png)
  
@@ -63,13 +63,13 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
     export CB_PASSWORD=***
     ```
 
-  3. Download the CanaryBit Inspector agent (`cbclient`)
+  3. Download the CanaryBit Inspector client (`cb-inspector-client`)
 
     ```
-    ./cb download cbclient [CBCLIENT_V]/cbclient
+    ./cb download cb-inspector-client [CB_INSPECTOR_CLIENT_V]/cb-inspector-client
     ```
   
-    where `[CBCLIENT_V]` is the required client version (e.g. `0.2.6`).
+    where `[CB_INSPECTOR_CLIENT_V]` is the required client version (e.g. `0.1.0`).
 
   4. Get a Token
 
@@ -77,16 +77,16 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
     ./cb login inspector
     ```
 
-    The command returns a fresh token for the user. The token will be used by `cbclient` to authenticate the user towards the CanaryBit Inspector service.
+    The command returns a fresh token for the user. The token will be used by `cb-inspector-client` to authenticate the user towards the CanaryBit Inspector service.
 
 *From <ins>inside</ins> a Confidential VM:*
 
-  1. Access the Confidential VM and run the `cbclient` using the fresh token retrieved in the previous step:
+  1. Access the Confidential VM and run the `cb-inspector-client` using the fresh token retrieved in the previous step:
 
   ```
-  export CBCLIENT_TOKEN=***
+  export CB_INSPECTOR_CLIENT_TOKEN=***
 
-  ./cbclient attestation --environments [TARGET_ENV] --inspector-url https://api.inspector.confidentialcloud.io
+  ./cb-inspector-client --environments [TARGET_ENV] --inspector-url https://api.inspector.confidentialcloud.io
   ```
 
   where `TARGET_ENV` is currently, one of the following:
@@ -96,7 +96,7 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
 
 !!! note 
 
-    Currently, `cbclient` requires the `libtss2` library to be installed on the machine. If not available, simply install the package with:
+    Currently, `cb-inspector-client` requires the `libtss2` library to be installed on the machine. If not available, simply install the package with:
     ```
     sudo apt install libtss2-dev
     ```
@@ -105,8 +105,8 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
 
       ```
       # Attest the Confidential VM
-      $ export CBCLIENT_LOG_LEVEL="info"
-      $ ./cbclient attestation --environments snp --inspector-url https://inspector.confidentialcloud.io
+      $ export CB_INSPECTOR_CLIENT_LOG_LEVEL="info"
+      $ ./cb-inspector-client --environments snp --inspector-url https://inspector.confidentialcloud.io
       2026-02-22T22:14:55Z info: starting attestation
       2026-02-22T22:14:55Z info: generating attestation reports for enclave c2fdb0228f9e3edb1c5999f2401e76929fd79d7ec9e0d08cd914dfb5347aeb28
       2026-02-22T22:14:55Z info: requesting nonce from: https://inspector.confidentialcloud.io
@@ -163,12 +163,12 @@ Create a file with a custom Rego policy expression.
 
 Follow the related documentation to apply custom policy with [CanaryBit Tower](./tower.md#add-custom-policies) or [CanaryBit Surveyor](surveyor.md#add-custom-policies).
 
-For [manual verification](#via-manual-configuration), simply add the policy file as argument to the `cbclient`.
+For [manual verification](#via-manual-configuration), simply add the policy file as argument to the `cb-inspector-client`.
 
 !!! Example "Example: Manual verification with custom policy"
 
       ```
-      ./cbclient attestation  ... --policy mypolicy.rego
+      ./cb-inspector-client ... --policy mypolicy.rego
       ```
 
 ## Download the reports
