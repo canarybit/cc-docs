@@ -112,17 +112,13 @@ $ export CB_TOKENS=$(cb login)
 Then, create the `inspector` secret in your cluster with :
 
 ```
-$ surveyor secret create inspector \
-    --cb-tokens "$CB_TOKENS" \
-    --namespace default
+$ surveyor secret create inspector --cb-tokens "$CB_TOKENS" --namespace default
 ```
 
 Finally, create the `registry` secret with:
 
 ```
-$ surveyor secret create registry \
-    --password $(cb login registry cb-inspector-client | base64 -d | cut -f 2 -d :) \
-    --namespace default
+$ surveyor secret create registry --password $(cb login registry cb-inspector-client | base64 -d | cut -f 2 -d :) --namespace default
 ```
 
 ### Add custom policies
@@ -153,12 +149,7 @@ To create a custom policy, simply create a file with a custom Rego policy expres
 Deploy your container (e.g. `mypod.yaml`) via Pod/Deployment manifest:
 
 ```
-$ surveyor deploy \
-  --cc-mode kata \
-  --kata-runtime-class kata-qemu-snp \
-  --attestation-targets snp \
-  --attestation-policy mypolicy.rego \
-  mypod.yaml
+$ surveyor deploy --cc-mode kata --kata-runtime-class kata-qemu-snp --attestation-targets snp --attestation-policy mypolicy.rego mypod.yaml
 ```
 
 !!! info
