@@ -58,7 +58,7 @@ The verification of your Confidential environment is triggered **automatically**
 
 !!! abstract "Optional: Manual verification"
 
-    If manual verification is preferred, you would need to upload the CanaryBit (`cbclient`) agent on each Confidential VM you would like to attest.
+    If manual verification is preferred, you would need to upload the CanaryBit (`cb-inspector-client`) agent on each Confidential VM you would like to attest.
     
     Specifically, you would need to:
     
@@ -68,17 +68,17 @@ The verification of your Confidential environment is triggered **automatically**
     ```
     cb login cbinspector
     ```
-    The returned temporary token will be used by `cbclient` to communicate with CanaryBit Inspector. 
+    The returned temporary token will be used by `cb-inspector-client` to communicate with CanaryBit Inspector. 
     
-    3. Download the `cbclient`:
+    3. Download the `cb-inspector-client`:
     ```
-    ./cb download cbclient 0.3.0/cbclient
+    ./cb download cb-inspector-client 0.1.0/cb-inspector-client
     ``` 
-    4. Copy the `cbclient` on each Confidential VM.
+    4. Copy the `cb-inspector-client` on each Confidential VM.
     
     5. From each Confidential VM, run:
     ```
-    cbclient attestation --token $CBTOKEN --environment $HW_ENV --inspector-url https://api.inspector.confidentialcloud.io
+    cb-inspector-client --token $CBTOKEN --environment $HW_ENV --inspector-url https://api.inspector.confidentialcloud.io
     ```
     providing `$CBTOKEN` and `$HW_ENV` (`"snp"` or `"tdx"`, depending on your hardware chipset) as arguments.
 
