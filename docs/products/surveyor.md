@@ -109,16 +109,10 @@ To create new secrets, first login via the CanaryBit CLI and export your authent
 $ export CB_TOKENS=$(cb login)
 ```
 
-Then, create the `inspector` secret in your cluster with :
+Then, create both `inspector` and `registry` secret on your cluster with :
 
 ```
-$ surveyor secret create inspector --cb-tokens "$CB_TOKENS" --namespace default
-```
-
-Finally, create the `registry` secret with:
-
-```
-$ surveyor secret create registry --password $(cb login registry cb-inspector-client | base64 -d | cut -f 2 -d :) --namespace default
+$ surveyor secret create canarybit --namespace default
 ```
 
 ### Add custom policies
