@@ -20,7 +20,7 @@ It guarantees confidentiality and privacy allowing end-users to select between t
 - A CanaryBit [Inspector licence](./inspector.md#licences);
 - The CanaryBit [CLI](https://docs.confidentialcloud.io/tools/cli/) (`cb-cli`) installed;
 - Access to a Kubernetes cluster (`kubeconfig`) running on a [supported](../requirements.md) hardware platform;
-- [Helm](https://helm.sh) - the package manager for Kubernetes - installed.
+- [Helm](https://helm.sh) - the package manager for Kubernetes - installed (Not needed if deploying the pods in `node` mode).
 
 ## Source your credentials
 
