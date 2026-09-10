@@ -50,11 +50,11 @@ There are two ways to download CanaryBit Surveyor:
 !!! Example
     ```
     $ cb list surveyor
-    0.2.0/surveyor-x86_64-unknown-linux-gnu
+    0.3.0/surveyor-x86_64-unknown-linux-gnu
     latest
 
-    $ cb download surveyor 0.2.0/surveyor-x86_64-unknown-linux-gnu
-    Downloaded 0.2.0/surveyor-x86_64-unknown-linux-gnu to surveyor-x86_64-unknown-linux-gnu
+    $ cb download surveyor 0.3.0/surveyor-x86_64-unknown-linux-gnu
+    Downloaded 0.3.0/surveyor-x86_64-unknown-linux-gnu to surveyor-x86_64-unknown-linux-gnu
     ```
 
 ## Configure
