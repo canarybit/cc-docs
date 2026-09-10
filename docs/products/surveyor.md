@@ -6,7 +6,7 @@
 
 CanaryBit Surveyor is a **Confidential Container launcher**. It helps end-users to run containers/pods only upon validation of the underlying infrastructure, running under Kata Containers (AMD SEV-SNP, Intel TDX) or on confidential nodes directly.
 
-It guarantees confidentiality and privacy allowing end-users to select between two modes:
+It guarantees confidentiality and privacy allowing end-users to select between two deployment modes:
 
    1. `kata` **(recommended)**: each container/pod is hypervisor-isolated inside a lightweight VM - known as [Kata Containers](https://katacontainers.io/) - and remotely attested by CanaryBit Inspector. This mode guarantees security and isolation.
    2. `node`: each container/pod runs on confidential nodes directly, and is remotely attested by CanaryBit Inspector. This mode guarantees security but no isolation between containers/pods.
@@ -20,7 +20,8 @@ It guarantees confidentiality and privacy allowing end-users to select between t
 - A CanaryBit [Inspector licence](./inspector.md#licences);
 - The CanaryBit [CLI](https://docs.confidentialcloud.io/tools/cli/) (`cb-cli`) installed;
 - Access to a Kubernetes cluster (`kubeconfig`) running on a [supported](../requirements.md) hardware platform;
-- [Helm](https://helm.sh) - the package manager for Kubernetes - installed (Not needed if deploying the pods in `node` mode).
+- *Only for `kata` mode:*
+  - [Helm](https://helm.sh) installed.
 
 ## Source your credentials
 
