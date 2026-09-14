@@ -21,7 +21,7 @@ It guarantees confidentiality and privacy allowing end-users to select between t
 - The CanaryBit [CLI](https://docs.confidentialcloud.io/tools/cli/) (`cb-cli`) installed;
 - Access to a Kubernetes cluster (`kubeconfig`) running on a [supported](../requirements.md) hardware platform;
 - *Only for `kata` mode:*
-  - [Helm](https://helm.sh) installed.
+    - [Helm](https://helm.sh) installed.
 
 ## Source your credentials
 
@@ -60,9 +60,9 @@ There are two ways to download CanaryBit Surveyor:
 
 ## Configure
 
-### Install Kata
+### Install Kata (recommended)
 
-In `kata` mode, hardware-specific Kata Containers runtime classes are required before deploying confidential workloads. 
+Only for `kata` mode, hardware-specific Kata Containers runtime classes are required before deploying confidential workloads. 
 
 To install the Kata runtime classes, first initialize the configuration with: 
 
