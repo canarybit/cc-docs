@@ -3,7 +3,7 @@
 
 <br/>
 
-Effective Date: May 18, 2026
+**Effective Date:** May 18, 2026
 
 These Terms & Conditions (“Terms”) govern the licensing, use, resale, and delivery of software products and professional services provided by Canary Bit AB (“CanaryBit”, “we”, “our”, or “us”).
 CanaryBit is a company established in Stockholm, Sweden.
