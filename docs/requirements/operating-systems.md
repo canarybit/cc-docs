@@ -2,15 +2,17 @@
 
 ## Linux 
 
-Any of:
+Any with OS kernel `v6.16+`.
 
-- Ubuntu
-- RedHat Enterprise Linux (RHEL)
+Validated on:
+
+- Ubuntu `v26.04+`
+- RedHat Enterprise Linux (RHEL) `v10+`
 - AmazonLinux
-- OpenSuse
 - NixOS
+- SUSE Linux Enterprise Server `v15+`
+- OpenSuse
 
-with kernel `v6.16+`
 
 ## Windows
 

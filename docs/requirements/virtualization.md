@@ -70,8 +70,6 @@ Below a shortlist of our **verified providers**:
 
   -   :simple-vmware:{ .lg .middle } __VMware vSphere `v9+`__
 
-  -   :simple-suse:{ .lg .middle } __Harvester `v1.7.1+`__
-
   -   :simple-suse:{ .lg .middle } __KubeVirt `v1.7+`__
 
   -   :simple-qemu:{ .lg .middle } __Libvirt `v11+` / Qemu `v9.2+`__
