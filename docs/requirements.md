@@ -12,12 +12,3 @@ Moreover, CanaryBit Confidential Cloud supports a wide range of technologies thr
 
     🟡 &nbsp; Work in progress
 
-
-## Supported Technologies
-
-* [Virtualization](./requirements/virtualization.md)
-
-* [Operating Systems](./requirements/operating-systems.md)
-
-* [Containers](./requirements/containers.md)
-

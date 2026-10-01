@@ -39,15 +39,6 @@ Below a shortlist of our **verified providers**:
 
 </div>
 
-<br>
-
-<details open>
-<summary>Partnership</summary>
-<br>Are you a CSP, hardware vendor or software solutions provider and interested to support Confidential Cloud?
-<br><a href="https://www.canarybit.eu/partners/">Become a Partner!</a>
-<br><br>
-</details>
-
 ## Bare-metal / Private Cloud
 
 <div class="grid cards" markdown>
