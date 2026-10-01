@@ -217,7 +217,7 @@ CanaryBit Inspector service uses *NVIDIA Attestation Services* for NVIDIA GPU at
       
       *"Users who use NVIDIA Attestation Cloud Services or the NVIDIA Trust software components, without an **Enterprise Product license** may exercise the software and services solely for the purposes of development of a confidential computing service, not a commercial offering / redistribution."*
 
-Users who use CanaryBit Inspector to perform NVIDIA GPU remote attestation are then **required to comply** with [NVIDIA End-user License Agreement](https://docs.nvidia.com/attestation/cloud-services/latest/license.html).
+Users who use CanaryBit Inspector to perform NVIDIA GPU remote attestation **must comply** with [NVIDIA End-user License Agreement](https://docs.nvidia.com/attestation/cloud-services/latest/license.html).
 
 
 
