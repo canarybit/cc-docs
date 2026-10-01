@@ -211,7 +211,7 @@ CanaryBit Inspector can be deployed on-prem, for internal use or offered as a se
 
 ### NVIDIA Enterprise license
 
-CanaryBit Inspector service uses *NVIDIA Attestation Services* for NVIDIA GPU attestation. NVIDIA Attestation Services are subject to the [NVIDIA End-user License Agreement](https://docs.nvidia.com/attestation/cloud-services/latest/license.html):
+CanaryBit Inspector service exposes *NVIDIA Attestation Services* for NVIDIA GPU attestation. NVIDIA Attestation Services are subject to the [NVIDIA End-user License Agreement](https://docs.nvidia.com/attestation/cloud-services/latest/license.html):
 
 !!! Note
       
