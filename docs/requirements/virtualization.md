@@ -13,8 +13,8 @@ Below a shortlist of our **verified providers**:
   
     ---
         
-    **Jurisdiction**: 🏳️‍🌈️ Provider-related   
-    **Locations**: 🏳️‍🌈️ Provider-related
+    **Jurisdiction**: 🌐 Provider-specific   
+    **Locations**: 🌐 Provider-specific
 
  - :material-aws:{ .lg .middle } __AWS__
 
