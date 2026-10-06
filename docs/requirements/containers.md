@@ -3,7 +3,7 @@
 ## Platforms
 - [Kubernetes](https://kubernetes.io/)
 - [Openshift](https://www.redhat.com/en/technologies/cloud-computing/openshift) `v4.20+`
-- [Rancher](https://www.rancher.com)
+- [SUSE Rancher](https://www.rancher.com)  `v2.14` - RKE `v1.33`
 
 !!! note 
 
