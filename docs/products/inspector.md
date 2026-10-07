@@ -4,10 +4,19 @@
 
 --- 
 
-**CanaryBit Inspector** is a Confidential Computing [Remote Attestation]() service with extended functionalites, helping end-users to fully verify the security of their processing environments before any sensitive data analysis.
+CanaryBit Inspector is a **Confidential Computing Remote Attestation service** with extended functionality. 
+It lets you fully verify the security of your processing environments before any sensitive data analysis. 
+Inspector confirms that the underlying platform supports and actually uses the Confidential Computing capabilities of its processor architecture and firmware. 
+It does this by validating an attestation report collected by a lightweight client running inside the TEE, which gathers information at the hardware, virtualization, OS and software levels. 
+Inspector then monitors infrastructure security and enforces your deployment policies by alerting components that fail to meet them.
 
-CanaryBit Inspector validates that the underlying platform has support for and uses Confidential Computing capabilties enabled by the platform's instruction set architecture and firmware.
-CanaryBit Inspector performs the validation based on an Attestation Report provided by a software client deployed in the TEE. The client software collects information on the hardware, firmware, and software level to attest its trustworthiness. CanaryBit Inspector monitors the infrastructure security and enforces customer-defined deployment policies by destroying infrastructure components that fail to meet custom needs.
+Key capabilities
+
+- **Confidential VM and container attestation:** verify Confidential VMs deployed through CanaryBit Tower, through your own cloud-init configuration, or manually. Confidential containers and pods are attested with CanaryBit Surveyor, whether they run on a managed service such as AKS or EKS or on another container platform.
+- **Broad hardware coverage:** supports AMD SEV-SNP and Intel TDX, and exposes NVIDIA Attestation Services for GPU attestation (subject to the NVIDIA End-user License Agreement).
+- **Custom policies:** enforce your own Rego policies at the application, operating system, virtualization and hardware levels, on top of the verifier's default policies. The dashboard's Policy Generator and Policy Playground help you write them.
+- **Unified dashboard:** fine-tune expected environments, review vulnerabilities (CVEs) affecting your setup, and download verification reports and insights.
+- **Flexible licensing:** Trial (free, Not For Resale), Private (Basic, Standard or Enterprise), and Reseller for offering Inspector as a service. It can be deployed on-prem, for internal use, or offered as a service.
 
 ## Architecture 
 CanaryBit Inspector service is **built on microservices** that wholetogether provide an holistic view on the underlying insfrastructure and technology stack.

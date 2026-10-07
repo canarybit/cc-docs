@@ -4,17 +4,16 @@
 
 ---
 
-**CanaryBit Tower** is a Confidential Computing resources orchestration service. It helps end-users to deploy secure processing environments and provides control over configuration drifts.
+CanaryBit Tower is a Confidential Computing resource orchestration service that helps you deploy secure processing environments and control configuration drift. 
+Delivered as Infrastructure as Code (IaC) configurations, it creates the required infrastructure resources and one or more TEEs, either on the cloud provider of your choice or on-premises.
 
-It creates all the required infrastructure resources and one or more TEE (see [Confidential Computing](https://www.canarybit.eu/what-is-confidential-computing-and-why-should-i-care/)). 
-Tower orchestrates TEEs either on the resources of a Cloud Service Provider of your choice, or On-Prem.
-It destroys all the resources once the execution is completed or compromised. Each TEE is single-use and immutable once created.
+Key capabilities
 
-CanaryBit Tower consists of multiple Terraform / OpenTofu **module** configurations. The Tower module is a collection of resources to provision Confidential VMs resources only.
-
-!!! tip "What is a module?" 
-
-    To learn more about the module concepts and how to use it refer to the official [Terraform](https://developer.hashicorp.com/terraform/language/modules) or [OpenTofu](https://opentofu.org/docs/language/modules/) documentation.
+- **Infrastructure as code:** provision Confidential VMs and their supporting resources (networks, security groups and more) with a standard init and apply workflow.
+- **Multi-environment support:** free, Apache-2.0 licensed configurations for Azure, AWS and GCP. VMware, Proxmox, OpenShift and Libvirt/QEMU for bare-metal and private setups require a Premium License.
+- **Remote attestation:** verify each Confidential VM's security characteristics at boot time or at a custom cadence with CanaryBit Inspector, so you aren't left trusting the hypervisor or infrastructure provider.
+- **Custom policies:** add your own Rego policies at different levels of the stack (hardware, hypervisor, OS and more), enforced on top of the verifier's default policies.
+- **Verification reports:** download the final report and additional insights from the Inspector dashboard.
 
 ## Requirements
 

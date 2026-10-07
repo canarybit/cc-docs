@@ -8,7 +8,7 @@ CanaryBit Surveyor is a **confidential container launcher** that runs containers
 It works with Kata Containers or directly on confidential nodes in your Kubernetes cluster running on AMD SEV-SNP and Intel TDX hardware. 
 Each workload is remotely attested by [CanaryBit Inspector](./inspector.md) before it starts and then re-verified on a schedule (daily by default), so your data and algorithms stay protected inside a hardware-encrypted execution environment.
 
-Key capabilities:
+Key capabilities
 
 - **Attestation-gated deployment**: workloads launch only after the infrastructure passes remote attestation.
 - **Two deployment modes**: kata (recommended) isolates each pod in its own lightweight VM. node runs pods directly on confidential nodes, which gives security but no isolation between pods.
