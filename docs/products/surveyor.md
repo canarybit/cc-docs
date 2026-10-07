@@ -4,15 +4,16 @@
 
 ---
 
-CanaryBit Surveyor is a **Confidential Container launcher**. It helps end-users to run containers/pods only upon validation of the underlying infrastructure, running under Kata Containers (AMD SEV-SNP, Intel TDX) or on confidential nodes directly.
+CanaryBit Surveyor is a **confidential container launcher** that runs containers and pods only after the underlying infrastructure has been validated. 
+It works with Kata Containers or directly on confidential nodes in your Kubernetes cluster running on AMD SEV-SNP and Intel TDX hardware. 
+Each workload is remotely attested by [CanaryBit Inspector](./inspector.md) before it starts and then re-verified on a schedule (daily by default), so your data and algorithms stay protected inside a hardware-encrypted execution environment.
 
-It guarantees confidentiality and privacy allowing end-users to select between two deployment modes:
+Key capabilities:
 
-   1. `kata` **(recommended)**: each container/pod is hypervisor-isolated inside a lightweight VM - known as [Kata Containers](https://katacontainers.io/) - and remotely attested by CanaryBit Inspector. This mode guarantees security and isolation.
-   2. `node`: each container/pod runs on confidential nodes directly, and is remotely attested by CanaryBit Inspector. This mode guarantees security but no isolation between containers/pods.
-
-!!! Info 
-      Kata containers gives stronger isolation but running a container/pod as a kata container means launching a VM dedicated to the container/pod. Confidential Computing  does not currently support nested virtualization.
+- **Attestation-gated deployment**: workloads launch only after the infrastructure passes remote attestation.
+- **Two deployment modes**: kata (recommended) isolates each pod in its own lightweight VM. node runs pods directly on confidential nodes, which gives security but no isolation between pods.
+- **Custom policies**: add your own Rego policies, for example to enforce a kernel version, hypervisor or region, on top of the default verifier policies.
+Verification reports: download attestation reports and insights from the Inspector dashboard.
 
 ## Requirements
 
