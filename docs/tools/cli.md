@@ -26,10 +26,10 @@ $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli
 
 where `[VERSION]` is the `cb` version and `[OS_TARGET]` is one of the following reference architectures:
 
-- Linux: `cb-x86_64-unknown-linux-gnu`
-- Windows: `cb-x86_64-pc-windows-msvc.exe`
-- Apple Intel: `cb-x86_64-apple-darwin`
-- Apple M-series: `cb-aarch64-apple-darwin`
+- Linux: `cb-cli-linux-x64`
+- Windows: `cb-cli-windows-x64.exe`
+- Apple Intel: `cb-cli-macos-x64`
+- Apple M-series: `cb-cli-macos-arm64`
 
 !!! Example
     ```
@@ -37,8 +37,9 @@ where `[VERSION]` is the `cb` version and `[OS_TARGET]` is one of the following 
       📁  0.2.4
       📁  0.2.5
       📁  0.2.6
+      📁  0.3.0
     
-    $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli/0.2.6/cb-x86_64-unknown-linux-gnu -o cb
+    $ curl -fsSL https://canarybit-public-binaries.s3.eu-west-1.amazonaws.com/cb-cli/0.3.0/cb-cli-linux-x64 -o cb
     ```
 
 ## Subcommands
@@ -78,7 +79,11 @@ $ cb list cb-inspector-client
 ```
 
 ```title="Download"
-$ cb download cb-inspector-client 0.1.0/cb-inspector-client
+$ cb download cb-inspector-client
+```
+
+```title="Download specific version"
+$ cb download cb-inspector-client --version 0.1.0
 ```
 
 ### Current Version
@@ -87,6 +92,12 @@ For information about the current (latest) release, see the release notes. To fi
 
 ```
 cb --version
+```
+
+To update run the cb itself (may require `sudo`)
+
+```
+cb update
 ```
 
 ### Help

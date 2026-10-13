@@ -75,10 +75,8 @@ A Confidential VM is deployed by the end-user on the target infrastructure provi
   3. Download the CanaryBit Inspector client (`cb-inspector-client`)
 
     ```
-    ./cb download cb-inspector-client [CB_INSPECTOR_CLIENT_V]/cb-inspector-client
+    ./cb download cb-inspector-client
     ```
-  
-    where `[CB_INSPECTOR_CLIENT_V]` is the required client version (e.g. `0.1.0`).
 
   4. Get a Token
 
