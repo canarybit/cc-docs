@@ -1,5 +1,5 @@
 # Terms & Conditions
-**For Software Licenses and Professional Services.**
+**For CanaryBit Software Licenses and Professional Services.**
 
 <br/>
 
@@ -164,4 +164,4 @@ For legal, licensing, support, or commercial inquiries, contact:
 **Canary Bit AB** </br>
 Stockholm, Sweden </br>
 Email: [legal@canarybit.eu](mailto:legal@canarybit.eu) </br>
-Website: [https://canarybit.eu](https://canarybit.eu)
+Website: [https://www.canarybit.eu](https://www.canarybit.eu)

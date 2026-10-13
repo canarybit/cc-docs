@@ -1,5 +1,5 @@
 # Service Level Agreement
-**For Products and Services.**
+**For CanaryBit Products and Services.**
 
 <br/>
 
@@ -194,4 +194,4 @@ For support or SLA-related inquiries, contact:
 **Canary Bit AB** </br>
 Stockholm, Sweden </br>
 Email: [legal@canarybit.eu](mailto:legal@canarybit.eu) </br>
-Website: [https://canarybit.eu](https://canarybit.eu)
+Website: [canarybit.eu](https://www.canarybit.eu)
