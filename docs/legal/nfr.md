@@ -12,7 +12,7 @@ These terms govern your use of Inspector (the "**Service**") under a free, Not F
 
 ## 1. Duration
 
-CanaryBit grants you a limited, non-exclusive, non-transferable, revocable license to use the Service **for 6 months** from activation (the "**Term**"), only for internal evaluation, testing, training, demos to prospective customers, and integration development. Only the users and seats approved in your NFR invitation or order may use it.
+CanaryBit grants you a limited, non-exclusive, non-transferable, revocable license to use the Service **for 6 months** from activation (the "**Term**"), only for internal evaluation, testing, training, and integration development. Only the users and seats approved in your NFR invitation or order may use it.
 
 ## 2. Not for resale
 
