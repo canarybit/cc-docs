@@ -8,7 +8,7 @@
 These terms govern your use of Inspector (the "**Service**") under a free, Not For Resale (NFR) license. 
 
 !!! info 
-    Your NFR license is granted through an NFR invitation or order that links to these terms. By accepting that invitation or order, activating your NFR account through it, or using the Service under it, you accept these terms.** If you accept for an organization, you confirm you can bind it. If you do not agree, do not use the Service.
+    Your NFR license is granted through an NFR invitation or order that links to these terms. By accepting that invitation or order, activating your NFR account through it, or using the Service under it, you accept these terms.
 
 ## 1. Duration
 
