@@ -1,4 +1,4 @@
-# Not For Resale License information
+# Not For Resale (NFR) License 
 **For CanaryBit Licenced Products**
 
 <br/>
@@ -34,9 +34,11 @@ NFR licenses are free and granted at our discretion, typically to partners, cons
 
 The Service is provided with no SLA and with support at our discretion. We may change or limit features, reset environments, and delete data at any time, so do not store anything you need to keep.
 
-## 5. Your data
+## 5. Use of Data
 
-Use only test or anonymized data. Do not upload live production data or personal data. You own your data and give us a license to host and process it to run the Service. We handle personal data under our [Privacy Policy](#). After the Term ends, we may delete your data **after 30 days**.
+Personal Data collected under the NFR licence will be processed solely for the purposes of the NFR licence and will not be used for any resale, commercial redistribution or third-party service delivery.
+
+Upon expiry or termination of the NFR licence, CanaryBit will deactivate the Service and, within 30 days, delete or return (at the Customer’s choice) all data and delete the contact email. CanaryBit may retain minimal licence records (such as licence ID, dates and the Customer’s organisation name) for 5 years to evidence compliance with these Terms.
 
 ## 6. Confidentiality and feedback
 
