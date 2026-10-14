@@ -72,7 +72,7 @@ The verification of your Confidential environment is triggered **automatically**
     
     3. Download the `cb-inspector-client`:
     ```
-    ./cb download cb-inspector-client 0.1.0/cb-inspector-client
+    ./cb download cb-inspector-client
     ``` 
     4. Copy the `cb-inspector-client` on each Confidential VM.
     
