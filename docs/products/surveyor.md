@@ -62,7 +62,7 @@ There are two ways to download CanaryBit Surveyor:
     0.3.0
 
     $ cb download surveyor --target macos-arm64
-    [2026-10-13T13:34:05Z INFO  cb_cli] Downloaded surveyor-macos-arm64 to surveyor-macos-arm64-0.3.0
+    Downloaded surveyor-macos-arm64 to surveyor-macos-arm64-0.3.0
     ```
 
 ## Configure
