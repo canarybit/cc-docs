@@ -1,9 +1,9 @@
 # Containers
 
 ## Platforms
-- [Kubernetes](https://kubernetes.io/)
-- [Openshift](https://www.redhat.com/en/technologies/cloud-computing/openshift) `v4.20+`
-- [SUSE Rancher](https://www.rancher.com)  `v2.14` - RKE `v1.33`
+- [Kubernetes](https://kubernetes.io/){:target="_blank"}
+- [Red Hat Openshift](https://www.redhat.com/en/technologies/cloud-computing/openshift){:target="_blank"} `v4.20+`
+- [SUSE Rancher](https://www.rancher.com){:target="_blank"}  `v2.14` - RKE `v1.33`
 
 !!! note 
 
@@ -11,5 +11,5 @@
 
 ## Runtime
 
-- [Kata-runtime](https://katacontainers.io/) (recommended for full isolation)
+- [Kata-runtime](https://katacontainers.io/){:target="_blank"} (recommended for full isolation)
 - Any other container runtime

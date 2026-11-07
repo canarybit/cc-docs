@@ -66,7 +66,7 @@ Below a shortlist of our **verified providers**:
 <div class="grid cards" markdown>
   <!-- https://squidfunk.github.io/mkdocs-material/reference/grids/#using-card-grids !-->
 
-  -   :simple-proxmox:{ .lg .middle } __Proxmox VE `v8.4`__
+  -   :simple-proxmox:{ .lg .middle } __Proxmox VE `v8.4+`__
 
   -   :simple-vmware:{ .lg .middle } __VMware vSphere `v9+`__
 

@@ -28,7 +28,6 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
-    - navigation.expand
     - navigation.path
     - navigation.footer
 
@@ -63,7 +62,7 @@ markdown_extensions:
   
 nav:
   - Welcome!: 'index.md'
-  - Why Confidential Cloud: 'overview.md'
+  - Confidential Cloud: 'overview.md'
   - Requirements:
     - 'Overview': 'requirements.md'
     - 'Hardware': 'requirements/hardware.md'
@@ -72,7 +71,6 @@ nav:
     - 'Containers': 'requirements/containers.md'
     #- 'Encryption': []
     #- 'Security': []
-
   - Products:
     - 'INSPECTOR': './products/inspector.md'
     - 'TOWER': './products/tower.md'
@@ -82,6 +80,15 @@ nav:
     - 'CanaryBit CLI': './tools/cli.md'
 
   - 'Playground': './playground.md'
+
+  - Hardening:
+    - 'Overview': 'hardening.md'
+    - AMD SEV-SNP:
+      - 'Guest Level': 'hardening/snp/guest.md'
+      - 'Host Level': 'hardening/snp/host.md'
+    - Intel TDX:
+      - 'Guest Level': 'hardening/tdx/guest.md'
+      - 'Host Level': 'hardening/tdx/host.md'
 
   - 'Legal':
       - 'Terms & Conditions': './legal/terms.md'
