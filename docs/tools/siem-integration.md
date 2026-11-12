@@ -1,29 +1,37 @@
 # SIEM integration
 
-Get a snapshot of your IT infrastructure in your SIEM or monitoring tool. 
+Get a snapshot of your IT infrastructure in a SIEM monitoring tool. 
 
 --- 
 
-The Inspector attestation reports connector allows  end-users to easily collect attestation events from CanaryBit Inspector and forward them to a telemetry data collector (e.g. FluentBit). 
-The data collector system can then be connected to a monitoring tool (e.g. Grafana, Splunk, etc...) for log aggregation and alerting.
+The Inspector attestation reports connector allows  end-users to easily collect attestation events from CanaryBit Inspector and forward them to a telemetry data collector (e.g. [FluentBit](https://fluentbit.io)). 
+The data collector system can then be connected to a monitoring tool (e.g. [Grafana](https://grafana.com), [Splunk](https://www.splunk.com), or others) for log aggregation and alerting.
 
 ```mermaid
 graph LR
-    A[Inspector] -.http.-> B[Telemetry Collector] -.http.-> C[SIEM/Monitoring tool]
+    B[Canary Bit Connector] <-.GET.-> A[Canary Bit Inspector] 
+    B[Canary Bit Connector] -.-> C[Data Collector] -.-> D[SIEM]
 ```
+
+1. At launch, the Canary Bit Connector locally stores a `last_polling` file containing the launch timestamp. 
+2. At a recurrent schedule, the Canary Bit Connector **a)** reads the `last_polling` timestamp, **b)** fetches the CanaryBit Inspector attestation reports event logs from the `last_polling` timestamp until the current timestamp, and **c)** ships the event logs to the Data Collector.
+3. The `last_polling` file is then updated with the current timestamp.
+4. The Data Collector is then responsible to forward the event logs to the configured SIEM/monitoring tool.
 
 ## Requirements
 
- - A CanaryBit Inspector [license](/products/inspector/#licences)
+ - Access to a CanaryBit Inspector instance
 
 ## Configuration
 
 The following variables are required by the connector:
 
 - `CB_USERNAME` and `CB_PASSWORD` for CanaryBit authentication;
-- `TELEMETRY_DATA_COLLECTOR_URI` to transfer attestation events to a SIEM/monitoring system.
+- `TELEMETRY_DATA_COLLECTOR_URI` for shipping the events to a SIEM monitoring tool.
 
-An end-user can deploy the connector as either a `systemd` service or as Docker a container.
+We recommend to store the environment variables in an `.rc` (e.g. `my-env.rc`)
+
+The connector can then be deployed as either a [systemd service](#systemd) or as a [container](#container).
 
 ### Systemd
 
@@ -70,7 +78,7 @@ docker run --rm \
 
 ## Example
 
-In this example we use [FluentBit](https://fluentbit.io) and [Grafana](https://grafana.com) as telemetry data collector and monitoring tool, respectively.
+In this example we use FluentBit and Grafana as telemetry data collector and monitoring tool, respectively.
 
    1. Create and source a `my-env.rc` file with the following environment variables:
 
@@ -93,16 +101,22 @@ In this example we use [FluentBit](https://fluentbit.io) and [Grafana](https://g
        Log_Level     info
 
       [INPUT]
-          # DO NOT REMOVE !!! Receive the results from the connector via http          
+          # ---
+          # DO NOT REMOVE !!! 
+          # Receives the results from the connector via http          
+          # ---
           Name         http
           Listen       0.0.0.0
           Port         9880
 
       [FILTER]
-          # DO NOT REMOVE !!! Parse the input and convert it to a multi-line format
+          # ---
+          # DO NOT REMOVE !!! 
+          Parses the attestations input and converts it to a multi-line format
+          # ---
           Name    lua
           Match   *
-          script  /fluent-bit/etc/parse-attestations.lua
+          script  /fluent-bit/etc/filter.lua
           call    split_json
       
       [OUTPUT]
@@ -114,7 +128,9 @@ In this example we use [FluentBit](https://fluentbit.io) and [Grafana](https://g
           tls.verify    On
           http_user     ${LOKI_USER}
           http_passwd   ${LOKI_PASSWORD}
+          # ---
           Labels        job=my_attestations
+          # ---
           line_format   json
       ```
 
@@ -131,7 +147,7 @@ In this example we use [FluentBit](https://fluentbit.io) and [Grafana](https://g
         -e LOKI_USER \
         -e LOKI_PASSWORD \
         -v "$(pwd)/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro" \
-        -v "$(pwd)/filter-attestations.lua:/fluent-bit/etc/filter-attestations.lua:ro" \
+        -v "$(pwd)/filter.lua:/fluent-bit/etc/filter.lua:ro" \
         --restart unless-stopped \
         fluent/fluent-bit:latest \
         /fluent-bit/bin/fluent-bit -c /fluent-bit/etc/fluent-bit.conf
@@ -152,3 +168,16 @@ In this example we use [FluentBit](https://fluentbit.io) and [Grafana](https://g
     !!! warning 
         Make sure that both containers are on the same network, in this example we used `my-network`.
      
+   4. Visualise the event logs in Grafana
+
+      In Grafana **Explore** (tab), select the Loki data source connection used to ship the logs to Grafana.
+
+      Run the query selecting`job=my_attestations` as _Label Filter_
+
+      ![Grafana Filter](/img/siem-grafana-filter.png)
+
+      and visualise the return event logs:
+
+      ![Grafana Results](/img/siem-grafana-results.png)
+ 
+   
