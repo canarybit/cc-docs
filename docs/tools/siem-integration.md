@@ -14,7 +14,7 @@ graph LR
 ```
 
 1. At launch, the Canary Bit Connector locally stores a `last_polling` file containing the launch timestamp. 
-2. At a recurrent schedule, the Canary Bit Connector **a)** reads the `last_polling` timestamp, **b)** fetches the CanaryBit Inspector attestation reports event logs from the `last_polling` timestamp until the current timestamp, and **c)** ships the event logs to the Data Collector.
+2. At a recurrent schedule, the Canary Bit Connector **a)** reads the `last_polling` timestamp, **b)** fetches the CanaryBit Inspector attestation reports event logs from the `last_polling` timestamp until the current timestamp, and **c)** forwards the event logs to the Data Collector in this specific time range.
 3. The `last_polling` file is then updated with the current timestamp.
 4. The Data Collector is then responsible to forward the event logs to the configured SIEM/monitoring tool.
 
@@ -179,5 +179,3 @@ In this example we use FluentBit and Grafana as telemetry data collector and mon
       and visualise the return event logs:
 
       ![Grafana Results](/img/siem-grafana-results.png)
- 
-   
