@@ -60,6 +60,11 @@ markdown_extensions:
       # For a full list of supported emojis: https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   
 nav:
   - Welcome!: 'index.md'
@@ -80,6 +85,7 @@ nav:
 
   - Tools:
     - 'CanaryBit CLI': './tools/cli.md'
+    - 'SIEM integration': './tools/siem-integration.md'
 
   - 'Playground': './playground.md'
 
