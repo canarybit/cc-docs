@@ -13,8 +13,14 @@ graph LR
     B[Canary Bit Connector] -.-> C[Data Collector] -.-> D[SIEM]
 ```
 
-1. At launch, the Canary Bit Connector locally stores a `last_polling` file containing the launch timestamp. 
-2. At a recurrent schedule, the Canary Bit Connector **a)** reads the `last_polling` timestamp, **b)** fetches the CanaryBit Inspector attestation reports event logs starting from the `last_polling` timestamp and until the current timestamp, and **c)** forwards them to the Data Collector for the specific time range.
+1. At launch, the Canary Bit Connector locally stores a `last_polling` file containing the launch timestamp.
+2. At a recurrent schedule, the Canary Bit Connector:
+    - reads the `last_polling` timestamp; 
+    {: type="a" }
+    - fetches the CanaryBit Inspector attestation reports event logs starting from the `last_polling` timestamp and until the current timestamp;
+    {: type="a" }
+    - forwards them to the Data Collector for the specific time range.
+    {: type="a" }
 3. The `last_polling` file is then updated with the current timestamp.
 4. The Data Collector is then responsible to forward the event logs to the configured SIEM/monitoring tool.
 
