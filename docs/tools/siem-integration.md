@@ -14,7 +14,7 @@ graph LR
 ```
 
 1. At launch, the Canary Bit Connector locally stores a `last_polling` file containing the launch timestamp. 
-2. At a recurrent schedule, the Canary Bit Connector **a)** reads the `last_polling` timestamp, **b)** fetches the CanaryBit Inspector attestation reports event logs from the `last_polling` timestamp until the current timestamp, and **c)** forwards the event logs to the Data Collector in this specific time range.
+2. At a recurrent schedule, the Canary Bit Connector **a)** reads the `last_polling` timestamp, **b)** fetches the CanaryBit Inspector attestation reports event logs starting from the `last_polling` timestamp and until the current timestamp, and **c)** forwards them to the Data Collector for the specific time range.
 3. The `last_polling` file is then updated with the current timestamp.
 4. The Data Collector is then responsible to forward the event logs to the configured SIEM/monitoring tool.
 
@@ -29,9 +29,10 @@ The following variables are required by the connector:
 - `CB_USERNAME` and `CB_PASSWORD` for CanaryBit authentication;
 - `TELEMETRY_DATA_COLLECTOR_URI` for shipping the events to a SIEM monitoring tool.
 
-We recommend to store the environment variables in an `.rc` (e.g. `my-env.rc`)
-
 The connector can then be deployed as either a [systemd service](#systemd) or as a [container](#container).
+
+!!! note
+    We recommend to store the environment variables in an `.rc` (e.g. `my-env.rc`)
 
 ### Systemd
 
@@ -134,7 +135,7 @@ In this example we use FluentBit and Grafana as telemetry data collector and mon
           line_format   json
       ```
 
-    !!! note
+    !!! info
            Label is used to identify the events and query the results in Grafana. In this example, we used `job=my_attestations`        
 
    2. Launch FluentBit:
