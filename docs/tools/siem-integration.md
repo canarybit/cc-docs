@@ -104,41 +104,41 @@ In this example we use FluentBit and Grafana as telemetry data collector and mon
 
       ```
       [SERVICE]
-       Flush         1
-       Log_Level     info
+        Flush         1
+        Log_Level     info
 
       [INPUT]
-          # ---
-          # DO NOT REMOVE !!! 
-          # Receives the results from the connector via http          
-          # ---
-          Name         http
-          Listen       0.0.0.0
-          Port         9880
+        # ---
+        # DO NOT REMOVE !!! 
+        # Receives the results from the connector via http          
+        # ---
+        Name         http
+        Listen       0.0.0.0
+        Port         9880
 
       [FILTER]
-          # ---
-          # DO NOT REMOVE !!! 
-          Parses the attestations input and converts it to a multi-line format
-          # ---
-          Name    lua
-          Match   *
-          script  /fluent-bit/etc/filter.lua
-          call    split_json
+        # ---
+        # DO NOT REMOVE !!! 
+        # Parses the attestations input and converts it to a multi-line format
+        # ---
+        Name    lua
+        Match   *
+        script  /fluent-bit/etc/filter.lua
+        call    split_json
       
       [OUTPUT]
-          Name          loki
-          Match         *
-          Host          ${LOKI_HOST}
-          Port          443
-          tls           On
-          tls.verify    On
-          http_user     ${LOKI_USER}
-          http_passwd   ${LOKI_PASSWORD}
-          # ---
-          Labels        job=my_attestations
-          # ---
-          line_format   json
+        Name          loki
+        Match         *
+        Host          ${LOKI_HOST}
+        Port          443
+        tls           On
+        tls.verify    On
+        http_user     ${LOKI_USER}
+        http_passwd   ${LOKI_PASSWORD}
+        # ---
+        Labels        job=my_attestations
+        # ---
+        line_format   json
       ```
 
     !!! info
