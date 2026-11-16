@@ -225,7 +225,7 @@ Deployment action: configure Inspector to retrieve the collateral views needed f
 - configure verification services to use current collateral and enforce the organization's policy
 - for migratable TDs, include the Migration TD and destination platform in the trust review and attestation policy
 
-## 11. Final guest hardening checklist
+## 11. Checklist
 
 - [ ] Guest kernel includes TDX support and is kept current
 - [ ] Production kernel arguments from section 2 are active

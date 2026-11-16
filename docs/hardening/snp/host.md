@@ -161,7 +161,7 @@ References:
 - [AMD SEV-SNP Firmware ABI Specification (Publication 56860)](https://www.amd.com/content/dam/amd/en/documents/developer/56860.pdf) — ABI definition of launch feature bits, including `SEV_FEATURES[3]`.
 - [Linux KVM AMD memory-encryption documentation](https://docs.kernel.org/virt/kvm/x86/amd-memory-encryption.html) and the [Linux KVM/SVM SEV implementation](https://github.com/torvalds/linux/blob/master/arch/x86/kvm/svm/sev.c) — host-side SEV/KVM context. These do not by themselves establish that a particular kernel build includes Restricted Injection.
 
-## 5. Host production checklist
+## 5. Checklist
 
 Before deployment, confirm the following:
 
@@ -171,8 +171,6 @@ Before deployment, confirm the following:
 - [ ] restricted injection is enabled only where all layers support it
 - [ ] host launch settings match the approved guest policy and are confirmed by attestation policy
 
-## 6. Final host guidance
-
 A hardened SEV-SNP host is not defined by one setting alone. It is a combination of:
 
 - updated firmware
@@ -180,4 +178,6 @@ A hardened SEV-SNP host is not defined by one setting alone. It is a combination
 - correct launch-time feature selection
 - a verified guest policy
 
-Guest-policy requirements, including PMC virtualization, `PAGE_SWAP_DISABLE`, and attestation checks such as `ALIAS_CHECK_COMPLETE`, are covered in the [SNP guest hardening guide](guest.md). The host owner must verify actual platform state rather than assume default values are secure.
+Guest-policy requirements, including PMC virtualization, `PAGE_SWAP_DISABLE`, and attestation checks such as `ALIAS_CHECK_COMPLETE`, are covered in the [SNP guest hardening guide](guest.md). 
+
+The host owner must verify actual platform state rather than assume default values are secure.

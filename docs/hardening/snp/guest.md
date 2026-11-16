@@ -265,7 +265,7 @@ errors contains "SNP measurement is not approved" if {
 
 The mitigation fields above are illustrative normalized claims, not universal bit numbers. Obtain the actual vector values from the target launch stack and map them using the matching AMD ABI. Add identity checks only for claims populated and authenticated in the environment.
 
-## 9. Final guest hardening checklist
+## 9. Checklist
 
 - [ ] Guest firmware is SNP-aware and the guest kernel is current, with SNP support and #HV handling where required
 - [ ] `VIRT_PERFMON` (`SEV_FEATURES[11]`) is not enabled for PMC virtualization

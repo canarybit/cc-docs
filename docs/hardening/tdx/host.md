@@ -154,7 +154,7 @@ Before production, confirm that the VMM launch configuration supplies the approv
 - ACPI restrictions
 - any launch-measured command-line or runtime claims required by policy
 
-## 8. Host production checklist
+## 8. Checklist
 
 - [ ] host firmware updated
 - [ ] host kernel and KVM/QEMU stack updated
@@ -164,7 +164,5 @@ Before production, confirm that the VMM launch configuration supplies the approv
 - [ ] `no-kvmclock` enforced
 - [ ] `random.trust_cpu=y` enforced
 - [ ] guest attestation validates runtime security posture
-
-## 9. Final host guidance
 
 A secure Intel TDX host environment depends on controlled guest launch policy and runtime verification. The host must not assume that a running TD is secure simply because it boots; attestation and runtime policy checks are required.

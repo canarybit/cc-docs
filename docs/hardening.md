@@ -3,7 +3,7 @@
 This section contains practical hardening guidance for AMD SEV-SNP and Intel TDX Confidential Computing deployments. 
 The documents are separated by platform and by host/guest responsibility so operators can find the relevant steps quickly.
 
-!!! info "Recommended order"
+!!! abstract "Recommended order"
 
     1. Select the platform guide: SEV-SNP or TDX.
     2. Review the host guide with the platform or infrastructure operator.
@@ -15,7 +15,7 @@ The documents are separated by platform and by host/guest responsibility so oper
 
     Some controls are set by the host or at guest launch and cannot be changed from inside a running guest. Coordinate host-side changes with the infrastructure owner.
 
-!!! note 
+!!! info 
 
     Treat attestation as a verification step: define which measurements, policy fields, TCB levels, and freshness requirements the relying party must accept.
     
