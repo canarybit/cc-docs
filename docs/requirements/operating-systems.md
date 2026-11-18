@@ -16,4 +16,4 @@ Validated on:
 
 ## Windows
 
-- Windows-Azure
+- `Server 2022+ (Gen 2)`
