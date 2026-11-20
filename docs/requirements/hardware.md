@@ -49,6 +49,12 @@ Confidential Cloud currently supports the following hardware:
 
 </div>
 
+!!! info
+
+      Depending on what chipset and combination you have installed, the Host must be configured accrordingly. 
+      Please follow the [host configuration requirements](host.md) as next step.
+
+
 ## SmartNIC 
 
 :warning: Coming soon:
