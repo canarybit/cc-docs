@@ -72,6 +72,7 @@ nav:
   - Requirements:
     - 'Overview': 'requirements.md'
     - 'Hardware': 'requirements/hardware.md'
+    - 'BIOS Setup': 'requirements/bios-setup-confidential-computing.md'
     - 'Virtualization': 'requirements/virtualization.md'
     - 'Operating Systems': 'requirements/operating-systems.md'
     - 'Containers': 'requirements/containers.md'
