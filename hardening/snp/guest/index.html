@@ -1,0 +1,2259 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="CanaryBit Confidential Cloud is a digital infrastructure security suite for  Businesses and Public Authorities that are willing to collaborate  with sensitive data and algorithms, and in need of a hardware-encrypted  execution environment protected from unauthorized access.">
+      
+      
+        <meta name="author" content="Canary Bit AB">
+      
+      
+        <link rel="canonical" href="https://docs.confidentialcloud.io/hardening/snp/guest/">
+      
+      
+        <link rel="prev" href="../../">
+      
+      
+        <link rel="next" href="../host/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Guest Level - CanaryBit Confidential Cloud</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/canarybit.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="canarybit" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#amd-sev-snp-guest-hardening" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="CanaryBit Confidential Cloud" class="md-header__button md-logo" aria-label="CanaryBit Confidential Cloud" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CanaryBit Confidential Cloud
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Guest Level
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="canarybit" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CanaryBit Confidential Cloud" class="md-nav__button md-logo" aria-label="CanaryBit Confidential Cloud" data-md-component="logo">
+      
+  <img src="../../../img/logo.png" alt="logo">
+
+    </a>
+    CanaryBit Confidential Cloud
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome!
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Confidential Cloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../requirements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../requirements/hardware/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../requirements/host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../requirements/virtualization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtualization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../requirements/virtual-machines/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Virtual Machines
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../requirements/containers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Containers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Products
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Products
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/inspector/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    INSPECTOR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/tower/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TOWER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../products/surveyor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SURVEYOR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tools
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CanaryBit CLI
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../tools/siem-integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SIEM integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../playground/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Playground
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardening
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hardening
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AMD SEV-SNP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AMD SEV-SNP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guest Level
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guest Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-verify-the-guest-stack-supports-snp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Verify the guest stack supports SNP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Verify the guest stack supports SNP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-check-the-guest-firmwarekernel-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Check the guest firmware/kernel environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prevent-pmc-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prevent PMC virtualization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Prevent PMC virtualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-security-requirement-of-pmc-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Security requirement of PMC virtualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-restricted-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Restricted injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Restricted injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-guest-side-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Guest side requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-validate-attestation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Validate attestation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Validate attestation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-check-the-report-and-enforce-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Check the report and enforce policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-harden-sev-snp-launch-identity-and-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Harden SEV-SNP launch identity and policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Harden SEV-SNP launch identity and policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-guest-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Guest policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-guest-svn-and-image-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Guest SVN and image identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bind-runtime-attestation-to-the-inspector-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Bind runtime attestation to the Inspector challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validate-launch-time-and-current-mitigation-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Validate launch-time and current mitigation vectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Validate launch-time and current mitigation vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-generate-verifier-policy-for-the-deployment-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Generate verifier policy for the deployment environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Intel TDX
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Intel TDX
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tdx/guest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guest Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tdx/host/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Host Level
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legal
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legal
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../legal/terms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Terms & Conditions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../legal/sla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Level Agreement
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../legal/nfr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NFR License
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://inspector.confidentialcloud.io/" target="_blank" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sign in
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.canarybit.eu/contact" target="_blank" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contact Support ⧉
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objective
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-verify-the-guest-stack-supports-snp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Verify the guest stack supports SNP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Verify the guest stack supports SNP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-check-the-guest-firmwarekernel-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Check the guest firmware/kernel environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prevent-pmc-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prevent PMC virtualization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Prevent PMC virtualization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-security-requirement-of-pmc-virtualization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Security requirement of PMC virtualization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-restricted-injection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Restricted injection
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Restricted injection">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-definition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Definition
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-guest-side-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Guest side requirements
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-validate-attestation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Validate attestation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Validate attestation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-check-the-report-and-enforce-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5.1 Check the report and enforce policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-harden-sev-snp-launch-identity-and-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Harden SEV-SNP launch identity and policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. Harden SEV-SNP launch identity and policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-guest-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Guest policy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-guest-svn-and-image-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Guest SVN and image identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-bind-runtime-attestation-to-the-inspector-challenge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Bind runtime attestation to the Inspector challenge
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-validate-launch-time-and-current-mitigation-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Validate launch-time and current mitigation vectors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Validate launch-time and current mitigation vectors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-generate-verifier-policy-for-the-deployment-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 Generate verifier policy for the deployment environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Welcome!
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Hardening
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="./" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    AMD SEV-SNP
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="amd-sev-snp-guest-hardening">AMD SEV-SNP Guest Hardening<a class="headerlink" href="#amd-sev-snp-guest-hardening" title="Permanent link">#️</a></h1>
+<p>This guide covers the guest-side hardening decisions for AMD SEV-SNP confidential VMs. It focuses on the settings a guest owner must verify and the runtime checks needed to confirm the guest is launched in a hardened policy.</p>
+<h2 id="1-objective">1. Objective<a class="headerlink" href="#1-objective" title="Permanent link">#️</a></h2>
+<p>The guest should boot with the minimum trusted surface and a policy that blocks unsafe features and host-controlled behaviors.</p>
+<p>The key principles are:</p>
+<ul>
+<li>keep the guest policy restrictive</li>
+<li>avoid enabling PMC virtualization</li>
+<li>Keep the guest kernel updated</li>
+<li>ensure the guest is built with SNP-aware firmware and kernel support</li>
+<li>validate the attestation report before the VM is accepted </li>
+</ul>
+<h2 id="2-verify-the-guest-stack-supports-snp">2. Verify the guest stack supports SNP<a class="headerlink" href="#2-verify-the-guest-stack-supports-snp" title="Permanent link">#️</a></h2>
+<h3 id="21-check-the-guest-firmwarekernel-environment">2.1 Check the guest firmware/kernel environment<a class="headerlink" href="#21-check-the-guest-firmwarekernel-environment" title="Permanent link">#️</a></h3>
+<p>The guest should use SNP-aware firmware and an SNP-aware Linux guest kernel. For upstream Linux, 6.11 is a baseline for SEV-SNP guest support; distributions may backport that support to earlier kernels. Treat the vendor-supported kernel release and verified SNP capabilities as authoritative, rather than relying on the version number alone. Optional features such as restricted injection may require additional, version-specific patches.</p>
+<div class="highlight"><pre><span></span><code>uname<span class="w"> </span>-a
+cat<span class="w"> </span>/proc/cmdline
+</code></pre></div>
+<p><code>uname -a</code> reports the running kernel release, build, and system architecture. <code>/proc/cmdline</code> reports the boot parameters actually passed to the running guest; it does not show the kernel version or prove that the kernel supports a feature.</p>
+<p>If the guest is a cloud VM or custom image, verify the image includes the expected SNP support. Use the cloud or image-management update process to install a vendor-supported kernel, then verify the active kernel and its SNP capabilities.</p>
+<h2 id="3-prevent-pmc-virtualization">3. Prevent PMC virtualization<a class="headerlink" href="#3-prevent-pmc-virtualization" title="Permanent link">#️</a></h2>
+<p>PMC means performance monitoring counters. These are specialized hardware registers inside AMD CPUs (core PMCs, L3/uncore PMCs, Data Fabric PMCs, etc.) that count low-level processor events such as:</p>
+<ul>
+<li>Retired instructions</li>
+<li>Retired branches / taken branches</li>
+<li>Cache accesses/misses</li>
+<li>Division operations and cycles</li>
+<li>And hundreds of other micro-architectural events</li>
+</ul>
+<p>AMD EPYC generations (notably the 8005 series and beyond) added PMC Virtualization / Guest PMC Event Filtering. This allows:</p>
+<ul>
+<li>Hardware filtering of which events a guest is allowed to program </li>
+<li>Better isolation so the host cannot freely observe guest performance-counter activity.</li>
+</ul>
+<p>In the <a href="https://www.amd.com/content/dam/amd/en/documents/developer/56860.pdf">AMD SEV-SNP Firmware ABI Specification (Publication 56860)</a>, <code>SEV_FEATURES[11]</code> is <code>VIRT_PERFMON</code> (virtualized performance monitoring). Use the ABI revision applicable to the platform when interpreting this and other feature bits.</p>
+<h3 id="31-security-requirement-of-pmc-virtualization">3.1 Security requirement of PMC virtualization<a class="headerlink" href="#31-security-requirement-of-pmc-virtualization" title="Permanent link">#️</a></h3>
+<p>Do not enable <code>VIRT_PERFMON</code> (<code>SEV_FEATURES[11]</code>) at launch.</p>
+<p>This is the guest-side equivalent of a host policy decision and is essential for limiting performance-counter attacks.</p>
+<p>If the guest can see or manipulate real hardware performance counters, a malicious hypervisor may exploit that channel.</p>
+<h3 id="32-verification">3.2 Verification<a class="headerlink" href="#32-verification" title="Permanent link">#️</a></h3>
+<p>Inspect the launch configuration and the attested <code>SEV_FEATURES</code> claim. Confirm that bit 11 (<code>VIRT_PERFMON</code>) is not set. This is a launch feature, not the separate <code>PAGE_SWAP_DISABLE</code> guest-policy bit described in section 6. A guest-side check alone cannot prove that the launch setting was applied.</p>
+<h2 id="4-restricted-injection">4. Restricted injection<a class="headerlink" href="#4-restricted-injection" title="Permanent link">#️</a></h2>
+<h3 id="41-definition">4.1 Definition<a class="headerlink" href="#41-definition" title="Permanent link">#️</a></h3>
+<p>Restricted injection limits the hypervisor to special #HV events instead of arbitrary interrupt injection.</p>
+<h3 id="42-guest-side-requirements">4.2 Guest side requirements<a class="headerlink" href="#42-guest-side-requirements" title="Permanent link">#️</a></h3>
+<p>For the guest to work safely with this feature:</p>
+<ul>
+<li>guest firmware must support #HV handling</li>
+<li>guest kernel must support #HV doorbell handling</li>
+<li>host must provide the matching support</li>
+</ul>
+<p>Do not enable or rely on restricted injection unless you have verified the full stack is ready.</p>
+<p>Restricted injection is configured by the launch stack, not enabled by the guest commands in this guide. Follow the applicable <a href="https://www.amd.com/en/developer/sev.html">AMD SEV-SNP documentation</a>, <a href="https://docs.kernel.org/virt/kvm/x86/amd-memory-encryption.html">Linux KVM AMD memory-encryption documentation</a>, and <a href="https://www.qemu.org/docs/master/system/i386/amd-memory-encryption.html">QEMU AMD SEV documentation</a>, along with the guest-firmware release documentation for the exact versions in use. Confirm that the complete host-kernel, QEMU, firmware, and guest-kernel stack supports the ABI-defined feature before enabling it; support may depend on vendor or downstream patches.</p>
+<h2 id="5-validate-attestation">5. Validate attestation<a class="headerlink" href="#5-validate-attestation" title="Permanent link">#️</a></h2>
+<h3 id="51-check-the-report-and-enforce-policy">5.1 Check the report and enforce policy<a class="headerlink" href="#51-check-the-report-and-enforce-policy" title="Permanent link">#️</a></h3>
+<p>Use Inspector to validate the report and enforce the required claims in Rego. In particular:</p>
+<ul>
+<li>require <code>ALIAS_CHECK_COMPLETE</code> to be true</li>
+<li>require <code>PAGE_SWAP_DISABLE</code> in the attested guest policy when required</li>
+<li>compare every required guest-policy field with the approved deployment values (guest-policy correctness)</li>
+<li>require prohibited launch features, such as <code>VIRT_PERFMON</code>, to be absent</li>
+</ul>
+<p>Example attestation snippet</p>
+<div class="highlight"><pre><span></span><code>Platform Info (39):
+  SMT Enabled: true
+  TSME Enabled: true
+  ECC Enabled: true
+  RAPL Disabled: false
+  Ciphertext Hiding Enabled: false
+  Alias Check Complete: true
+</code></pre></div>
+<p>Illustrative rules to add to the existing <code>Inspector</code> policy. These assume that <code>input.claims.attestations["snp"]</code> contains the corresponding normalized claims; adjust field names to the Inspector claims available in the deployment. They add failures to the shared <code>errors</code> set, which the core policy uses to decide <code>allow</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP alias check is incomplete"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">snp</span><span class="p">.</span><span class="n">platform_info</span><span class="p">.</span><span class="n">alias_check_complete</span>
+<span class="p">}</span>
+
+<span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP page-swap restriction is not enabled"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">snp</span><span class="p">.</span><span class="n">guest_policy</span><span class="p">.</span><span class="n">page_swap_disable</span>
+<span class="p">}</span>
+
+<span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP guest policy does not match an approved policy"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">is_approved_snp_guest_policy</span><span class="p">(</span><span class="n">snp</span><span class="p">.</span><span class="n">guest_policy</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">is_approved_snp_guest_policy</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">ref_values_by_type</span><span class="p">(</span><span class="s2">"SNP_GUEST_POLICY"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP virtualized performance monitoring is enabled"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="n">snp</span><span class="p">.</span><span class="n">sev_features</span><span class="p">.</span><span class="n">virt_perfmon</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Configure <code>SNP_GUEST_POLICY</code> reference values as the complete approved policy objects, guest policy is described in section 6. Include only the checks required for the deployment.</p>
+<h2 id="6-harden-sev-snp-launch-identity-and-policy">6. Harden SEV-SNP launch identity and policy<a class="headerlink" href="#6-harden-sev-snp-launch-identity-and-policy" title="Permanent link">#️</a></h2>
+<p>The guest owner or launch service for example Tower selects several security-relevant values at launch. Review these values as part of image release and guest provisioning; they cannot generally be changed after launch.</p>
+<h3 id="61-guest-policy">6.1 Guest policy<a class="headerlink" href="#61-guest-policy" title="Permanent link">#️</a></h3>
+<p>Set the required guest policy through Tower. Select only the policy options required by the workload and platform. Review, where supported:</p>
+<ul>
+<li>whether guest debugging is allowed (disable it for production)</li>
+<li>whether SMT is allowed</li>
+<li>whether a migration agent is allowed</li>
+<li>whether the guest is restricted to a single socket</li>
+<li>the minimum required ABI version</li>
+<li>whether ciphertext hiding is required</li>
+<li>whether RAPL must be disabled</li>
+<li>whether AES-256-XTS is required</li>
+<li>whether CXL devices are allowed</li>
+</ul>
+<p>For deployments requiring page-swap restriction:</p>
+<ul>
+<li>set <code>PAGE_SWAP_DISABLE</code> in the guest policy</li>
+</ul>
+<p><code>PAGE_SWAP_DISABLE</code> is bit 25 in the guest policy. It disables page swapping as defined by the applicable SNP ABI; it is not a general-purpose statement that all page movement is blocked. A verifier checks the attested guest-policy bit against the deployment's required value.</p>
+<p>Illustrative rule to add to the existing <code>Inspector</code> policy. Map the field name to the normalized claim provided by Inspector:</p>
+<div class="highlight"><pre><span></span><code><span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP page-swap restriction is not enabled"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">snp</span><span class="p">.</span><span class="n">guest_policy</span><span class="p">.</span><span class="n">page_swap_disable</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>To calculate the hardened policy value manually:</p>
+<div class="highlight"><pre><span></span><code><span class="nv">policy</span><span class="o">=</span><span class="k">$((</span><span class="m">0x30000</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="o">(</span><span class="m">1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="m">25</span><span class="k">))</span><span class="o">)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">"policy = 0x</span><span class="k">$(</span><span class="nb">printf</span><span class="w"> </span><span class="s1">'%x'</span><span class="w"> </span><span class="nv">$policy</span><span class="k">)</span><span class="s2">"</span>
+</code></pre></div>
+<p>Expected result:</p>
+<div class="highlight"><pre><span></span><code>0x20030000
+</code></pre></div>
+<p>In Tower if you select the desired policies, the policy values will be automatically created.</p>
+<p>The exact available flags depend on the SEV-SNP ABI, platform generation, and launch tooling. Check the tool's documentation and confirm the resulting policy in the attestation report; do not assume that a requested option was applied.</p>
+<h3 id="62-guest-svn-and-image-identity">6.2 Guest SVN and image identity<a class="headerlink" href="#62-guest-svn-and-image-identity" title="Permanent link">#️</a></h3>
+<p><code>GUEST_SVN</code>, <code>FAMILY_ID</code>, and <code>IMAGE_ID</code> are launch-time values supplied by the guest owner through the launch stack (for example, an ID block passed by the VMM). They are not normally chosen from inside the running guest. Whether Tower or another launcher sets them must be confirmed in that environment. In our current workflow, we do not set these values, so do not assume they identify an approved image until their values are observed in a real attestation report.</p>
+<ul>
+<li><strong>Guest SVN</strong>: owner-assigned version claim for the guest image. To enforce anti-rollback, the verifier must maintain a minimum acceptable SVN and reject reports below it. The field by itself does not make a verifier reject an older image.</li>
+<li><strong>Family ID and Image ID</strong>: owner-assigned identity labels that can help a verifier select or identify an image family/release when the launch stack populates and authenticates them.</li>
+</ul>
+<p>These are separate report claims from <code>MEASUREMENT</code>. The measurement is the cryptographic digest of the guest launch contents; checking an Image ID does not avoid measurement verification and is not a substitute for it. An Image ID is useful as an additional, compact policy claim only when its source and binding are trusted. If these fields are used, record the expected claim values in the verifier policy and check them during attestation.</p>
+<p>Illustrative rules to add to the existing <code>Inspector</code> policy. Configure the corresponding reference values for the deployment; store the minimum SVN reference value as a number:</p>
+<div class="highlight"><pre><span></span><code><span class="n">is_approved_guest_svn</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">some</span><span class="w"> </span><span class="n">minimum</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">ref_values_by_type</span><span class="p">(</span><span class="s2">"SNP_MIN_GUEST_SVN"</span><span class="p">)</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="n">minimum</span>
+<span class="p">}</span>
+
+<span class="n">is_approved_snp_image_id</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">ref_values_by_type</span><span class="p">(</span><span class="s2">"SNP_IMAGE_ID"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP guest SVN is below the approved minimum"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">is_approved_guest_svn</span><span class="p">(</span><span class="n">snp</span><span class="p">.</span><span class="n">guest_svn</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP image ID is not approved"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">is_approved_snp_image_id</span><span class="p">(</span><span class="n">snp</span><span class="p">.</span><span class="n">image_id</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Apply the <code>IMAGE_ID</code> comparison only where the launch stack populates and authenticates that claim.</p>
+<h2 id="7-bind-runtime-attestation-to-the-inspector-challenge">7. Bind runtime attestation to the Inspector challenge<a class="headerlink" href="#7-bind-runtime-attestation-to-the-inspector-challenge" title="Permanent link">#️</a></h2>
+<p>For Inspector requests, Inspector generates a fresh nonce for each request and checks that the returned report's <code>REPORT_DATA</code> contains that request's expected nonce. This binds the report to the current challenge and helps prevent replay or substitution; it does not itself establish that the guest policy is secure. Verify the security claims separately by checking the attested guest policy and required report fields against the relying party's approved policy, as in section 5.</p>
+<p>The report requester selects the VMPL in the report request. VMPL 0 is the highest privilege level; request the level appropriate to the component making the request, and have the verifier check the reported VMPL matches the intended component and trust policy.</p>
+<h2 id="8-validate-launch-time-and-current-mitigation-vectors">8. Validate launch-time and current mitigation vectors<a class="headerlink" href="#8-validate-launch-time-and-current-mitigation-vectors" title="Permanent link">#️</a></h2>
+<p>For attestation report versions that provide these fields (including supported report version 5 and later), inspect both vectors and interpret them using the matching AMD ABI/report-version definition:</p>
+<ul>
+<li><strong>LAUNCH_MIT_VECTOR</strong>: mitigation state recorded for guest launch.</li>
+<li><strong>CURRENT_MIT_VECTOR</strong>: mitigation state recorded when the attestation report is generated.</li>
+</ul>
+<p>The vectors are bitmaps, not universal version numbers. Their numeric values and bit meanings depend on the report version and platform support, so there is no single expected hex value that applies to every SNP environment. For example, if policy requires mitigation <code>M</code> at launch and at report time, the policy should require the ABI-defined <code>M</code> bit to indicate the required state in both fields. If launch and current state differ, evaluate each field according to its own requirement; do not treat one as a replacement for the other.</p>
+<h3 id="81-generate-verifier-policy-for-the-deployment-environment">8.1 Generate verifier policy for the deployment environment<a class="headerlink" href="#81-generate-verifier-policy-for-the-deployment-environment" title="Permanent link">#️</a></h3>
+<p>Generate or configure the attestation policy from the actual environment rather than copying one policy across all platforms. Account for:</p>
+<ul>
+<li>processor/platform generation and supported SNP report versions</li>
+<li>firmware/ABI version and which claims the attestation pipeline exposes</li>
+<li>expected Guest Policy, measurement, and any populated <code>GUEST_SVN</code>, <code>FAMILY_ID</code>, and <code>IMAGE_ID</code> claims</li>
+<li>mitigation-vector bit meanings and required launch-time versus current states</li>
+</ul>
+<p>The policy should check the claims required for that environment, reject missing claims when they are mandatory, and compare identity/SVN values against the approved image policy. Keep measurement verification enabled; identity labels are additional policy inputs, not a shortcut around it. Validate the policy against real reports from each supported environment before relying on it in production.</p>
+<p>Illustrative rules to add to the existing <code>Inspector</code> policy. The example assumes Inspector (or an upstream normalization step) has mapped the ABI-defined bits to booleans; use the actual field names exposed by the deployment:</p>
+<div class="highlight"><pre><span></span><code><span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"required SNP launch mitigation is not enabled"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">snp</span><span class="p">.</span><span class="n">mitigations</span><span class="p">.</span><span class="n">launch_required</span>
+<span class="p">}</span>
+
+<span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"required current SNP mitigation is not enabled"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">snp</span><span class="p">.</span><span class="n">mitigations</span><span class="p">.</span><span class="n">current_required</span>
+<span class="p">}</span>
+
+<span class="n">is_approved_snp_measurement</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">value</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">ref_values_by_type</span><span class="p">(</span><span class="s2">"SNP_MEASUREMENT"</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">errors</span><span class="w"> </span><span class="k">contains</span><span class="w"> </span><span class="s2">"SNP measurement is not approved"</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">snp</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nb">input</span><span class="p">.</span><span class="n">claims</span><span class="p">.</span><span class="n">attestations</span><span class="p">[</span><span class="s2">"snp"</span><span class="p">]</span>
+<span class="w">    </span><span class="k">not</span><span class="w"> </span><span class="n">is_approved_snp_measurement</span><span class="p">(</span><span class="n">snp</span><span class="p">.</span><span class="n">measurement</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The mitigation fields above are illustrative normalized claims, not universal bit numbers. Obtain the actual vector values from the target launch stack and map them using the matching AMD ABI. Add identity checks only for claims populated and authenticated in the environment.</p>
+<h2 id="9-checklist">9. Checklist<a class="headerlink" href="#9-checklist" title="Permanent link">#️</a></h2>
+<ul>
+<li>[ ] Guest firmware is SNP-aware and the guest kernel is current, with SNP support and #HV handling where required</li>
+<li>[ ] <code>VIRT_PERFMON</code> (<code>SEV_FEATURES[11]</code>) is not enabled for PMC virtualization</li>
+<li>[ ] PAGE_SWAP_DISABLE is enabled in the launch policy when supported and required</li>
+<li>[ ] Restricted Injection is used only when the host kernel, QEMU, guest firmware, and guest kernel all support it</li>
+<li>[ ] Guest Policy is reviewed and set by the authorized guest owner or Tower</li>
+<li>[ ] Debugging is disabled in production unless explicitly approved</li>
+<li>[ ] Guest SVN meets the anti-rollback policy; Family ID and Image ID match the approved image</li>
+<li>[ ] Verifier policy is generated for the platform/report environment and checks required identity, SVN, policy, and mitigation claims</li>
+<li>[ ] Attestation report confirms the expected guest policy and required claims</li>
+<li>[ ] <code>ALIAS_CHECK_COMPLETE</code> is true in the attestation report</li>
+<li>[ ] <code>REPORT_DATA</code> is bound to a fresh Inspector nonce and validated by Inspector</li>
+<li>[ ] The report is requested at the intended VMPL</li>
+<li>[ ] LAUNCH_MIT_VECTOR and CURRENT_MIT_VECTOR are interpreted using the matching AMD ABI and checked against environment-specific requirements</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../host/" class="md-footer__link md-footer__link--next" aria-label="Next: Host Level">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Host Level
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      <iframe src="https://status.confidentialcloud.io/embed-badges/live-status?align=start&background-light=f5f5f5&text-light=000000&background-dark=171717&text-dark=ffffff" width="190" height="30" loading="lazy" frameborder="0" scrolling="no" style="color-scheme: light dark;"></iframe> <br> Copyright © <a href="https://www.canarybit.eu" target="_blank">Canary Bit AB</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.canarybit.eu" target="_blank" rel="noopener" title="www.canarybit.eu" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.36 14c.08-.66.14-1.32.14-2s-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2m-5.15 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95a8.03 8.03 0 0 1-4.33 3.56M14.34 14H9.66c-.1-.66-.16-1.32-.16-2s.06-1.35.16-2h4.68c.09.65.16 1.32.16 2s-.07 1.34-.16 2M12 19.96c-.83-1.2-1.5-2.53-1.91-3.96h3.82c-.41 1.43-1.08 2.76-1.91 3.96M8 8H5.08A7.92 7.92 0 0 1 9.4 4.44C8.8 5.55 8.35 6.75 8 8m-2.92 8H8c.35 1.25.8 2.45 1.4 3.56A8 8 0 0 1 5.08 16m-.82-2C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2s.06 1.34.14 2M12 4.03c.83 1.2 1.5 2.54 1.91 3.97h-3.82c.41-1.43 1.08-2.77 1.91-3.97M18.92 8h-2.95a15.7 15.7 0 0 0-1.38-3.56c1.84.63 3.37 1.9 4.33 3.56M12 2C6.47 2 2 6.5 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/company/canarybit/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.path", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+    
+  </body>
+</html>
