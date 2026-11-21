@@ -1,8 +1,10 @@
-# Operating Systems
+# Virtual Machines
 
-The following **guest** operating systems are currently supported by CanaryBit Confidential Cloud.
+## Operating System
 
-## Linux 
+CanaryBit Confidential Cloud supports the following operating systems:
+
+### Linux 
 
 Any with OS kernel `v6.16+`.
 
@@ -14,6 +16,6 @@ Validated on:
 - NixOS `v24.05`
 - SUSE Linux Enterprise Server `v15+`
 
-## Windows
+### Windows
 
 - `Server 2022+ (Gen 2)`

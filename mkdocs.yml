@@ -73,7 +73,7 @@ nav:
     - 'Hardware': 'requirements/hardware.md'
     - 'Host': 'requirements/host.md'
     - 'Virtualization': 'requirements/virtualization.md'
-    - 'Operating Systems': 'requirements/operating-systems.md'
+    - 'Virtual Machines': 'requirements/virtual-machines.md'
     - 'Containers': 'requirements/containers.md'
     #- 'Encryption': []
     #- 'Security': []
