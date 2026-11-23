@@ -154,8 +154,12 @@ Deploy your container (e.g. `mypod.yaml`) via Pod/Deployment manifest:
 $ surveyor deploy --cc-mode kata --kata-runtime-class kata-qemu-snp --attestation-targets snp --attestation-policy mypolicy.rego mypod.yaml
 ```
 
-!!! info
+!!! info "How it works"
     CanaryBit Surveyor will extend the Pod manifest by adding the CanaryBit Inspector client (`cb-inspector-client`) as init container, ensuring the workload is launched only upon a successful attestation and verified by CanaryBit Inspector at a custom schedule (defaults to `daily`)
+
+!!! warning "Pod Logs"
+    Pod Logs are enabled or disabled depending on the selected containerization platform and its confidential kata-runtime implementation. 
+    For example, **RedHat Openshift** `kata-cc` runtime disables pod logs by default (`ReadStreamRequest:=false`), whereas upstream `kata-qemu-snp` and `kata-qemu-tdx` leaves stdout enabled (`ReadStreamRequest:=true`) by default unless explicitly enforced via a policy with pod annotation.  
 
 ## Download the reports
 
