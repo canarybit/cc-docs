@@ -78,7 +78,7 @@ The verification of your Confidential environment is triggered **automatically**
     
     5. From each Confidential VM, run:
     ```
-    cb-inspector-client --token $CBTOKEN --environment $HW_ENV --inspector-url https://api.inspector.confidentialcloud.io
+    cb-inspector-client --token $CBTOKEN --environments $HW_ENV --inspector-url https://api.inspector.confidentialcloud.io
     ```
     providing `$CBTOKEN` and `$HW_ENV` (`"snp"` or `"tdx"`, depending on your hardware chipset) as arguments.
 
