@@ -30,6 +30,7 @@ theme:
   features:
     - navigation.path
     - navigation.footer
+    - tabs
 
 extra:
   social:
