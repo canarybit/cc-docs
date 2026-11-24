@@ -48,7 +48,7 @@ plugins:
 
 markdown_extensions:
   - toc:
-      permalink: '#️'
+      permalink: '¶️'
   - admonition
   - pymdownx.details
   - pymdownx.superfences
